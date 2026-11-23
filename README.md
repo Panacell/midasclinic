@@ -3,12 +3,12 @@
 미다스의원 인스파이어리조트점 (구 선이고은 성형외과) 리뉴얼 홈페이지입니다.
 기존 nosekorea.com의 세포치료 관련 내용을 모두 빼고, 프리미엄 성형외과 콘셉트로 새로 디자인했습니다.
 
-## 디자인 방향 (v7 — International · Bright)
-- 콘셉트: "Beauty, without borders." 국제적이고 활기찬 프리미엄 성형외과
-- 컬러: 화이트 바탕 · 라군 틸(#1A9A8B / 딥 #0F6F65) · 애프리콧 포인트(#FF9B6A) · 잉크(#10232B) · 민트 미스트(#F1F7F6)
-- 서체: Plus Jakarta Sans(모던 산세리프 헤드라인) + Instrument Serif 이탤릭 강조 + Noto Sans KR
-- 레이아웃: 매거진식 비대칭(풀블리드 히어로, 지그재그 시그니처, 메뉴판형 진료 목록, 원장 인용 겹침, 가로 드래그 갤러리, 틸 블록 예약 섹션)
-- 이미지 자리: 낮의 도시 스카이라인·바다·대리석·보케를 캔버스로 그려 둠. `<canvas class="scene">`를 `<img>`로 바꾸면 실제 사진으로 교체
+## 디자인 방향 (v8 — Global Modern, 레퍼런스 기반)
+- 톤: 아이시 실버블루(#EEF1F6) · 화이트 · 잉크 네이비(#161C2B), 다크 섹션 #141A26
+- 서체: Cormorant Garamond(세리프 헤드라인, 이탤릭 강조) · Inter · Noto Sans KR
+- 구성: 투명 헤더(언어 선택·Consultation) → 4장 히어로 슬라이더(도트) → Philosophy 좌우 분할 → Procedures(Face/Body/Skin 탭 + 아이콘 아코디언) → Why Midas 3아이콘 → Facility 분할 → Director 분할 → Your Journey 4단계 → Global Patient Program(다크, 카드 비주얼, 도시 시계) → Contact(정보 + 폼, 언어 선택) → Footer, 모바일 하단 고정 바
+- 레퍼런스의 Before & After(전후 사진)는 의료법상 전후 비교 사진 광고 제한 때문에 'Your Journey'로 대체, VIP 멤버십은 'Global Patient Program'으로 대체
+- 이미지 자리: 캔버스로 그린 임시 이미지. `<canvas data-scene>`를 `<img>`로 교체
 
 ## 구성
 - `index.html`: 원페이지 사이트(CSS·JS 포함, 별도 빌드 없음)
