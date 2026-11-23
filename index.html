@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>미다스의원 | MIDAS Aesthetic Clinic · 인스파이어 리조트</title>
+<meta name="description" content="미다스의원 인스파이어리조트점 (구 선이고은 성형외과). 코성형·코재수술, 안면거상·SMAS 리프팅, 눈성형, 윤곽, 바디, 피부. 최승호 대표원장 1:1 상담.">
+<meta property="og:title" content="미다스의원 | MIDAS Aesthetic Clinic">
+<meta property="og:description" content="인스파이어 엔터테인먼트 리조트 선타워 3층 · 대표원장 최승호">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f0e0c; --ink-2:#1a1815; --ink-3:#26231f;
+  --ivory:#f6f2ea; --paper:#fbf9f5; --line:#e4ddd0;
+  --gold:#b89a5e; --gold-2:#d4bc86; --gold-3:#8a7140;
+  --text:#2b2824; --muted:#7a736a; --muted-d:#a79f92;
+  --serif-en:'Cormorant Garamond',serif;
+  --serif-kr:'Noto Serif KR',serif;
+  --sans:'Noto Sans KR',system-ui,sans-serif;
+  --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{font-family:var(--sans);font-weight:300;color:var(--text);background:var(--paper);line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+.eyebrow{font-family:var(--serif-en);font-style:italic;font-size:15px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.h-section{font-family:var(--serif-kr);font-weight:300;font-size:clamp(28px,3.4vw,44px);line-height:1.35;letter-spacing:-.01em;margin-top:18px}
+.rule{display:inline-block;width:48px;height:1px;background:var(--gold);vertical-align:middle;margin-right:14px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 30px;font-size:14px;letter-spacing:.08em;border:1px solid var(--gold);color:var(--gold-2);transition:.35s;cursor:pointer;background:transparent;font-family:var(--sans)}
+.btn:hover{background:var(--gold);color:var(--ink)}
+.btn.solid{background:var(--gold);color:var(--ink)}
+.btn.solid:hover{background:var(--gold-2)}
+.btn.dark{border-color:var(--ink);color:var(--ink)}
+.btn.dark:hover{background:var(--ink);color:var(--ivory)}
+.btn .arr{font-family:var(--serif-en);font-size:18px;line-height:1}
+
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:.4s;color:var(--ivory)}
+header.scrolled{background:rgba(15,14,12,.94);backdrop-filter:blur(8px);box-shadow:0 1px 0 rgba(184,154,94,.2)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:88px;transition:.4s}
+header.scrolled .hd{height:68px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo svg{width:34px;height:34px}
+.logo .wm{font-family:var(--serif-en);font-size:26px;letter-spacing:.32em;font-weight:400;line-height:1}
+.logo .sub{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:.3em;color:var(--muted-d);margin-top:5px}
+nav.gnb{display:flex;gap:34px;font-size:14px;letter-spacing:.04em}
+nav.gnb a{position:relative;padding:6px 0;opacity:.88}
+nav.gnb a:after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold);transition:.3s}
+nav.gnb a:hover{opacity:1}
+nav.gnb a:hover:after{width:100%}
+.hd-r{display:flex;align-items:center;gap:20px}
+.hd-tel{font-family:var(--serif-en);font-size:19px;letter-spacing:.06em;color:var(--gold-2)}
+.hd .btn{padding:11px 20px;font-size:13px}
+.burger{display:none;width:28px;height:18px;position:relative;background:none;border:0;cursor:pointer}
+.burger span{position:absolute;left:0;width:100%;height:1px;background:var(--ivory);transition:.3s}
+.burger span:nth-child(1){top:0}.burger span:nth-child(2){top:8.5px}.burger span:nth-child(3){bottom:0}
+.mnav{position:fixed;top:0;left:0;width:100%;height:100%;background:var(--ink);z-index:49;display:flex;flex-direction:column;justify-content:center;padding:0 40px;gap:22px;transform:translateX(100%);transition:.5s;color:var(--ivory);visibility:hidden}
+.mnav.open{transform:none;visibility:visible}
+.mnav a{font-family:var(--serif-kr);font-size:24px;font-weight:300}
+.mnav small{font-family:var(--serif-en);color:var(--gold);font-style:italic;margin-right:14px;font-size:16px}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;background:var(--ink);color:var(--ivory);overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 60% 70% at 78% 45%,rgba(184,154,94,.22),transparent 60%),
+  radial-gradient(ellipse 40% 50% at 15% 90%,rgba(184,154,94,.08),transparent 70%),
+  linear-gradient(180deg,#121110 0%,#0b0a09 100%)}
+.hero-art{position:absolute;right:-6%;top:50%;transform:translateY(-50%);width:min(62vw,860px);opacity:.9;pointer-events:none}
+.hero-art .ring{transform-origin:center;animation:spin 90s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero .wrap{position:relative;width:100%}
+.hero-copy{max-width:640px;padding-top:40px}
+.hero h1{font-family:var(--serif-kr);font-weight:300;font-size:clamp(38px,5.4vw,72px);line-height:1.28;letter-spacing:-.02em;margin:26px 0 30px}
+.hero h1 em{font-style:normal;color:var(--gold-2)}
+.hero p.lead{font-size:16.5px;color:#cfc8bb;max-width:480px;line-height:1.9}
+.hero .cta{display:flex;gap:14px;margin-top:46px;flex-wrap:wrap}
+.hero-meta{position:absolute;left:0;right:0;bottom:42px}
+.hero-meta .wrap{display:flex;justify-content:space-between;align-items:flex-end;font-size:12.5px;letter-spacing:.14em;color:var(--muted-d)}
+.scroll-cue{display:flex;align-items:center;gap:14px}
+.scroll-cue i{display:block;width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{opacity:.3;transform:scaleY(.6);transform-origin:top}50%{opacity:1;transform:scaleY(1)}}
+.fade{opacity:0;transform:translateY(24px);animation:up 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.15s}.d2{animation-delay:.35s}.d3{animation-delay:.55s}.d4{animation-delay:.75s}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* Sections */
+section{padding:140px 0}
+.reveal{opacity:0;transform:translateY(30px);transition:1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* Philosophy */
+.philo{background:var(--paper)}
+.philo-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:90px}
+.philo-top p{color:var(--muted);font-size:16px;line-height:2}
+.values{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.value{padding:52px 44px 10px 0;position:relative}
+.value + .value{padding-left:44px;border-left:1px solid var(--line)}
+.value .num{font-family:var(--serif-en);font-size:56px;font-weight:300;color:var(--gold);line-height:1}
+.value h3{font-family:var(--serif-kr);font-weight:400;font-size:22px;margin:26px 0 6px}
+.value .en{font-family:var(--serif-en);font-style:italic;color:var(--muted);font-size:15px;letter-spacing:.04em}
+.value p{margin-top:18px;color:var(--muted);font-size:15px}
+
+/* Signature */
+.signature{background:var(--ink);color:var(--ivory);padding:0;overflow:hidden}
+.sig-grid{display:grid;grid-template-columns:1.05fr 1fr;min-height:720px}
+.sig-visual{position:relative;background:
+  radial-gradient(circle at 50% 45%,rgba(212,188,134,.18),transparent 55%),
+  linear-gradient(135deg,#1c1a17,#0e0d0b);display:flex;align-items:center;justify-content:center}
+.sig-visual svg{width:72%;max-width:480px}
+.sig-visual .tag{position:absolute;left:40px;bottom:36px;font-family:var(--serif-en);font-style:italic;color:var(--gold);letter-spacing:.2em;font-size:13px}
+.sig-copy{padding:120px 8% 120px 90px;display:flex;flex-direction:column;justify-content:center}
+.sig-copy p{color:#c9c2b5;margin-top:28px;font-size:16px;line-height:2}
+.sig-list{margin:44px 0 50px;border-top:1px solid rgba(184,154,94,.25)}
+.sig-list li{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid rgba(184,154,94,.25);font-family:var(--serif-kr);font-size:17px;font-weight:300;transition:.3s;cursor:default}
+.sig-list li span{font-family:var(--serif-en);font-style:italic;font-size:14px;color:var(--muted-d);letter-spacing:.06em}
+.sig-list li:hover{padding-left:12px;color:var(--gold-2)}
+
+/* Procedures */
+.proc{background:var(--ivory)}
+.proc-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+.proc-head p{max-width:420px;color:var(--muted)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:56px}
+.tab{background:none;border:0;padding:16px 22px;font-family:var(--serif-kr);font-size:16px;color:var(--muted);cursor:pointer;position:relative;transition:.3s}
+.tab:after{content:"";position:absolute;left:22px;right:22px;bottom:-1px;height:1px;background:var(--ink);transform:scaleX(0);transition:.35s}
+.tab.on{color:var(--ink)}
+.tab.on:after{transform:none}
+.panel{display:none;grid-template-columns:380px 1fr;gap:70px;animation:up .7s forwards}
+.panel.on{display:grid}
+.panel-intro .en{font-family:var(--serif-en);font-size:46px;font-weight:300;line-height:1.05;color:var(--ink)}
+.panel-intro h3{font-family:var(--serif-kr);font-weight:400;font-size:20px;margin:18px 0 16px}
+.panel-intro p{color:var(--muted);font-size:15px}
+.items{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.item{background:var(--paper);padding:34px 32px;transition:.35s;position:relative}
+.item:hover{background:#fff}
+.item:hover .item-n{color:var(--gold)}
+.item-n{font-family:var(--serif-en);font-size:14px;color:var(--muted-d);letter-spacing:.1em;transition:.3s}
+.item h4{font-family:var(--serif-kr);font-weight:400;font-size:19px;margin:10px 0 8px;color:var(--ink)}
+.item p{font-size:14px;color:var(--muted);line-height:1.8}
+
+/* Doctor */
+.doctor{background:var(--paper)}
+.doc-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:100px;align-items:center}
+.doc-photo{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#2a2622,#111);overflow:hidden}
+.doc-photo:before{content:"";position:absolute;inset:22px;border:1px solid rgba(184,154,94,.45)}
+.doc-photo .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--muted-d);gap:16px}
+.doc-photo .ph svg{width:120px;opacity:.5}
+.doc-photo .ph small{font-size:12px;letter-spacing:.2em}
+.doc-photo .sig{position:absolute;right:40px;bottom:36px;text-align:right;color:var(--ivory)}
+.doc-photo .sig b{display:block;font-family:var(--serif-kr);font-weight:400;font-size:24px;letter-spacing:.1em}
+.doc-photo .sig i{font-family:var(--serif-en);color:var(--gold-2);letter-spacing:.14em;font-size:14px}
+.doc-name{margin:26px 0 8px;font-family:var(--serif-kr);font-size:30px;font-weight:300}
+.doc-name small{font-size:16px;color:var(--muted);margin-left:12px}
+.quote{font-family:var(--serif-kr);font-weight:300;font-size:19px;line-height:1.9;color:var(--ink);padding:28px 0 32px;border-bottom:1px solid var(--line)}
+.quote:before{content:"“";display:block;font-family:var(--serif-en);font-size:64px;color:var(--gold);line-height:.6;margin-bottom:10px}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:4px 36px;margin-top:32px}
+.creds li{list-style:none;font-size:14.5px;color:var(--text);padding:10px 0 10px 20px;position:relative;border-bottom:1px dashed var(--line)}
+.creds li:before{content:"";position:absolute;left:0;top:21px;width:8px;height:1px;background:var(--gold)}
+.train{margin-top:28px;font-size:14px;color:var(--muted);line-height:1.9}
+
+/* Space */
+.space{background:var(--ink);color:var(--ivory)}
+.space-head{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:64px}
+.space-head p{color:#bdb5a7}
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:14px}
+.g{position:relative;overflow:hidden;background:#1b1916}
+.g:first-child{grid-row:span 2}
+.g .fill{position:absolute;inset:0;transition:1.2s cubic-bezier(.2,.7,.2,1)}
+.g:hover .fill{transform:scale(1.05)}
+.g .cap{position:absolute;left:24px;bottom:20px;font-size:13px;letter-spacing:.12em}
+.g .cap i{display:block;font-family:var(--serif-en);color:var(--gold-2);font-size:13px;margin-bottom:2px}
+.f1{background:radial-gradient(ellipse at 70% 30%,rgba(212,188,134,.35),transparent 55%),linear-gradient(160deg,#2b2620,#0f0e0c)}
+.f2{background:radial-gradient(circle at 30% 70%,rgba(184,154,94,.28),transparent 60%),linear-gradient(200deg,#24201b,#121110)}
+.f3{background:linear-gradient(120deg,#1a1815 30%,rgba(184,154,94,.25)),#141210}
+.f4{background:radial-gradient(circle at 80% 80%,rgba(212,188,134,.25),transparent 55%),#191714}
+.f5{background:linear-gradient(0deg,rgba(184,154,94,.18),transparent 70%),#151311}
+.g .lines{position:absolute;inset:0;opacity:.35}
+
+/* Process */
+.process{background:var(--ivory)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:70px;counter-reset:s}
+.step{padding:0 30px 0 0;position:relative}
+.step:before{content:"";position:absolute;top:12px;left:30px;right:0;height:1px;background:var(--line)}
+.step:last-child:before{display:none}
+.step .dot{width:25px;height:25px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ivory);position:relative}
+.step .dot:after{content:"";width:7px;height:7px;background:var(--gold);border-radius:50%}
+.step .en{font-family:var(--serif-en);font-style:italic;color:var(--gold-3);margin-top:28px;letter-spacing:.08em}
+.step h4{font-family:var(--serif-kr);font-weight:400;font-size:20px;margin:6px 0 12px}
+.step p{font-size:14.5px;color:var(--muted)}
+
+/* Contact */
+.contact{background:var(--paper)}
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}
+.info dl{display:grid;grid-template-columns:110px 1fr;gap:22px 20px;margin-top:46px;font-size:15px}
+.info dt{font-family:var(--serif-en);font-style:italic;color:var(--gold-3);letter-spacing:.08em;font-size:15px}
+.info dd .big{font-family:var(--serif-en);font-size:34px;letter-spacing:.04em;color:var(--ink);line-height:1.1}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 22px}
+.hours b{font-weight:400;color:var(--ink)}
+.msgs{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap}
+.msgs span{border:1px solid var(--line);padding:7px 14px;font-size:13px;color:var(--muted)}
+.map{margin-top:44px;aspect-ratio:16/8;background:linear-gradient(135deg,#ece6da,#f6f2ea);position:relative;overflow:hidden;border:1px solid var(--line)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.map .pin{position:absolute;left:58%;top:44%;transform:translate(-50%,-100%);text-align:center}
+.map .pin b{display:block;background:var(--ink);color:var(--gold-2);font-weight:400;font-size:12.5px;letter-spacing:.08em;padding:8px 14px;white-space:nowrap}
+.map .pin i{display:block;width:1px;height:26px;background:var(--ink);margin:0 auto}
+.form{background:var(--ink);color:var(--ivory);padding:60px 56px}
+.form h3{font-family:var(--serif-kr);font-weight:300;font-size:28px;margin:14px 0 8px}
+.form > p{color:var(--muted-d);font-size:14px;margin-bottom:34px}
+.field{margin-bottom:22px}
+.field label{display:block;font-size:12.5px;letter-spacing:.12em;color:var(--muted-d);margin-bottom:8px}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:0;border-bottom:1px solid #3a3631;color:var(--ivory);padding:10px 0;font:inherit;font-size:15px;outline:none;transition:.3s}
+.field select option{background:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{resize:vertical;min-height:90px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.agree{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted-d);margin:8px 0 30px}
+.agree input{accent-color:var(--gold);margin-top:5px}
+.form .btn{width:100%;justify-content:center}
+.form-msg{display:none;margin-top:20px;padding:16px 18px;border:1px solid rgba(184,154,94,.4);font-size:14px;color:var(--gold-2);line-height:1.7}
+
+/* Footer */
+footer{background:#0a0908;color:#8d867a;font-size:13px;padding:80px 0 50px}
+.ft-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:40px;border-bottom:1px solid #24211d}
+.ft-top .logo{color:var(--ivory)}
+.ft-nav{display:flex;gap:28px;flex-wrap:wrap;color:#bdb5a7}
+.ft-info{margin-top:36px;line-height:2.1}
+.ft-info span{margin-right:22px;white-space:nowrap}
+.notice{margin-top:28px;font-size:12px;color:#6c665d;line-height:1.9}
+.copy{margin-top:26px;font-family:var(--serif-en);letter-spacing:.14em;color:#5d574f}
+
+/* Quick */
+.quick{position:fixed;right:24px;bottom:24px;z-index:40;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(20px);transition:.4s}
+.quick.show{opacity:1;transform:none}
+.quick a{width:56px;height:56px;background:var(--ink);color:var(--gold-2);display:flex;align-items:center;justify-content:center;flex-direction:column;font-size:10.5px;letter-spacing:.06em;border:1px solid rgba(184,154,94,.35);transition:.3s}
+.quick a:hover{background:var(--gold);color:var(--ink)}
+.quick a b{font-family:var(--serif-en);font-size:17px;font-weight:400;line-height:1.1}
+
+@media (max-width:1080px){
+  nav.gnb,.hd-tel{display:none}
+  .burger{display:block;z-index:60}
+  .philo-top,.doc-grid,.ct-grid,.space-head{grid-template-columns:1fr;gap:48px}
+  .sig-grid{grid-template-columns:1fr}
+  .sig-visual{min-height:420px}
+  .sig-copy{padding:90px 32px}
+  .panel{grid-template-columns:1fr;gap:40px}
+  .steps{grid-template-columns:1fr 1fr;gap:50px 0}
+  .step:nth-child(2):before{display:none}
+}
+@media (max-width:720px){
+  .wrap{padding:0 22px}
+  section{padding:96px 0}
+  .hd .btn{display:none}
+  .values{grid-template-columns:1fr}
+  .value,.value + .value{padding:40px 0 30px;border-left:0;border-bottom:1px solid var(--line)}
+  .items{grid-template-columns:1fr}
+  .creds{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:240px 160px 160px}
+  .g:first-child{grid-column:span 2;grid-row:auto}
+  .steps{grid-template-columns:1fr}
+  .step:before{display:none}
+  .form{padding:44px 26px}
+  .row2{grid-template-columns:1fr}
+  .info dl{grid-template-columns:1fr;gap:6px}
+  .info dd{margin-bottom:18px}
+  .hero-art{width:120vw;right:-50%;opacity:.45}
+  .hero-meta .wrap span:first-child{display:none}
+  .ft-info span{white-space:normal;display:block;margin:0}
+  .info dd .big{font-size:30px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fade,.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap hd">
+    <a href="#top" class="logo" aria-label="미다스의원 홈">
+      <svg viewBox="0 0 40 40" fill="none" stroke="#b89a5e" stroke-width="1"><circle cx="20" cy="20" r="18.5"/><circle cx="20" cy="20" r="13" stroke-opacity=".5"/><path d="M11 27V13l9 10 9-10v14"/></svg>
+      <span><span class="wm">MIDAS</span><span class="sub">미다스의원 · AESTHETIC CLINIC</span></span>
+    </a>
+    <nav class="gnb">
+      <a href="#about">병원소개</a>
+      <a href="#nose">코성형</a>
+      <a href="#procedures">진료안내</a>
+      <a href="#doctor">대표원장</a>
+      <a href="#space">공간</a>
+      <a href="#contact">오시는 길</a>
+    </nav>
+    <div class="hd-r">
+      <a class="hd-tel" href="tel:0322523210">032.252.3210</a>
+      <a class="btn" href="#contact">상담 예약</a>
+      <button class="burger" id="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav">
+  <a href="#about"><small>01</small>병원소개</a>
+  <a href="#nose"><small>02</small>코성형</a>
+  <a href="#procedures"><small>03</small>진료안내</a>
+  <a href="#doctor"><small>04</small>대표원장</a>
+  <a href="#space"><small>05</small>공간</a>
+  <a href="#contact"><small>06</small>오시는 길</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <svg class="hero-art" viewBox="0 0 800 800" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3cf9f"/><stop offset=".5" stop-color="#b89a5e"/><stop offset="1" stop-color="#6e5a33"/></linearGradient>
+    </defs>
+    <g class="ring" stroke="url(#gd)">
+      <circle cx="400" cy="400" r="340" stroke-width=".6" stroke-dasharray="2 10"/>
+      <circle cx="400" cy="400" r="300" stroke-width=".5" opacity=".6"/>
+    </g>
+    <circle cx="400" cy="400" r="232" stroke="url(#gd)" stroke-width=".8" opacity=".9"/>
+    <ellipse cx="400" cy="400" rx="232" ry="92" stroke="url(#gd)" stroke-width=".5" opacity=".45" transform="rotate(-28 400 400)"/>
+    <ellipse cx="400" cy="400" rx="232" ry="92" stroke="url(#gd)" stroke-width=".5" opacity=".45" transform="rotate(28 400 400)"/>
+    <!-- golden-ratio profile line -->
+    <path d="M430 168 C 402 222, 392 262, 396 300 C 399 330, 418 352, 452 392 C 462 404, 458 414, 440 418 C 424 421, 418 428, 424 440 C 430 452, 426 462, 414 468 C 424 482, 420 498, 404 508 C 392 516, 392 540, 404 566 C 414 588, 420 612, 418 640" stroke="url(#gd)" stroke-width="1.4" stroke-linecap="round"/>
+    <line x1="160" y1="400" x2="640" y2="400" stroke="#b89a5e" stroke-width=".4" opacity=".35"/>
+    <line x1="400" y1="120" x2="400" y2="680" stroke="#b89a5e" stroke-width=".4" opacity=".25"/>
+    <circle cx="452" cy="392" r="3" fill="#d4bc86"/>
+    <text x="470" y="386" fill="#b89a5e" font-family="Cormorant Garamond" font-style="italic" font-size="14" letter-spacing="2">1 : 1.618</text>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow fade d1"><span class="rule"></span>Midas Aesthetic Clinic · Inspire Resort</div>
+      <h1 class="fade d2">정교함이 빚어내는<br><em>자연스러운 품격</em></h1>
+      <p class="lead fade d3">코 재건과 리프팅을 중심으로, 얼굴 전체의 균형을 읽는 1:1 맞춤 성형. 대표원장이 상담부터 수술, 회복까지 직접 함께합니다.</p>
+      <div class="cta fade d4">
+        <a href="#contact" class="btn solid">상담 예약하기 <span class="arr">→</span></a>
+        <a href="#procedures" class="btn">진료 안내 <span class="arr">→</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="wrap">
+      <span>INSPIRE ENTERTAINMENT RESORT · SUN TOWER 3F</span>
+      <span class="scroll-cue">SCROLL <i></i></span>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philo" id="about">
+  <div class="wrap">
+    <div class="philo-top reveal">
+      <div>
+        <div class="eyebrow"><span class="rule"></span>Philosophy</div>
+        <h2 class="h-section">한 사람의 얼굴에서<br>가장 아름다운 비율을 찾습니다</h2>
+      </div>
+      <p>미다스의원 인스파이어리조트점은 (구)선이고은 성형외과의 진료 철학을 이어갑니다. 유행을 좇는 얼굴이 아니라, 본래의 인상과 골격을 존중하며 오래도록 자연스러운 결과를 지향합니다. 정직한 진단과 신뢰할 수 있는 수술, 그것이 미다스의 기준입니다.</p>
+    </div>
+    <div class="values">
+      <div class="value reveal">
+        <div class="num">01</div>
+        <h3>정직한 진단</h3>
+        <div class="en">Honest Consultation</div>
+        <p>꼭 필요한 수술만 권합니다. 가능한 결과와 한계, 회복 과정을 숨김없이 설명드립니다.</p>
+      </div>
+      <div class="value reveal">
+        <div class="num">02</div>
+        <h3>안전을 우선하는 수술</h3>
+        <div class="en">Safety First</div>
+        <p>정밀한 사전 검사와 마취 관리, 체계적인 사후 관리로 수술의 모든 단계를 안전하게 설계합니다.</p>
+      </div>
+      <div class="value reveal">
+        <div class="num">03</div>
+        <h3>멈추지 않는 연구</h3>
+        <div class="en">Continuous Mastery</div>
+        <p>국내외 학회와 연수를 통해 새로운 술기를 검증하고, 검증된 방법만을 진료에 적용합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE: NOSE -->
+<section class="signature" id="nose">
+  <div class="sig-grid">
+    <div class="sig-visual">
+      <svg viewBox="0 0 400 400" fill="none" aria-hidden="true">
+        <circle cx="200" cy="200" r="168" stroke="#b89a5e" stroke-width=".5" opacity=".5"/>
+        <circle cx="200" cy="200" r="120" stroke="#b89a5e" stroke-width=".5" opacity=".3" stroke-dasharray="3 6"/>
+        <path d="M206 52 C 190 96, 184 128, 188 160 C 191 186, 206 206, 236 240 C 246 252, 240 262, 224 264 C 210 266, 206 274, 212 284 C 218 296, 212 304, 200 310" stroke="#d4bc86" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M188 160 L 236 240" stroke="#b89a5e" stroke-width=".5" stroke-dasharray="2 4" opacity=".8"/>
+        <path d="M150 240 L 270 240" stroke="#b89a5e" stroke-width=".5" opacity=".5"/>
+        <path d="M206 52 L 206 310" stroke="#b89a5e" stroke-width=".4" opacity=".3"/>
+        <circle cx="236" cy="240" r="3" fill="#d4bc86"/>
+        <circle cx="188" cy="160" r="2.5" fill="#b89a5e"/>
+        <text x="250" y="236" fill="#b89a5e" font-family="Cormorant Garamond" font-style="italic" font-size="13" letter-spacing="1.5">Nasal tip</text>
+        <text x="96" y="156" fill="#8d8270" font-family="Cormorant Garamond" font-style="italic" font-size="13" letter-spacing="1.5">Dorsum</text>
+      </svg>
+      <div class="tag">SIGNATURE — RHINOPLASTY &amp; RECONSTRUCTION</div>
+    </div>
+    <div class="sig-copy">
+      <div class="eyebrow reveal"><span class="rule"></span>Signature</div>
+      <h2 class="h-section reveal">코 재건, <br>미다스가 가장 깊이 다뤄온 분야</h2>
+      <p class="reveal">코는 얼굴의 중심이자 기능의 기관입니다. 미다스의원은 자가 늑연골을 활용한 구조적 재건부터 비중격 교정, 까다로운 재수술까지 — 아름다운 라인과 편안한 호흡을 함께 설계합니다.</p>
+      <ul class="sig-list reveal">
+        <li>늑연골(가슴연골) 코성형 <span>Rib Cartilage Rhinoplasty</span></li>
+        <li>비중격 만곡증 교정 <span>Septoplasty</span></li>
+        <li>코 재수술 <span>Revision Rhinoplasty</span></li>
+        <li>남자 코성형 <span>Male Rhinoplasty</span></li>
+      </ul>
+      <div class="reveal"><a href="#contact" class="btn">코성형 상담 신청 <span class="arr">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDURES -->
+<section class="proc" id="procedures">
+  <div class="wrap">
+    <div class="proc-head reveal">
+      <div>
+        <div class="eyebrow"><span class="rule"></span>Procedures</div>
+        <h2 class="h-section">진료 안내</h2>
+      </div>
+      <p>얼굴과 바디, 피부까지. 개인의 해부학적 구조와 라이프스타일을 고려해 가장 알맞은 방법을 제안합니다.</p>
+    </div>
+
+    <div class="tabs reveal" role="tablist">
+      <button class="tab on" data-t="p1">리프팅 · 안티에이징</button>
+      <button class="tab" data-t="p2">눈성형</button>
+      <button class="tab" data-t="p3">윤곽 · 페이스</button>
+      <button class="tab" data-t="p4">바디</button>
+      <button class="tab" data-t="p5">피부 · 쁘띠</button>
+    </div>
+
+    <div class="panel on" id="p1">
+      <div class="panel-intro">
+        <div class="en">Lifting &amp;<br>Anti-aging</div>
+        <h3>리프팅 · 안티에이징</h3>
+        <p>처진 피부만이 아니라 근막(SMAS)층부터 끌어올려, 시간이 지나도 자연스럽게 유지되는 젊은 인상을 되찾습니다.</p>
+      </div>
+      <div class="items">
+        <div class="item"><div class="item-n">01</div><h4>안면거상</h4><p>얼굴 전반의 처짐과 깊은 주름을 근본적으로 개선하는 리프팅</p></div>
+        <div class="item"><div class="item-n">02</div><h4>중안면 SMAS 리프팅</h4><p>볼과 팔자 부위를 근막층부터 당겨 올리는 중안면 개선</p></div>
+        <div class="item"><div class="item-n">03</div><h4>눈썹하 SMAS 리프팅</h4><p>처진 눈꺼풀과 눈가 피부를 눈썹 아래 절개로 자연스럽게 개선</p></div>
+        <div class="item"><div class="item-n">04</div><h4>목 SMAS 리프팅</h4><p>턱선과 목의 늘어진 피부·주름을 정돈하는 목 리프팅</p></div>
+        <div class="item"><div class="item-n">05</div><h4>볼 리프팅</h4><p>꺼지고 처진 볼 라인을 매끄럽게 정리</p></div>
+        <div class="item"><div class="item-n">06</div><h4>포헤드 리프팅</h4><p>이마 주름과 눈썹 처짐을 함께 개선하는 이마거상</p></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p2">
+      <div class="panel-intro">
+        <div class="en">Eye<br>Surgery</div>
+        <h3>눈성형</h3>
+        <p>눈매는 인상의 첫인상을 결정합니다. 눈 뜨는 힘과 피부 두께, 얼굴 전체의 조화를 고려해 또렷하면서도 편안한 눈매를 디자인합니다.</p>
+      </div>
+      <div class="items">
+        <div class="item"><div class="item-n">01</div><h4>매몰법 · 절개법</h4><p>눈꺼풀 상태에 맞춘 쌍꺼풀 수술 방식 선택</p></div>
+        <div class="item"><div class="item-n">02</div><h4>안검하수 (눈매교정)</h4><p>눈 뜨는 근육의 힘을 보강해 또렷하고 시원한 눈매로</p></div>
+        <div class="item"><div class="item-n">03</div><h4>앞트임 · 뒤트임</h4><p>눈의 가로 길이와 비율을 섬세하게 조정</p></div>
+        <div class="item"><div class="item-n">04</div><h4>상안검 · 하안검</h4><p>처진 눈꺼풀, 눈밑 지방과 주름을 개선하는 중년 눈성형</p></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p3">
+      <div class="panel-intro">
+        <div class="en">Facial<br>Contour</div>
+        <h3>윤곽 · 페이스</h3>
+        <p>얼굴의 입체감과 비율을 설계합니다. 볼륨이 필요한 곳은 채우고, 균형을 해치는 요소는 정돈합니다.</p>
+      </div>
+      <div class="items">
+        <div class="item"><div class="item-n">01</div><h4>T존 성형</h4><p>이마와 코를 잇는 T존 라인의 입체적인 개선</p></div>
+        <div class="item"><div class="item-n">02</div><h4>3차원 입체 지방이식</h4><p>자가 지방으로 꺼진 부위에 자연스러운 볼륨을 부여</p></div>
+        <div class="item"><div class="item-n">03</div><h4>잇몸 성형</h4><p>웃을 때 드러나는 잇몸 노출을 개선해 단정한 미소로</p></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p4">
+      <div class="panel-intro">
+        <div class="en">Body<br>Contour</div>
+        <h3>바디</h3>
+        <p>체형의 비율과 라인을 고려한 바디 디자인. 미국지방흡입학회·미국모발이식학회 정회원인 대표원장이 직접 상담합니다.</p>
+      </div>
+      <div class="items">
+        <div class="item"><div class="item-n">01</div><h4>지방흡입</h4><p>부위별 지방층을 정밀하게 다듬는 라인 중심 지방흡입</p></div>
+        <div class="item"><div class="item-n">02</div><h4>복부 성형</h4><p>늘어진 복부 피부와 근막을 함께 정리</p></div>
+        <div class="item"><div class="item-n">03</div><h4>유방 하수 교정</h4><p>처진 가슴의 위치와 형태를 바로잡는 교정술</p></div>
+        <div class="item"><div class="item-n">04</div><h4>모발이식</h4><p>헤어라인과 밀도를 고려한 자연스러운 모발이식</p></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p5">
+      <div class="panel-intro">
+        <div class="en">Skin &amp;<br>Petit</div>
+        <h3>피부 · 쁘띠</h3>
+        <p>수술 전후 관리부터 일상의 피부 고민까지. 피부 타입과 상태에 맞춘 맞춤 프로그램을 제공합니다.</p>
+      </div>
+      <div class="items">
+        <div class="item"><div class="item-n">01</div><h4>보톡스 · 필러</h4><p>주름 개선과 볼륨 보완을 위한 쁘띠 시술</p></div>
+        <div class="item"><div class="item-n">02</div><h4>피부 심부 재생</h4><p>피부 깊은 층의 탄력과 결을 개선하는 케어</p></div>
+        <div class="item"><div class="item-n">03</div><h4>모공</h4><p>넓어진 모공과 거친 피부결 개선</p></div>
+        <div class="item"><div class="item-n">04</div><h4>기미 · 주근깨 · 안면홍조</h4><p>색소와 붉은기를 정돈하는 맞춤 치료</p></div>
+        <div class="item"><div class="item-n">05</div><h4>여드름 · 여드름흉터</h4><p>활동성 여드름 관리와 흉터 개선</p></div>
+        <div class="item"><div class="item-n">06</div><h4>물광주사</h4><p>피부 속 수분과 광채를 채우는 주사 시술</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTOR -->
+<section class="doctor" id="doctor">
+  <div class="wrap doc-grid">
+    <div class="doc-photo reveal">
+      <!-- 원장님 프로필 사진으로 교체: .ph 블록을 <img src="images/doctor.jpg" alt="최승호 대표원장" style="width:100%;height:100%;object-fit:cover"> 로 바꾸세요 -->
+      <div class="ph">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#b89a5e" stroke-width=".8"><circle cx="50" cy="36" r="16"/><path d="M18 88c4-18 18-28 32-28s28 10 32 28"/></svg>
+        <small>DIRECTOR PORTRAIT</small>
+      </div>
+      <div class="sig"><b>최승호</b><i>CHOI, SEUNG HO · M.D.</i></div>
+    </div>
+    <div>
+      <div class="eyebrow reveal"><span class="rule"></span>Director</div>
+      <div class="doc-name reveal">최승호 <small>대표원장</small></div>
+      <p class="quote reveal">한 가지 자격과 경험에 머무르지 않고, 더 아름답고 더 안전한 결과를 위해 매 순간 배우고 연구합니다. 환자 한 분 한 분에게 정직하게 최선을 다하겠습니다.</p>
+      <ul class="creds reveal">
+        <li>가톨릭의대 외래교수, 전문의</li>
+        <li>대한미용외과학회 학술이사</li>
+        <li>유럽 IBCS 미용외과 전문의</li>
+        <li>유럽미용의학학회 정회원</li>
+        <li>미국미용외과학회 정회원</li>
+        <li>미국지방흡입학회(ASLS) 정회원</li>
+        <li>미국모발이식학회(ASHRS) 정회원</li>
+        <li>발칸미용외과학회 정회원</li>
+      </ul>
+      <p class="train reveal">미국 노스미시간·인디애나 주립대학에서 유방성형 및 재건 분야 연수, 일본 요코하마에서 유방·유두 재건 연수. 호주·필리핀·독일·불가리아 등에서 미용성형 분야 연수 및 자격 취득.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPACE -->
+<section class="space" id="space">
+  <div class="wrap">
+    <div class="space-head reveal">
+      <div>
+        <div class="eyebrow"><span class="rule"></span>The Space</div>
+        <h2 class="h-section">리조트 안의 프라이빗 클리닉</h2>
+      </div>
+      <p>인스파이어 엔터테인먼트 리조트 선타워 3층. 인천국제공항과 가까워 국내외 고객 모두 편하게 방문하실 수 있으며, 상담부터 회복까지 프라이버시를 지키는 동선으로 설계했습니다.</p>
+    </div>
+    <!-- 실제 병원 사진으로 교체: 각 .fill 에 style="background:url(images/space-1.jpg) center/cover" 지정 -->
+    <div class="gallery reveal">
+      <div class="g"><div class="fill f1"></div><div class="cap"><i>Lounge</i>라운지 · 리셉션</div></div>
+      <div class="g"><div class="fill f2"></div><div class="cap"><i>Consultation</i>1:1 상담실</div></div>
+      <div class="g"><div class="fill f3"></div><div class="cap"><i>Operating Room</i>수술실</div></div>
+      <div class="g"><div class="fill f4"></div><div class="cap"><i>Recovery</i>회복실</div></div>
+      <div class="g"><div class="fill f5"></div><div class="cap"><i>Skin Care</i>피부 관리실</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow"><span class="rule"></span>Your Journey</div>
+      <h2 class="h-section">상담부터 회복까지, 한 명의 원장이 함께합니다</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="dot"></div><div class="en">Step 01</div><h4>상담 예약</h4><p>전화, 카카오톡, WhatsApp, WeChat 또는 온라인으로 편하게 예약하세요.</p></div>
+      <div class="step reveal"><div class="dot"></div><div class="en">Step 02</div><h4>1:1 원장 상담</h4><p>대표원장이 직접 얼굴과 체형을 분석하고 가능한 결과와 한계를 설명드립니다.</p></div>
+      <div class="step reveal"><div class="dot"></div><div class="en">Step 03</div><h4>맞춤 수술 · 시술</h4><p>정밀 검사 후 개인에게 맞춘 계획으로 안전하게 진행합니다.</p></div>
+      <div class="step reveal"><div class="dot"></div><div class="en">Step 04</div><h4>사후 관리</h4><p>회복 단계별 경과 확인과 관리로 결과가 자리 잡을 때까지 함께합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap ct-grid">
+    <div class="info reveal">
+      <div class="eyebrow"><span class="rule"></span>Contact &amp; Location</div>
+      <h2 class="h-section">오시는 길</h2>
+      <dl>
+        <dt>Tel</dt>
+        <dd><a class="big" href="tel:0322523210">032.252.3210</a><br><span style="color:var(--muted);font-size:13.5px">FAX 032-252-3211 · drchoi119@gmail.com</span></dd>
+        <dt>Address</dt>
+        <dd>인천광역시 중구 공항문화로 127<br>인스파이어 엔터테인먼트 리조트 선타워 3층</dd>
+        <dt>Hours</dt>
+        <dd class="hours"><b>평일</b><span>10:00 – 18:30</span><b>토요일</b><span>10:00 – 16:00</span><b>점심</b><span>12:00 – 13:00</span></dd>
+        <dt>Messenger</dt>
+        <dd><div class="msgs"><span>KakaoTalk</span><span>WhatsApp</span><span>WeChat</span></div></dd>
+      </dl>
+      <div class="map" aria-label="위치 약도">
+        <svg viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice" fill="none">
+          <path d="M-20 210 C 120 190, 220 240, 360 200 S 560 150, 640 170" stroke="#d6ccb9" stroke-width="18"/>
+          <path d="M-20 210 C 120 190, 220 240, 360 200 S 560 150, 640 170" stroke="#fff" stroke-width="2" stroke-dasharray="8 8"/>
+          <path d="M340 -10 L 360 320" stroke="#e2d9c8" stroke-width="10"/>
+          <path d="M80 -10 C 120 100, 160 160, 150 320" stroke="#e8e0d1" stroke-width="6"/>
+          <rect x="300" y="70" width="110" height="60" fill="#e4dccd"/>
+          <rect x="430" y="60" width="70" height="90" fill="#e9e2d5"/>
+          <text x="24" y="270" fill="#a59c8c" font-family="Noto Sans KR" font-size="11" letter-spacing="1">공항문화로</text>
+          <text x="470" y="40" fill="#a59c8c" font-family="Noto Sans KR" font-size="11">→ 인천국제공항</text>
+        </svg>
+        <div class="pin"><b>미다스의원 · 선타워 3F</b><i></i></div>
+      </div>
+    </div>
+
+    <form class="form reveal" id="form" novalidate>
+      <div class="eyebrow">Online Reservation</div>
+      <h3>온라인 상담 신청</h3>
+      <p>남겨주신 연락처로 상담 코디네이터가 진료시간 내 연락드립니다.</p>
+      <div class="row2">
+        <div class="field"><label for="f-name">성함</label><input id="f-name" required></div>
+        <div class="field"><label for="f-tel">연락처</label><input id="f-tel" type="tel" required></div>
+      </div>
+      <div class="field"><label for="f-cat">관심 분야</label>
+        <select id="f-cat">
+          <option>코성형 · 코재수술</option><option>리프팅 · 안티에이징</option><option>눈성형</option><option>윤곽 · 페이스</option><option>바디</option><option>피부 · 쁘띠</option><option>기타</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-msg">문의 내용</label><textarea id="f-msg"></textarea></div>
+      <label class="agree"><input type="checkbox" id="f-agree"> 상담을 위한 개인정보(성함, 연락처) 수집·이용에 동의합니다. 수집된 정보는 상담 목적으로만 사용됩니다.</label>
+      <button class="btn solid" type="submit">상담 신청하기 <span class="arr">→</span></button>
+      <div class="form-msg" id="form-msg"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-top">
+      <a href="#top" class="logo">
+        <svg viewBox="0 0 40 40" fill="none" stroke="#b89a5e" stroke-width="1"><circle cx="20" cy="20" r="18.5"/><circle cx="20" cy="20" r="13" stroke-opacity=".5"/><path d="M11 27V13l9 10 9-10v14"/></svg>
+        <span><span class="wm">MIDAS</span><span class="sub">미다스의원 · AESTHETIC CLINIC</span></span>
+      </a>
+      <div class="ft-nav"><a href="#about">병원소개</a><a href="#nose">코성형</a><a href="#procedures">진료안내</a><a href="#doctor">대표원장</a><a href="#contact">오시는 길</a></div>
+    </div>
+    <div class="ft-info">
+      <span>미다스의원 인스파이어리조트점 (구)선이고은 성형외과</span><span>대표원장 최승호</span><span>사업자등록번호 617-66-00589</span><br>
+      <span>인천광역시 중구 공항문화로 127 인스파이어 엔터테인먼트 리조트 선타워 3층</span><span>T. 032-252-3210</span><span>F. 032-252-3211</span><span>E. drchoi119@gmail.com</span>
+    </div>
+    <p class="notice">※ 모든 수술 및 시술은 개인에 따라 결과가 다를 수 있으며, 출혈·감염·부종·비대칭·흉터 등의 부작용이 발생할 수 있습니다. 수술 전 반드시 전문의와 충분히 상담하시기 바랍니다.</p>
+    <p class="copy">© MIDAS AESTHETIC CLINIC. ALL RIGHTS RESERVED.</p>
+  </div>
+</footer>
+
+<div class="quick" id="quick">
+  <a href="tel:0322523210"><b>T</b>전화</a>
+  <a href="#contact"><b>R</b>예약</a>
+  <a href="#top"><b>↑</b>TOP</a>
+</div>
+
+<script>
+(function(){
+  var hd=document.getElementById('hd'),quick=document.getElementById('quick');
+  function onScroll(){var y=window.scrollY;hd.classList.toggle('scrolled',y>40);quick.classList.toggle('show',y>600)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+  burger.addEventListener('click',function(){mnav.classList.toggle('open')});
+  mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mnav.classList.remove('open')})});
+
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+      document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');document.getElementById(t.dataset.t).classList.add('on');
+    });
+  });
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+  } else document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});
+
+  /* 상담 신청: 실제 접수 서버(또는 폼 서비스) 주소를 ENDPOINT 에 넣으면 전송됩니다. */
+  var ENDPOINT='';
+  var form=document.getElementById('form'),msg=document.getElementById('form-msg');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('f-name').value.trim(),tel=document.getElementById('f-tel').value.trim();
+    msg.style.display='block';
+    if(!name||!tel){msg.textContent='성함과 연락처를 입력해 주세요.';return}
+    if(!document.getElementById('f-agree').checked){msg.textContent='개인정보 수집·이용에 동의해 주세요.';return}
+    if(!ENDPOINT){msg.innerHTML='온라인 접수는 준비 중입니다. 빠른 상담은 전화 <b>032-252-3210</b> 또는 카카오톡으로 문의해 주세요.';return}
+    fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,tel:tel,category:document.getElementById('f-cat').value,message:document.getElementById('f-msg').value})})
+      .then(function(r){if(!r.ok)throw 0;msg.textContent='상담 신청이 접수되었습니다. 진료시간 내 연락드리겠습니다.';form.reset()})
+      .catch(function(){msg.innerHTML='전송에 실패했습니다. 전화 <b>032-252-3210</b>으로 문의해 주세요.'});
+  });
+})();
+</script>
+</body>
+</html>
