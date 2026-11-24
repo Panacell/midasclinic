@@ -931,7 +931,7 @@ def contact():
 VIDEOS = [
     ("8lM00noyg0g", T("23rd World Miss University contestants visit the clinic", "제23회 월드미스유니버시티 참가자 내원", "第23届世界大学小姐参赛者到访"), ""),
     ("GwVnHXa72_U", T("Rhinoplasty using Rib Cartilage", "늑연골을 이용한 코성형", "肋软骨隆鼻"), ""),
-    ("yM99I7L0YEA", T("Midas Clinic", "미다스의원", "美达斯医院"), ""),
+    ("yM99I7L0YEA", T("Rib Cartilage Rhinoplasty", "가슴연골(늑연골) 코수술", "肋软骨隆鼻手术"), ""),
 ]
 PRESS = [
 ]
