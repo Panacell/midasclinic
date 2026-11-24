@@ -14,7 +14,7 @@
   var I18N = {
     en: {
       'nav.about': 'About', 'nav.procedures': 'Procedures', 'nav.global': 'Global Care',
-      'nav.experience': 'Inspire Experience', 'nav.contact': 'Contact',
+      'nav.experience': 'Inspire Experience', 'nav.contact': 'Contact', 'nav.media': 'Media', 'nav.cell': 'Cell',
       'cta.consult': 'Consultation', 'cta.book': 'Book a Consultation', 'cta.explore': 'Explore Procedures', 'cta.call': 'Call',
 
       'hero1.kicker': 'Premium Plastic Surgery',
@@ -72,7 +72,7 @@
 
     ko: {
       'nav.about': '병원소개', 'nav.procedures': '진료안내', 'nav.global': '글로벌 케어',
-      'nav.experience': '인스파이어 경험', 'nav.contact': '오시는 길',
+      'nav.experience': '인스파이어 경험', 'nav.contact': '오시는 길', 'nav.media': '미디어', 'nav.cell': '세포',
       'cta.consult': '상담 예약', 'cta.book': '상담 예약하기', 'cta.explore': '진료 안내 보기', 'cta.call': '전화',
 
       'hero1.kicker': 'Premium Plastic Surgery',
@@ -130,7 +130,7 @@
 
     zh: {
       'nav.about': '关于我们', 'nav.procedures': '诊疗项目', 'nav.global': '国际关怀',
-      'nav.experience': 'Inspire 体验', 'nav.contact': '联系我们',
+      'nav.experience': 'Inspire 体验', 'nav.contact': '联系我们', 'nav.media': '媒体', 'nav.cell': '细胞',
       'cta.consult': '预约咨询', 'cta.book': '预约咨询', 'cta.explore': '查看诊疗项目', 'cta.call': '致电',
 
       'hero1.kicker': 'Premium Plastic Surgery',
@@ -207,11 +207,13 @@
       { icon: 'body', en: ['Liposuction', ['Area-specific Liposuction']], ko: ['지방흡입', ['부위별 지방흡입']], zh: ['吸脂', ['局部吸脂']] },
       { icon: 'abdomen', en: ['Abdominoplasty', ['Tummy Tuck']], ko: ['복부 성형', ['늘어진 복부 피부 · 근막 정리']], zh: ['腹部整形', ['腹壁成形']] },
       { icon: 'breast', en: ['Breast Lift', ['Breast Ptosis Correction']], ko: ['유방 하수 교정', ['처진 가슴의 위치 · 형태 교정']], zh: ['乳房提升', ['乳房下垂矫正']] },
+      { icon: 'breast', en: ['Stem Cell Breast Surgery', ['Stem Cell Breast Augmentation', 'Stem Cell Breast Reconstruction']], ko: ['줄기세포 유방 성형', ['줄기세포 유방 확대술', '줄기세포 유방 재건술']], zh: ['干细胞乳房整形', ['干细胞丰胸', '干细胞乳房重建']] },
       { icon: 'hair', en: ['Hair Transplant', ['Hairline & Density Design']], ko: ['모발이식', ['헤어라인 · 밀도 디자인']], zh: ['植发', ['发际线与密度设计']] }
     ],
     skin: [
       { icon: 'spark', en: ['Botox · Filler', ['Wrinkle Botox', 'Volume Filler']], ko: ['보톡스 · 필러', ['주름 보톡스', '볼륨 필러']], zh: ['肉毒素 · 玻尿酸', ['除皱肉毒素', '填充玻尿酸']] },
       { icon: 'ring', en: ['Skin Renewal', ['Deep Dermal Renewal', 'Pore Care', 'Skin Booster']], ko: ['피부 재생', ['피부 심부 재생', '모공', '물광주사']], zh: ['皮肤再生', ['深层皮肤再生', '毛孔管理', '水光针']] },
+      { icon: 'spark', en: ['PRP · Super PRP', ['PRP · PMRP', 'Super PRP']], ko: ['PRP · 슈퍼 PRP', ['PRP · PMRP', '슈퍼 PRP']], zh: ['PRP · 超级PRP', ['PRP · PMRP', '超级PRP']] },
       { icon: 'dots', en: ['Pigment · Acne', ['Melasma · Freckles · Redness', 'Acne · Acne Scars']], ko: ['색소 · 여드름', ['기미 · 주근깨 · 안면홍조', '여드름 · 여드름흉터']], zh: ['色斑 · 痘痘', ['黄褐斑 · 雀斑 · 面部潮红', '痘痘 · 痘印']] }
     ]
   };
@@ -409,6 +411,16 @@
     });
   }
   setInterval(tick, 30000);
+
+  /* YouTube: load the player only when clicked */
+  document.querySelectorAll('.yt[data-id]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true; f.title = 'Video';
+      b.replaceWith(f);
+    });
+  });
 
   /* ---------------------------------------------------------
      7. Reveal on scroll

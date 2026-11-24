@@ -34,23 +34,32 @@ def tx(tag, t, cls="", attrs=""):
 
 ARROW = '<svg><use href="#i-arrow"/></svg>'
 
+# 세포 항목은 파나셀 홈페이지로 연결 (새 창)
+PANACELL_URL = "https://panacellbio.com/ko/"
+
 NAV = [
     ("about", "about.html", T("About", "병원소개", "关于我们")),
     ("procedures", "procedures.html", T("Procedures", "진료안내", "诊疗项目")),
     ("global", "global-care.html", T("Global Care", "글로벌 케어", "国际关怀")),
     ("experience", "experience.html", T("Inspire Experience", "인스파이어 경험", "Inspire 体验")),
+    ("media", "media.html", T("Media", "미디어", "媒体")),
     ("contact", "contact.html", T("Contact", "오시는 길", "联系我们")),
+    ("cell", PANACELL_URL, T("Cell", "세포", "细胞")),
 ]
 CONSULT = T("Consultation", "상담 예약", "预约咨询")
 BOOK = T("Book a Consultation", "상담 예약하기", "预约咨询")
 HOME = T("Home", "홈", "首页")
 
 
+def nav_link(key, href, label, active=None):
+    if href.startswith("http"):
+        return tx("a", label, "ext", f' href="{href}" target="_blank" rel="noopener"')
+    return tx("a", label, "active" if key == active else "", f' href="{href}"')
+
+
 def header(active):
-    links = "\n      ".join(
-        tx("a", label, "active" if key == active else "", f' href="{href}"') for key, href, label in NAV
-    )
-    drawer = "\n  ".join(tx("a", label, "", f' href="{href}"') for key, href, label in NAV)
+    links = "\n      ".join(nav_link(k, h, l, active) for k, h, l in NAV)
+    drawer = "\n  ".join(nav_link(k, h, l) for k, h, l in NAV)
     return f'''<svg width="0" height="0" class="sr" aria-hidden="true">
   <symbol id="i-arrow" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 6h18M13 1l5 5-5 5"/></symbol>
   <symbol id="i-chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 3l4 4 4-4"/></symbol>
@@ -85,7 +94,7 @@ def header(active):
 
 
 def footer():
-    links = "\n        ".join(tx("a", label, "", f' href="{href}"') for key, href, label in NAV)
+    links = "\n        ".join(nav_link(k, h, l) for k, h, l in NAV)
     addr = T("Inspire Entertainment Resort<br>Incheon, Korea", "인스파이어 엔터테인먼트 리조트<br>인천, 대한민국",
              "Inspire Entertainment Resort<br>韩国 仁川")
     notice = T("※ Results vary by individual. All procedures carry risks such as bleeding, infection, swelling, asymmetry or scarring.",
@@ -402,10 +411,10 @@ CATS = [
          lead=T("Body contouring and hair restoration planned around your proportions and lifestyle.",
                 "체형의 비율과 라이프스타일을 고려한 바디 디자인과 모발이식.",
                 "根据身形比例与生活方式规划的身体塑形与植发。"),
-         short=T("Liposuction, abdominoplasty, breast lift and hair transplant.", "지방흡입, 복부 성형, 유방 하수 교정, 모발이식", "吸脂、腹壁整形、乳房提升、植发"),
-         overview=T("Body procedures are planned with the director, a member of the American Society of Lipo-Suction Surgery and the American Society of Hair Restoration Surgery, focusing on natural lines rather than volume alone.",
-                    "미국지방흡입학회·미국모발이식학회 정회원인 대표원장이 직접 상담하며, 단순히 양을 줄이는 것이 아니라 자연스러운 라인을 기준으로 계획합니다.",
-                    "由美国吸脂学会及美国植发学会正式会员的院长亲自面诊，不只追求减量，而以自然线条为标准进行规划。"),
+         short=T("Liposuction, abdominoplasty, breast lift, stem cell breast surgery and hair transplant.", "지방흡입, 복부 성형, 유방 하수 교정, 줄기세포 유방 확대·재건, 모발이식", "吸脂、腹壁整形、乳房提升、干细胞丰胸与乳房重建、植发"),
+         overview=T("Body procedures are planned with the director, a member of the American Society of Lipo-Suction Surgery and the American Society of Hair Restoration Surgery, who trained in breast surgery and reconstruction in the U.S. and Japan. The focus is on natural lines rather than volume alone.",
+                    "미국지방흡입학회·미국모발이식학회 정회원이며 미국·일본에서 유방성형과 재건을 수련한 대표원장이 직접 상담합니다. 단순히 양을 바꾸는 것이 아니라 자연스러운 라인을 기준으로 계획합니다.",
+                    "由美国吸脂学会及美国植发学会正式会员、曾在美国和日本进修乳房整形与重建的院长亲自面诊，不只追求体积变化，而以自然线条为标准进行规划。"),
          items=[
              (T("Liposuction", "지방흡입", "吸脂"),
               T("Refines fat layers area by area, with the overall body line in mind.",
@@ -419,6 +428,14 @@ CATS = [
               T("Restores the position and shape of sagging breasts.",
                 "처진 가슴의 위치와 형태를 바로잡습니다.",
                 "恢复下垂乳房的位置与形态。")),
+             (T("Stem Cell Breast Augmentation", "줄기세포 유방 확대술", "干细胞丰胸"),
+              T("Breast augmentation with your own fat, grafted together with adipose-derived stem cells — natural volume and feel without implants.",
+                "자가지방과 지방에서 얻은 줄기세포를 함께 이식하는 가슴 확대술. 보형물 없이 자연스러운 볼륨과 촉감을 추구합니다.",
+                "将自体脂肪与脂肪来源干细胞一同移植的丰胸术，无需假体，追求自然的饱满度与手感。")),
+             (T("Stem Cell Breast Reconstruction", "줄기세포 유방 재건술", "干细胞乳房重建"),
+              T("Restores breast volume and shape after surgery, or corrects asymmetry and deformity, using your own fat and adipose-derived stem cells.",
+                "유방 수술 후 또는 비대칭·변형으로 달라진 가슴의 볼륨과 형태를 자가지방·줄기세포로 재건합니다.",
+                "以自体脂肪与脂肪来源干细胞，重建术后或因不对称、变形而改变的乳房体积与形态。")),
              (T("Hair Transplant", "모발이식", "植发"),
               T("Natural hairline and density designed for your face shape.",
                 "얼굴형에 맞춘 자연스러운 헤어라인과 밀도를 디자인합니다.",
@@ -426,8 +443,9 @@ CATS = [
          ],
          suits=[T("Localised fat that does not respond to diet or exercise", "식단·운동으로 잘 빠지지 않는 부분 지방", "饮食或运动难以消除的局部脂肪"),
                 T("Loose abdominal skin after pregnancy or weight loss", "출산·감량 후 늘어진 복부", "产后或减重后腹部松弛"),
+                T("Wanting natural breast volume without implants, or reconstruction after breast surgery", "보형물 없이 자연스러운 가슴 볼륨을 원하거나, 유방 수술 후 재건이 필요한 경우", "希望不用假体获得自然丰满，或需要乳房术后重建"),
                 T("Thinning hair or a receding hairline", "모발이 가늘어지거나 헤어라인이 후퇴한 경우", "头发稀疏或发际线后移")]),
-    dict(slug="skin", interest=8,
+    dict(slug="skin", interest=9,
          icon='<circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="6"/>',
          name=T("Skin & Petit", "피부 · 쁘띠", "皮肤管理"),
          kicker=T("Skin", "피부", "皮肤"),
@@ -435,7 +453,7 @@ CATS = [
          lead=T("From pre- and post-surgery care to everyday skin concerns, tailored to your skin type.",
                 "수술 전후 관리부터 일상의 피부 고민까지, 피부 타입에 맞춰 관리합니다.",
                 "从术前术后护理到日常肌肤困扰，根据肤质量身定制。"),
-         short=T("Botox, filler, skin renewal, pigment and acne care.", "보톡스·필러, 피부 재생, 색소·여드름", "肉毒素、玻尿酸、皮肤再生、色斑与痘痘"),
+         short=T("Botox, filler, skin renewal, PRP · Super PRP, pigment and acne care.", "보톡스·필러, 피부 재생, PRP·슈퍼 PRP, 색소·여드름", "肉毒素、玻尿酸、皮肤再生、PRP与超级PRP、色斑与痘痘"),
          overview=T("Good skin makes every result look better. We combine non-surgical treatments according to your skin type and condition, without unnecessary procedures.",
                     "좋은 피부는 모든 결과를 더 돋보이게 합니다. 피부 타입과 상태에 맞춰 필요한 시술만 조합합니다.",
                     "好的肌肤让一切效果更出色。我们根据肤质与状态，只组合真正需要的非手术项目。"),
@@ -452,6 +470,14 @@ CATS = [
               T("Targets enlarged pores and rough texture.",
                 "넓어진 모공과 거친 피부결을 개선합니다.",
                 "改善毛孔粗大与肤质粗糙。")),
+             (T("PRP · PMRP", "PRP · PMRP", "PRP · PMRP"),
+              T("Platelet-rich plasma concentrated from your own blood, applied to support skin regeneration, tone and elasticity.",
+                "자신의 혈액에서 혈소판이 풍부한 혈장(PRP)을 농축해, 피부 재생과 톤·탄력 개선을 돕습니다.",
+                "从自体血液中浓缩富含血小板的血浆（PRP），帮助肌肤再生，改善肤色与弹性。")),
+             (T("Super PRP", "슈퍼 PRP", "超级PRP"),
+              T("A higher-concentration PRP treatment for regeneration, texture and elasticity.",
+                "PRP를 고농도로 농축해 피부 재생, 피부결, 탄력 개선에 활용합니다.",
+                "将PRP高浓度浓缩，用于肌肤再生及改善肤质与弹性。")),
              (T("Pigment · Redness · Acne", "색소 · 홍조 · 여드름", "色斑 · 潮红 · 痘痘"),
               T("Customised treatment for melasma, freckles, facial redness, active acne and acne scars.",
                 "기미·주근깨, 안면홍조, 여드름과 여드름흉터에 맞춘 치료를 제공합니다.",
@@ -894,7 +920,61 @@ def contact():
          "Contact Midas Clinic Inspire: +82 32 252 3210. Sun Tower 3F, Inspire Entertainment Resort, Incheon.", body)
 
 
+# =====================================================================
+# Media (기사 · 동영상)
+#   VIDEOS: ("YouTube 영상 ID", T(제목), "YYYY-MM-DD")
+#           예) https://www.youtube.com/watch?v=AbCdEf12345  →  "AbCdEf12345"
+#   PRESS:  (T(기사 제목), "매체명", "YYYY-MM-DD", "기사 URL")
+# =====================================================================
+VIDEOS = [
+]
+PRESS = [
+]
+
+
+def media():
+    if VIDEOS:
+        vids = '<div class="video-grid">' + "".join(
+            f'''<figure class="video reveal"><button class="yt" data-id="{vid}" aria-label="Play">
+  <img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button>
+  <figcaption>{tx("span", title)}<small>{date}</small></figcaption></figure>'''
+            for vid, title, date in VIDEOS) + "</div>"
+    else:
+        vids = tx("p", T("Videos are being prepared.", "영상을 준비하고 있습니다.", "视频正在准备中。"), "empty reveal")
+    if PRESS:
+        press = '<div class="press-list">' + "".join(
+            f'''<a class="press reveal" href="{url}" target="_blank" rel="noopener"><span class="date">{date}</span>
+  {tx("span", title, "ttl")}<span class="outlet">{outlet}</span>{ARROW}</a>'''
+            for title, outlet, date, url in PRESS) + "</div>"
+    else:
+        press = tx("p", T("Articles are being prepared.", "기사를 준비하고 있습니다.", "报道正在准备中。"), "empty reveal")
+    body = f'''{page_hero(T("Media", "미디어", "媒体"), T("Media", "미디어", "媒体"),
+                T("Midas in<br><em>the media</em>", "미디어 속<br>미다스", "媒体中的<br>美达斯"),
+                T("Videos and press coverage of Midas Clinic and Dr. Seungho Choi.",
+                  "미다스의원과 최승호 대표원장의 영상과 언론 보도입니다.",
+                  "美达斯医院与崔承浩院长的视频与媒体报道。"))}
+
+<section class="section" id="videos">
+  <div class="wrap">
+    {sec_head(T("Videos", "동영상", "视频"), T("Watch", "영상으로 보기", "观看视频"))}
+    {vids}
+  </div>
+</section>
+
+<section class="section alt" id="press">
+  <div class="wrap">
+    {sec_head(T("Press", "언론 보도", "媒体报道"), T("In the news", "언론 보도", "新闻报道"))}
+    {press}
+  </div>
+</section>
+
+{cta_band()}'''
+    page("media.html", "media", T("Media", "미디어", "媒体"),
+         "Videos and press coverage of Midas Clinic Inspire and Dr. Seungho Choi.", body)
+
+
 if __name__ == "__main__":
+    media()
     about()
     procedures()
     for c in CATS:
