@@ -929,6 +929,9 @@ def contact():
 #   PRESS:  (T(기사 제목), "매체명", "YYYY-MM-DD", "기사 URL")
 # =====================================================================
 VIDEOS = [
+    ("8lM00noyg0g", T("23rd World Miss University contestants visit the clinic", "제23회 월드미스유니버시티 참가자 내원", "第23届世界大学小姐参赛者到访"), ""),
+    ("GwVnHXa72_U", T("Rhinoplasty using Rib Cartilage", "늑연골을 이용한 코성형", "肋软骨隆鼻"), ""),
+    ("yM99I7L0YEA", T("Midas Clinic", "미다스의원", "美达斯医院"), ""),
 ]
 PRESS = [
 ]
@@ -938,7 +941,7 @@ def media():
     if VIDEOS:
         vids = '<div class="video-grid">' + "".join(
             f'''<figure class="video reveal"><button class="yt" data-id="{vid}" aria-label="Play">
-  <img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span></button>
+  <img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><span class="play"></span></button>
   <figcaption>{tx("span", title)}<small>{date}</small></figcaption></figure>'''
             for vid, title, date in VIDEOS) + "</div>"
     else:
