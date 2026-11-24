@@ -445,3 +445,6 @@ html[lang="ko"] .lead,html[lang="ko"] .prose{line-height:1.95}
 .qr figcaption{font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--mute);margin-top:6px}
 /* facility photo slots */
 .space-card .ph img{z-index:1}
+.qr-card{align-items:center;text-align:center}
+.qr-card img{width:160px;height:160px;object-fit:contain;margin-bottom:18px;image-rendering:pixelated}
+.qr-card h3{margin-top:0}

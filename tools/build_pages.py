@@ -736,11 +736,14 @@ def global_care():
 
 <section class="section">
   <div class="wrap">
-    {sec_head(T("Contact channels", "상담 채널", "咨询渠道"), T("Reach us<br>your way", "편한 방법으로<br>연락하세요", "选择您方便的<br>方式联系我们"))}
+    {sec_head(T("Contact channels", "상담 채널", "咨询渠道"), T("Reach us<br>your way", "편한 방법으로<br>연락하세요", "选择您方便的<br>方式联系我们"),
+              T("Scan a QR code with your phone to start a chat with our consultation team.",
+                "휴대폰으로 QR 코드를 스캔하면 바로 상담 채팅을 시작할 수 있습니다.",
+                "用手机扫描二维码，即可与我们的咨询团队开始聊天。"))}
     <div class="cards">
-      <div class="card reveal"><h3>KakaoTalk</h3>{tx("p", T("For guests in Korea", "국내 고객", "适合韩国境内顾客"))}</div>
-      <div class="card reveal"><h3>WhatsApp</h3>{tx("p", T("For guests worldwide", "해외 고객", "适合全球顾客"))}</div>
-      <div class="card reveal"><h3>WeChat</h3>{tx("p", T("For guests from China", "중국 고객", "适合中国顾客"))}</div>
+      <div class="card qr-card reveal"><img src="images/qr-kakao.png" alt="KakaoTalk QR code" loading="lazy"><h3>KakaoTalk</h3>{tx("p", T("For guests in Korea", "국내 고객", "适合韩国境内顾客"))}</div>
+      <div class="card qr-card reveal"><img src="images/qr-whatsapp.png" alt="WhatsApp QR code" loading="lazy"><h3>WhatsApp</h3>{tx("p", T("For guests worldwide", "해외 고객", "适合全球顾客"))}</div>
+      <div class="card qr-card reveal"><img src="images/qr-wechat.png" alt="WeChat QR code" loading="lazy"><h3>WeChat</h3>{tx("p", T("For guests from China", "중국 고객", "适合中国顾客"))}</div>
     </div>
   </div>
 </section>
