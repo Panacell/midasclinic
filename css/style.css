@@ -430,3 +430,16 @@ html[lang="ko"] .lead,html[lang="ko"] .prose{line-height:1.95}
 /* serif body on dark sections keeps light colour */
 .cta-band p{color:#c3cad8}
 .director-card blockquote{color:#e4e8f0}
+
+/* director photo (images/director.png) — sits behind the text with a soft fade */
+.director-card .dir-photo{position:absolute;right:0;bottom:0;height:92%;width:auto;max-width:70%;object-fit:contain;object-position:right bottom;z-index:0}
+.director-card .dir-photo ~ *{position:relative;z-index:1}
+.director-card:has(.dir-photo):before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(27,33,49,.92) 0%,rgba(27,33,49,.55) 45%,rgba(27,33,49,0) 75%),linear-gradient(0deg,rgba(27,33,49,.85),rgba(27,33,49,0) 45%);pointer-events:none}
+.director-card .name,.director-card .role,.director-card blockquote{position:relative;z-index:2}
+/* messenger QR codes */
+.qr-row{display:flex;gap:18px;margin-top:28px;flex-wrap:wrap}
+.qr{background:#fff;padding:12px 12px 8px;box-shadow:0 1px 0 var(--line);text-align:center}
+.qr img{width:104px;height:104px;object-fit:contain}
+.qr figcaption{font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--mute);margin-top:6px}
+/* facility photo slots */
+.space-card .ph img{z-index:1}

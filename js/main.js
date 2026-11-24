@@ -45,7 +45,7 @@
       'tab.face': 'Face', 'tab.body': 'Body', 'tab.skin': 'Skin',
 
       'dir.kicker': 'Our Director', 'dir.title': 'Expertise<br>You Can <em>Trust</em>',
-      'dir.name': 'Choi Seung Ho, M.D.', 'dir.role': 'Representative Director',
+      'dir.name': 'Seungho Choi, M.D.', 'dir.role': 'Representative Director',
       'dir.quote': '“Never settled on one method — every face deserves the safest, most refined answer.”',
 
       'contact.kicker': 'Contact', 'contact.title': 'Begin Your<br><em>Consultation</em>',
@@ -161,7 +161,7 @@
       'tab.face': '面部', 'tab.body': '身体', 'tab.skin': '皮肤',
 
       'dir.kicker': 'Our Director', 'dir.title': '值得信赖的<br><em>专业</em>',
-      'dir.name': 'Choi Seung Ho 代表院长', 'dir.role': 'Representative Director',
+      'dir.name': 'Seungho Choi 代表院长', 'dir.role': 'Representative Director',
       'dir.quote': '“不止于一种资格与经验，为了更美、更安全的结果，时刻学习与钻研。”',
 
       'contact.kicker': 'Contact', 'contact.title': '开始您的<br><em>咨询</em>',
@@ -193,9 +193,9 @@
       { icon: 'nose', en: ['Rhinoplasty', ['Rib Cartilage Rhinoplasty', 'Septoplasty', 'Revision Rhinoplasty', 'Male Rhinoplasty']],
         ko: ['코성형 · 코 재건', ['늑연골(가슴연골) 코성형', '비중격 만곡증 교정', '코 재수술', '남자 코성형']],
         zh: ['鼻整形 · 鼻重建', ['肋软骨隆鼻', '鼻中隔偏曲矫正', '鼻修复', '男士鼻整形']] },
-      { icon: 'eye', en: ['Eye Surgery', ['Double Eyelid (Non-incision / Incision)', 'Ptosis Correction', 'Epicanthoplasty / Lateral Canthoplasty', 'Upper / Lower Blepharoplasty']],
-        ko: ['눈성형', ['매몰법 · 절개법', '안검하수 (눈매교정)', '앞트임 · 뒤트임', '상안검 · 하안검']],
-        zh: ['眼部整形', ['埋线 · 切开双眼皮', '上睑下垂矫正', '开内眼角 · 开外眼角', '上眼睑 · 下眼睑整形']] },
+      { icon: 'eye', en: ['Eye Surgery', ['Double Eyelid (Non-incision / Partial / Full incision)', 'Ptosis Correction', 'Epicanthoplasty / Lateral Canthoplasty', 'Upper / Lower Blepharoplasty']],
+        ko: ['눈성형', ['매몰법 · 부분절개 · 절개법', '안검하수 (눈매교정)', '앞트임 · 뒤트임', '상안검 · 하안검']],
+        zh: ['眼部整形', ['埋线 · 部分切开 · 全切开双眼皮', '上睑下垂矫正', '开内眼角 · 开外眼角', '上眼睑 · 下眼睑整形']] },
       { icon: 'lift', en: ['Lifting', ['Face Lift', 'Mid-face SMAS Lift', 'Sub-brow / Neck SMAS Lift', 'Cheek Lift · Forehead Lift']],
         ko: ['리프팅', ['안면거상', '중안면 SMAS 리프팅', '눈썹하 · 목 SMAS 리프팅', '볼 리프팅 · 포헤드 리프팅']],
         zh: ['提升', ['面部提升', '中面部SMAS提升', '眉下 · 颈部SMAS提升', '脸颊提升 · 额头提升']] },

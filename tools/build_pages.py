@@ -104,7 +104,7 @@ def footer():
       </div>
     </div>
     <div class="footer-bottom">
-      <span>미다스의원 인스파이어리조트점 (구)선이고은 성형외과 · 대표원장 최승호 · 사업자등록번호 617-66-00589<br>인천광역시 중구 공항문화로 127 인스파이어 엔터테인먼트 리조트 선타워 3층 · T. 032-252-3210 · F. 032-252-3211</span>
+      <span>미다스의원 인스파이어리조트점 (구)선이고은 성형외과 · Formerly Beauty Line Plastic Surgery · 대표원장 최승호 · 사업자등록번호 617-66-00589<br>인천광역시 중구 공항문화로 127 인스파이어 엔터테인먼트 리조트 선타워 3층 · T. 032-252-3210 · F. 032-252-3211</span>
       {tx("span", notice)}
     </div>
   </div>
@@ -311,7 +311,7 @@ CATS = [
                     "눈은 첫인상을 좌우합니다. 정해진 디자인 대신 눈 뜨는 힘, 피부와 지방의 두께, 얼굴 비율을 살펴 또렷하면서도 자연스러운 눈매를 만듭니다.",
                     "眼睛决定第一印象。我们不套用固定模板，而是观察睁眼力量、皮肤与脂肪厚度及面部比例，打造明亮自然的眼型。"),
          items=[
-             (T("Double Eyelid (Non-incision / Incision)", "쌍꺼풀 (매몰법 · 절개법)", "双眼皮（埋线 / 切开）"),
+             (T("Double Eyelid (Non-incision / Partial / Full incision)", "쌍꺼풀 (매몰법 · 부분절개 · 절개법)", "双眼皮（埋线 / 部分切开 / 全切开）"),
               T("The method is chosen according to skin thickness, fat and the line you want.",
                 "피부 두께와 지방량, 원하는 라인에 따라 수술 방법을 선택합니다.",
                 "根据皮肤厚度、脂肪量及期望的线条选择术式。")),
@@ -518,18 +518,30 @@ def detail_page(c):
 # =====================================================================
 def about():
     values = [
-        (T("Honest consultation", "정직한 진단", "诚实诊断"),
-         T("We recommend only what you truly need, and explain the possible results, limits and recovery as they are.",
-           "꼭 필요한 수술만 권하고, 가능한 결과와 한계, 회복 과정을 있는 그대로 설명드립니다.",
-           "只推荐真正需要的手术，如实说明可能的效果、局限与恢复过程。")),
+        (T("Proven skill", "검증된 실력", "实力可信"),
+         T("Surgery led by a director with years of experience and training at home and abroad.",
+           "국내외 연수와 오랜 경험으로 검증된 대표원장이 직접 진료합니다.",
+           "由在国内外进修、经验丰富的院长亲自诊疗。")),
+        (T("Focused expertise", "분야별 전문성", "专科专精"),
+         T("Deep experience in nose reconstruction, lifting and body contouring.",
+           "코 재건, 리프팅, 바디 등 깊이 다뤄온 분야의 전문성을 갖추었습니다.",
+           "在鼻重建、面部提升、身体塑形等领域积累了深厚经验。")),
+        (T("A place to rest", "편안한 휴식 공간", "舒适的休憩空间"),
+         T("A calm, private space inside the resort to consult and recover.",
+           "리조트 안 조용하고 프라이빗한 공간에서 상담하고 회복합니다.",
+           "在度假村内安静私密的空间中咨询与恢复。")),
+        (T("Trust", "믿고 맡기는 병원", "值得托付"),
+         T("Honest consultation — we recommend only what you truly need.",
+           "꼭 필요한 수술만 정직하게 권하는, 믿고 맡길 수 있는 병원입니다.",
+           "诚实咨询，只推荐您真正需要的项目。")),
+        (T("Natural & individual", "자연스러움과 개성", "自然与个性"),
+         T("Soft, natural lines that keep your own character.",
+           "본래의 개성을 살린 부드럽고 자연스러운 라인을 추구합니다.",
+           "追求保留个人特色的柔和自然线条。")),
         (T("Safety first", "안전 우선", "安全第一"),
-         T("Careful pre-operative checks, anesthesia management and step-by-step aftercare at every stage.",
-           "정밀한 사전 검사와 마취 관리, 단계별 사후 관리로 모든 과정을 안전하게 설계합니다.",
-           "通过细致的术前检查、麻醉管理和分阶段术后护理，确保每个环节的安全。")),
-        (T("Continuous study", "멈추지 않는 연구", "持续钻研"),
-         T("Through academic societies and training at home and abroad, we apply only methods that have been proven.",
-           "국내외 학회와 연수를 통해 새로운 술기를 검증하고, 검증된 방법만 진료에 적용합니다.",
-           "通过国内外学会与进修验证新技术，只将经过验证的方法用于诊疗。")),
+         T("Careful checks, anesthesia management and step-by-step aftercare.",
+           "정밀한 사전 검사와 마취 관리, 단계별 사후 관리로 안전을 지킵니다.",
+           "通过细致的术前检查、麻醉管理和分阶段护理确保安全。")),
     ]
     cards = "".join(f'<div class="card reveal"><div class="num">0{i}</div>{tx("h3", h)}{tx("p", p)}</div>'
                     for i, (h, p) in enumerate(values, 1))
@@ -562,9 +574,9 @@ def about():
   <div class="wrap two-col">
     <div class="reveal">{tx("div", T("Our story", "우리의 이야기", "我们的故事"), "kicker")}{tx("h2", T("A new chapter,<br>the same philosophy", "새로운 이름,<br>변하지 않는 철학", "新的名字，<br>不变的理念"), "title")}</div>
     <div class="prose reveal">
-      {tx("p", T("Midas Clinic Inspire Resort continues the practice formerly known as 선이고은 Plastic Surgery. With a new name and a new home inside Inspire Entertainment Resort, our approach stays the same.",
-                 "미다스의원 인스파이어리조트점은 (구)선이고은 성형외과의 진료를 이어갑니다. 이름과 공간은 새로워졌지만, 진료에 대한 태도는 그대로입니다.",
-                 "美达斯医院Inspire度假村店延续了前身“선이고은整形外科”的诊疗。名字与空间焕然一新，诊疗理念始终如一。"))}
+      {tx("p", T("Midas Clinic Inspire Resort continues the practice formerly known as Beauty Line Plastic Surgery (선이고은 성형외과) — an honest clinic built on trustworthy treatment. With a new name and a new home inside Inspire Entertainment Resort, our approach stays the same.",
+                 "미다스의원 인스파이어리조트점은 ‘정직한 병원, 신뢰가는 치료’를 지켜온 (구)선이고은 성형외과의 진료를 이어갑니다. 이름과 공간은 새로워졌지만, 진료에 대한 태도는 그대로입니다.",
+                 "美达斯医院Inspire度假村店延续了以“诚实的医院、值得信赖的治疗”为宗旨的前身Beauty Line整形外科（선이고은）。名字与空间焕然一新，诊疗理念始终如一。"))}
       {tx("p", T("We do not design faces for trends. We study each person's structure and character, and change only what needs to change — so the result looks like you, only more refined.",
                  "유행을 따르는 얼굴을 만들지 않습니다. 한 사람의 골격과 인상을 살피고 꼭 필요한 부분만 바꿔, 더 다듬어진 '나'로 보이는 결과를 지향합니다.",
                  "我们不追逐潮流脸。我们研究每个人的骨骼与气质，只改变需要改变的部分，让结果看起来是更精致的你。"))}
@@ -574,7 +586,10 @@ def about():
 
 <section class="section alt">
   <div class="wrap">
-    {sec_head(T("Our values", "진료 원칙", "诊疗原则"), T("Three promises", "세 가지 약속", "三个承诺"))}
+    {sec_head(T("Our values", "진료 원칙", "诊疗原则"), T("Six commitments", "여섯 가지 약속", "六个承诺"),
+              T("A clinic that creates the value of beauty — confident on the outside, at ease on the inside.",
+                "아름다움의 가치를 만드는 병원. 겉모습의 자신감과 마음의 편안함을 함께 생각합니다.",
+                "创造美之价值的医院——外在自信，内心安然。"))}
     <div class="cards">{cards}</div>
   </div>
 </section>
@@ -582,7 +597,8 @@ def about():
 <section class="director" id="director">
   <div class="director-card reveal">
     <span class="mono" aria-hidden="true">M</span>
-    {tx("div", T("Choi Seung Ho, M.D.", "최승호 대표원장", "Choi Seung Ho 代表院长"), "name")}
+    <img class="dir-photo" src="images/director.png" alt="" loading="lazy" onerror="this.remove()">
+    {tx("div", T("Seungho Choi, M.D.", "최승호 대표원장", "Seungho Choi 代表院长"), "name")}
     <div class="role">Representative Director</div>
     {tx("blockquote", T("“Never settled on one method — every face deserves the safest, most refined answer.”",
                         "“한 가지 자격과 경험에 머무르지 않고, 더 아름답고 안전한 결과를 위해 매 순간 배우고 연구합니다.”",
@@ -591,6 +607,9 @@ def about():
   <div class="split-body reveal">
     {tx("div", T("Our Director", "대표원장", "代表院长"), "kicker")}
     {tx("h2", T("Expertise<br>you can <em>trust</em>", "믿을 수 있는<br>전문성", "值得信赖的<br>专业"), "title")}
+    {tx("p", T("Dr. Choi has never been satisfied with a single credential or a single line of study. He trained with breast surgery and reconstruction specialists in the United States and Japan and earned aesthetic surgery qualifications in several countries — always working to make surgery safer and more beautiful.",
+               "최승호 대표원장은 한 가지 자격과 연구에 만족하지 않고 완벽을 추구해 왔습니다. 미국과 일본의 유방성형·재건 전문의에게 수련하고 여러 나라에서 미용성형 자격을 취득하며, 더 안전하고 더 아름다운 수술을 위해 노력하고 있습니다.",
+               "崔院长从不满足于单一的资格或研究，始终追求完美。他曾在美国和日本师从乳房整形与重建专家，并在多个国家取得美容整形资格，致力于让手术更安全、更美丽。"), "lead")}
     <div class="cv-groups">{cvh}</div>
   </div>
 </section>
@@ -739,21 +758,20 @@ def global_care():
 
 
 def experience():
+    # Real facility categories from the clinic tour page. Put the clinic's own photos in images/ and set the path.
     spaces = [
-        ("wide", "images/inspire-lounge.jpg", T("Lounge", "라운지", "休息室"),
-         T("A calm, light-filled space to arrive and relax.", "도착해서 편안히 쉴 수 있는 밝고 차분한 공간.", "明亮安静、可放松休息的空间。")),
-        ("wide", None, T("Consultation Room", "상담실", "咨询室"),
-         T("Private one-to-one consultation with the director.", "대표원장과 1:1로 상담하는 프라이빗 공간.", "与院长一对一咨询的私密空间。")),
-        ("", None, T("Operating Room", "수술실", "手术室"),
-         T("Prepared with safety as the first priority.", "안전을 최우선으로 준비된 수술 공간.", "以安全为第一原则的手术空间。")),
-        ("", None, T("Recovery Room", "회복실", "恢复室"),
-         T("Quiet rest after your procedure.", "수술 후 조용히 회복하는 공간.", "术后安静休养的空间。")),
-        ("", None, T("Skin Care Room", "피부관리실", "皮肤管理室"),
-         T("Care before and after surgery.", "수술 전후 피부 관리를 위한 공간.", "术前术后皮肤护理空间。")),
+        ("wide", "images/facility-reception.jpg", T("Reception", "안내데스크", "接待台"),
+         T("Where your visit begins — welcomed and guided in private.", "방문의 시작. 프라이빗하게 맞이하고 안내합니다.", "来访的起点，私密接待与引导。")),
+        ("wide", "images/facility-consultation.jpg", T("Consultation &amp; Treatment Rooms", "진료실 · 상담실", "诊疗室 · 咨询室"),
+         T("One-to-one consultation with the director.", "대표원장과 1:1로 상담하고 진료합니다.", "与院长一对一咨询与诊疗。")),
+        ("wide", "images/facility-operating.jpg", T("Operating Room", "수술실", "手术室"),
+         T("Prepared with safety as the first priority.", "안전을 최우선으로 준비된 수술 공간입니다.", "以安全为第一原则的手术空间。")),
+        ("wide", "images/inspire-lounge.jpg", T("Inspire Resort", "인스파이어 리조트", "Inspire 度假村"),
+         T("Stay and recover at the resort, steps away from the clinic.", "병원 가까이 리조트에 머물며 회복할 수 있습니다.", "可在毗邻诊所的度假村入住休养。")),
     ]
     sp = ""
     for cls, img, h, p in spaces:
-        media = f'<img src="{img}" alt="" loading="lazy">' if img else '<span>Photo</span>'
+        media = f'<span>Photo</span><img src="{img}" alt="" loading="lazy" onerror="this.remove()">'
         sp += f'<div class="space-card {cls} reveal"><div class="ph">{media}</div><div class="body">{tx("h3", h)}{tx("p", p)}</div></div>'
     journey = [
         (T("Arrive", "도착", "抵达"), T("Arrive at Inspire, minutes from the airport.", "공항 가까운 인스파이어 리조트에 도착합니다.", "抵达毗邻机场的Inspire度假村。")),
@@ -823,6 +841,11 @@ def contact():
         <div class="info-row"><dt data-i18n="contact.hours">Hours</dt><dd class="hours" id="hours"></dd></div>
         <div class="info-row"><dt data-i18n="contact.messenger">Messenger</dt><dd class="chips"><span>KakaoTalk</span><span>WhatsApp</span><span>WeChat</span></dd></div>
       </dl>
+      <div class="qr-row">
+        <figure class="qr"><img src="images/qr-kakao.png" alt="KakaoTalk QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>KakaoTalk</figcaption></figure>
+        <figure class="qr"><img src="images/qr-whatsapp.png" alt="WhatsApp QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>WhatsApp</figcaption></figure>
+        <figure class="qr"><img src="images/qr-wechat.png" alt="WeChat QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>WeChat</figcaption></figure>
+      </div>
     </div>
     <form class="form reveal" id="form" novalidate>
       <h3 data-i18n="form.title">Online Consultation</h3>
