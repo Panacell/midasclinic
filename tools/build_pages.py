@@ -597,7 +597,7 @@ def about():
 <section class="director" id="director">
   <div class="director-card reveal">
     <span class="mono" aria-hidden="true">M</span>
-    <img class="dir-photo" src="images/director.png" alt="" loading="lazy" onerror="this.remove()">
+    <img class="dir-photo" src="images/director.jpg" alt="" loading="lazy" onerror="this.remove()">
     {tx("div", T("Seungho Choi, M.D.", "최승호 대표원장", "Seungho Choi 代表院长"), "name")}
     <div class="role">Representative Director</div>
     {tx("blockquote", T("“Never settled on one method — every face deserves the safest, most refined answer.”",
@@ -760,14 +760,20 @@ def global_care():
 def experience():
     # Real facility categories from the clinic tour page. Put the clinic's own photos in images/ and set the path.
     spaces = [
-        ("wide", "images/facility-reception.jpg", T("Reception", "안내데스크", "接待台"),
-         T("Where your visit begins — welcomed and guided in private.", "방문의 시작. 프라이빗하게 맞이하고 안내합니다.", "来访的起点，私密接待与引导。")),
-        ("wide", "images/facility-consultation.jpg", T("Consultation &amp; Treatment Rooms", "진료실 · 상담실", "诊疗室 · 咨询室"),
-         T("One-to-one consultation with the director.", "대표원장과 1:1로 상담하고 진료합니다.", "与院长一对一咨询与诊疗。")),
+        ("wide", "images/facility-lobby.jpg", T("Sun Tower Lobby", "선타워 로비", "Sun Tower 大堂"),
+         T("A bright, green atrium welcomes you at Sun Tower, Inspire Resort.", "초록이 어우러진 선타워 로비에서 방문이 시작됩니다.", "绿意盎然的Sun Tower大堂迎接您的到来。")),
+        ("wide", "images/facility-entrance.jpg", T("Clinic Entrance", "병원 입구", "医院入口"),
+         T("A quiet, private entrance on the 3rd floor.", "3층의 조용하고 프라이빗한 입구.", "位于3层、安静私密的入口。")),
+        ("", "images/facility-lounge.jpg", T("Lounge", "라운지", "休息室"),
+         T("Relax before your consultation.", "상담 전 편안히 쉬는 공간.", "咨询前放松休息的空间。")),
+        ("", "images/facility-consultation.jpg", T("Consultation Room", "상담실", "咨询室"),
+         T("One-to-one consultation with the director.", "대표원장과 1:1로 상담합니다.", "与院长一对一咨询。")),
+        ("", "images/facility-treatment.jpg", T("Treatment Room", "진료실", "诊疗室"),
+         T("For examinations and non-surgical treatments.", "진찰과 시술을 위한 공간.", "用于检查与非手术治疗。")),
         ("wide", "images/facility-operating.jpg", T("Operating Room", "수술실", "手术室"),
-         T("Prepared with safety as the first priority.", "안전을 최우선으로 준비된 수술 공간입니다.", "以安全为第一原则的手术空间。")),
-        ("wide", "images/inspire-lounge.jpg", T("Inspire Resort", "인스파이어 리조트", "Inspire 度假村"),
-         T("Stay and recover at the resort, steps away from the clinic.", "병원 가까이 리조트에 머물며 회복할 수 있습니다.", "可在毗邻诊所的度假村入住休养。")),
+         T("Equipped and prepared with safety as the first priority.", "안전을 최우선으로 갖춘 수술 공간.", "以安全为第一原则配备的手术空间。")),
+        ("wide", "images/inspire-lounge.jpg", T("Stay at Inspire", "인스파이어에 머물기", "入住Inspire"),
+         T("Recover at the resort, steps away from the clinic.", "병원 가까이 리조트에 머물며 회복할 수 있습니다.", "在毗邻诊所的度假村休养恢复。")),
     ]
     sp = ""
     for cls, img, h, p in spaces:
@@ -784,7 +790,7 @@ def experience():
                 T("From consultation to recovery, premium care in a vibrant, cosmopolitan setting at Inspire.",
                   "상담부터 회복까지, 인스파이어의 세련된 공간에서 프리미엄 진료를 경험하세요.",
                   "从咨询到恢复，在Inspire充满活力的都市空间中体验高端诊疗。"),
-                img="images/inspire-lounge.jpg")}
+                img="images/facility-lobby.jpg")}
 
 <section class="section">
   <div class="wrap two-col">
