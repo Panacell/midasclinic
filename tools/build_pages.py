@@ -929,13 +929,14 @@ def contact():
 #   PRESS:  (T(기사 제목), "매체명", "YYYY-MM-DD", "기사 URL")
 # =====================================================================
 VIDEOS = [
-    ("GwVnHXa72_U", T("Rhinoplasty using Rib Cartilage", "늑연골을 이용한 코성형", "肋软骨隆鼻"), ""),
-    ("yM99I7L0YEA", T("Rib Cartilage Rhinoplasty", "가슴연골(늑연골) 코수술", "肋软骨隆鼻手术"), ""),
-    ("8lM00noyg0g", T("23rd World Miss University visit · Part 1", "제23회 월드미스유니버시티 내원 · 1편", "第23届世界大学小姐到访 · 第1部分"), ""),
-    ("KonXhnkdf80", T("23rd World Miss University visit · Part 2", "제23회 월드미스유니버시티 내원 · 2편", "第23届世界大学小姐到访 · 第2部分"), ""),
-    ("nm3iPItbjEU", T("23rd World Miss University visit · Part 3", "제23회 월드미스유니버시티 내원 · 3편", "第23届世界大学小姐到访 · 第3部分"), ""),
-    ("yCliYaUxtCM", T("23rd World Miss University visit · Part 4", "제23회 월드미스유니버시티 내원 · 4편", "第23届世界大学小姐到访 · 第4部分"), ""),
-    ("mddvpham3hg", T("23rd World Miss University visit · Part 5", "제23회 월드미스유니버시티 내원 · 5편", "第23届世界大学小姐到访 · 第5部分"), ""),
+    # 기존 홈페이지 동영상 게시판(총 14편) 순서 · 제목 기준. 8~14번은 유튜브 주소를 받으면 추가
+    ("mddvpham3hg", T("Autologous rib cartilage in nose reconstruction", "코재건술에 사용되는 (자가)가슴연골", "鼻重建中使用的自体肋软骨"), ""),
+    ("yCliYaUxtCM", T("Materials for nose reconstruction: rib cartilage", "코재건술에 사용되는 재료들 – 가슴연골", "鼻重建材料：肋软骨"), ""),
+    ("nm3iPItbjEU", T("The ideal nose — who is a candidate for nose reconstruction?", "이상적인 코의 모양, 과연 어떤 사람들이 코재건술 수술대상인가?", "理想的鼻型——哪些人适合鼻重建？"), ""),
+    ("KonXhnkdf80", T("What is nose reconstruction? · TV Doctor", "코재건술이란 무엇인가 · TV닥터", "什么是鼻重建？· TV医生"), ""),
+    ("GwVnHXa72_U", T("Rhinoplasty using Rib Cartilage", "가슴연골을 이용한 코성형", "肋软骨隆鼻"), ""),
+    ("yM99I7L0YEA", T("Rib Cartilage Rhinoplasty", "가슴연골 코수술", "肋软骨隆鼻手术"), ""),
+    ("8lM00noyg0g", T("23rd World Miss University contestants visit the clinic", "제23회 월드미스유니버시티 참가자 내원", "第23届世界大学小姐参赛者到访"), ""),
 ]
 PRESS = [
 ]
