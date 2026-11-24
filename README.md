@@ -5,25 +5,28 @@
 
 ## 폴더 구조
 ```
-index.html          페이지 마크업
-css/style.css       스타일 (색·서체 변수는 파일 상단 :root)
-js/main.js          다국어(EN/KR/中文), 메뉴, 슬라이더, 진료 탭, 진료 상태, 상담 폼
-images/             사진 (현재는 시안에서 잘라낸 임시 이미지)
+index.html              홈
+about.html              병원소개 · 대표원장
+procedures.html         진료안내 (전체)
+rhinoplasty.html        코성형          ┐
+eye.html                눈성형          │
+lifting.html            리프팅          │ 시술별 상세 페이지
+contouring.html         윤곽 · 페이스    │
+body.html               바디            │
+skin.html               피부 · 쁘띠      ┘
+global-care.html        해외 고객 안내
+experience.html         인스파이어 공간 · 위치
+contact.html            상담 신청 · 오시는 길 · 지도
+css/style.css           스타일 (색·서체 변수는 파일 상단 :root)
+js/main.js              다국어(EN/KR/中文), 메뉴, 슬라이더, 진료 탭, 진료 상태, 상담 폼
+images/                 사진 (현재는 시안에서 잘라낸 임시 이미지)
+tools/build_pages.py    서브 페이지 생성 스크립트
 ```
-빌드 과정이 없는 정적 사이트입니다. `index.html`을 브라우저로 열거나, 아무 정적 호스팅(GitHub Pages, Netlify, Vercel 등)에 올리면 됩니다.
-
-## 섹션
-1. Header — 로고, 메뉴, 언어 선택(EN/KR/中文), Consultation 버튼
-2. Hero — 3장 슬라이드 (글로벌 데스티네이션 / 코성형 / 리프팅)
-3. The Midas Standard — 인물 사진 + 철학
-4. Global Care · Easy Travel · Premium & Private — 3가지 강점
-5. Inspire Experience — 라운지 사진 + 회복 여정
-6. Procedures — Face / Body / Skin 탭, 펼쳐지는 시술 목록
-7. Director — 최승호 대표원장 경력
-8. Contact — 연락처, 진료시간(실시간 진료 상태), 상담 신청 폼
-9. Footer — 사업자 정보, 부작용 고지
+빌드 과정이 없는 정적 사이트입니다. 아무 정적 호스팅(GitHub Pages 등)에 그대로 올리면 됩니다.
 
 ## 수정 방법
+- **서브 페이지 문구 / 번역**: `tools/build_pages.py`에서 `T("영어", "한국어", "中文")` 형태로 수정한 뒤 `python3 tools/build_pages.py` 실행 (헤더·푸터도 이 파일에서 한 번에 바뀜)
+- **홈 문구**: `js/main.js`의 `I18N`
 - **문구 / 번역**: `js/main.js`의 `I18N` (en / ko / zh)
 - **시술 목록**: `js/main.js`의 `PROCEDURES`
 - **원장 경력**: `js/main.js`의 `CREDS`

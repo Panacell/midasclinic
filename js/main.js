@@ -260,6 +260,7 @@
   var activeTab = 'face';
 
   function renderProcedures() {
+    if (!procWrap) return;
     var html = '';
     Object.keys(PROCEDURES).forEach(function (tab) {
       html += '<div class="proc-list' + (tab === activeTab ? ' on' : '') + '" data-tab="' + tab + '">';
@@ -287,20 +288,25 @@
   }
 
   function renderCreds() {
-    document.getElementById('creds').innerHTML = (CREDS[current] || CREDS.en).map(function (c) { return '<li>' + c + '</li>'; }).join('');
+    var el = document.getElementById('creds'); if (!el) return;
+    el.innerHTML = (CREDS[current] || CREDS.en).map(function (c) { return '<li>' + c + '</li>'; }).join('');
   }
 
   function renderInterestOptions() {
-    var sel = document.getElementById('fCat'), keep = sel.selectedIndex;
+    var sel = document.getElementById('fCat'); if (!sel) return;
+    var keep = sel.selectedIndex;
     var opts = [];
     PROCEDURES.face.concat(PROCEDURES.body, PROCEDURES.skin).forEach(function (p) { opts.push((p[current] || p.en)[0]); });
     opts.push(current === 'ko' ? '기타' : current === 'zh' ? '其他' : 'Other');
     sel.innerHTML = opts.map(function (o) { return '<option>' + o + '</option>'; }).join('');
     if (keep > -1) sel.selectedIndex = keep;
+    var q = (location.search.match(/[?&]interest=(\d+)/) || [])[1];
+    if (q && keep < 1) sel.selectedIndex = +q;
   }
 
   function renderHours() {
-    document.getElementById('hours').innerHTML =
+    var el = document.getElementById('hours'); if (!el) { tick(); return; }
+    el.innerHTML =
       '<span data-d="wk">' + t('hours.wk') + '</span><span data-d="wk">10:00 – 18:30</span>' +
       '<span data-d="sat">' + t('hours.sat') + '</span><span data-d="sat">10:00 – 16:00</span>' +
       '<span>' + t('hours.lunch') + '</span><span>12:00 – 13:00</span>';
@@ -315,6 +321,19 @@
       var v = t(el.getAttribute('data-i18n'));
       if (v) el.innerHTML = v;
     });
+    /* sub pages: inline translations — English is the default text, data-ko / data-zh hold the others */
+    document.querySelectorAll('[data-ko],[data-zh]').forEach(function (el) {
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = lang === 'en' ? el.dataset.en : (el.getAttribute('data-' + lang) || el.dataset.en);
+    });
+    document.querySelectorAll('[data-ph-ko]').forEach(function (el) {
+      if (el.dataset.phEn === undefined) el.dataset.phEn = el.getAttribute('placeholder') || '';
+      el.setAttribute('placeholder', lang === 'en' ? el.dataset.phEn : (el.getAttribute('data-ph-' + lang) || el.dataset.phEn));
+    });
+    if (document.body.dataset.titleKo) {
+      if (!document.body.dataset.titleEn) document.body.dataset.titleEn = document.title;
+      document.title = lang === 'en' ? document.body.dataset.titleEn : (document.body.getAttribute('data-title-' + lang) || document.body.dataset.titleEn);
+    }
     document.getElementById('langLabel').textContent = LANG_LABEL[lang];
     document.querySelectorAll('[data-lang]').forEach(function (b) { b.classList.toggle('on', b.dataset.lang === lang); });
     renderProcedures(); renderCreds(); renderInterestOptions(); renderHours();
@@ -345,6 +364,7 @@
      4. Hero slider
      --------------------------------------------------------- */
   var slides = [].slice.call(document.querySelectorAll('.hero-slide'));
+  if (slides.length > 1) (function () {
   var dots = [].slice.call(document.querySelectorAll('#heroDots button'));
   var idx = 0, timer;
   function go(n) {
@@ -355,11 +375,13 @@
   }
   dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
   timer = setTimeout(function () { go(1); }, 6500);
+  })();
 
   /* ---------------------------------------------------------
      5. Procedure tabs
      --------------------------------------------------------- */
   var tabs = [].slice.call(document.querySelectorAll('.tab'));
+  if (procImg)
   tabs.forEach(function (tab) {
     tab.addEventListener('click', function () {
       activeTab = tab.dataset.tab;
@@ -373,6 +395,7 @@
      6. Opening status (KST)
      --------------------------------------------------------- */
   function tick() {
+    if (!document.getElementById('status')) return;
     var d = new Date(Date.now() + 9 * 3600e3), day = d.getUTCDay(), m = d.getUTCHours() * 60 + d.getUTCMinutes();
     var wk = day >= 1 && day <= 5, sat = day === 6, end = wk ? 1110 : sat ? 960 : 0, open = false, label = t('status.closed');
     if ((wk || sat) && m >= 600 && m < end) {
@@ -405,7 +428,7 @@
      --------------------------------------------------------- */
   var ENDPOINT = '';
   var form = document.getElementById('form'), msg = document.getElementById('formMsg');
-  form.addEventListener('submit', function (e) {
+  if (form) form.addEventListener('submit', function (e) {
     e.preventDefault();
     msg.style.display = 'block';
     var name = document.getElementById('fName').value.trim(), tel = document.getElementById('fTel').value.trim();
