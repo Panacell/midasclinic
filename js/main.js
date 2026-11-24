@@ -59,7 +59,7 @@
       'form.submit': 'Request Consultation',
       'form.errFields': 'Please enter your name and phone or messenger ID.',
       'form.errAgree': 'Please agree to the privacy terms.',
-      'form.notReady': 'Online booking is being prepared. Please call <b>+82 32 252 3210</b> or message us on KakaoTalk, WhatsApp or WeChat.',
+      'form.notReady': 'Online booking is being prepared. Please call <b>+82 32 252 3210</b> or message us on KakaoTalk, LINE, WhatsApp or WeChat.',
       'form.ok': 'Thank you. We will contact you during clinic hours.',
       'form.fail': 'Sending failed. Please call <b>+82 32 252 3210</b>.',
 
@@ -175,7 +175,7 @@
       'form.submit': '提交咨询',
       'form.errFields': '请输入姓名和联系方式。',
       'form.errAgree': '请同意个人信息收集与使用。',
-      'form.notReady': '在线预约正在准备中。请致电 <b>+82 32 252 3210</b>，或通过微信、WhatsApp、KakaoTalk联系我们。',
+      'form.notReady': '在线预约正在准备中。请致电 <b>+82 32 252 3210</b>，或通过微信、LINE、WhatsApp、KakaoTalk联系我们。',
       'form.ok': '咨询申请已提交，我们将在诊疗时间内与您联系。',
       'form.fail': '发送失败，请致电 <b>+82 32 252 3210</b>。',
 

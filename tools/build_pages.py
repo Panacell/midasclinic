@@ -153,9 +153,9 @@ def page_hero(crumb, kicker, title, lead, img=None):
 
 def cta_band(title=None, text=None, interest=None):
     title = title or T("Begin your <em>consultation</em>", "상담을 <em>시작하세요</em>", "开始您的<em>咨询</em>")
-    text = text or T("By phone, online form, KakaoTalk, WhatsApp or WeChat.",
-                     "전화, 온라인 상담, 카카오톡 · WhatsApp · WeChat으로 문의하실 수 있습니다.",
-                     "可通过电话、在线表单、KakaoTalk、WhatsApp或微信咨询。")
+    text = text or T("By phone, online form, KakaoTalk, LINE, WhatsApp or WeChat.",
+                     "전화, 온라인 상담, 카카오톡 · LINE · WhatsApp · WeChat으로 문의하실 수 있습니다.",
+                     "可通过电话、在线表单、KakaoTalk、LINE、WhatsApp或微信咨询。")
     href = "contact.html" + (f"?interest={interest}#form" if interest is not None else "#form")
     return f'''<section class="cta-band">
   <div class="wrap">
@@ -260,9 +260,9 @@ COMMON_FAQ = [
        "수술 범위와 건강 상태를 확인한 뒤 마취 방법을 결정하며, 사전에 충분히 설명드립니다.",
        "根据手术范围及健康状况确定麻醉方式，并会提前向您充分说明。")),
     (T("Can I consult before visiting Korea?", "방문 전에 미리 상담할 수 있나요?", "来韩国之前可以先咨询吗？"),
-     T("Yes. Send us your photos and questions via KakaoTalk, WhatsApp or WeChat for a preliminary consultation. Final planning is done after an in-person examination.",
-       "네. 카카오톡·WhatsApp·WeChat으로 사진과 궁금한 점을 보내주시면 사전 상담이 가능합니다. 최종 계획은 내원 진찰 후 확정합니다.",
-       "可以。通过KakaoTalk、WhatsApp或微信发送照片和问题即可进行预先咨询，最终方案需在面诊后确定。")),
+     T("Yes. Send us your photos and questions via KakaoTalk, LINE, WhatsApp or WeChat for a preliminary consultation. Final planning is done after an in-person examination.",
+       "네. 카카오톡·LINE·WhatsApp·WeChat으로 사진과 궁금한 점을 보내주시면 사전 상담이 가능합니다. 최종 계획은 내원 진찰 후 확정합니다.",
+       "可以。通过KakaoTalk、LINE、WhatsApp或微信发送照片和问题即可进行预先咨询，最终方案需在面诊后确定。")),
 ]
 
 RISK = T("※ Results and recovery vary by individual. Every surgery carries possible risks such as bleeding, infection, swelling, asymmetry or scarring. Please consult a specialist fully before deciding.",
@@ -681,9 +681,9 @@ def global_care():
     why = [
         ('<circle cx="16" cy="16" r="12"/><path d="M4 16h24M16 4c3.5 3.4 3.5 20.6 0 24M16 4c-3.5 3.4-3.5 20.6 0 24"/>',
          T("Multilingual channels", "다국어 상담 채널", "多语种咨询渠道"),
-         T("Website in English, Korean and Chinese, with consultation by KakaoTalk, WhatsApp and WeChat.",
-           "영어·한국어·중국어 홈페이지와 카카오톡·WhatsApp·WeChat 상담 채널을 운영합니다.",
-           "提供英文、韩文、中文网站，并可通过KakaoTalk、WhatsApp、微信咨询。")),
+         T("Website in English, Korean and Chinese, with consultation by KakaoTalk, LINE, WhatsApp and WeChat.",
+           "영어·한국어·중국어 홈페이지와 카카오톡·LINE·WhatsApp·WeChat 상담 채널을 운영합니다.",
+           "提供英文、韩文、中文网站，并可通过KakaoTalk、LINE、WhatsApp、微信咨询。")),
         ('<path d="M3 19l4-1 4 3 15-9c2-1 3.5.5 2 2L13 24l-6 2-2-3"/><path d="M12 15l-5-4 2-1 9 2"/>',
          T("Near Incheon Airport", "인천국제공항 인근", "毗邻仁川机场"),
          T("Located inside Inspire Entertainment Resort near Incheon International Airport.",
@@ -766,8 +766,9 @@ def global_care():
               T("Scan a QR code with your phone to start a chat with our consultation team.",
                 "휴대폰으로 QR 코드를 스캔하면 바로 상담 채팅을 시작할 수 있습니다.",
                 "用手机扫描二维码，即可与我们的咨询团队开始聊天。"))}
-    <div class="cards">
+    <div class="cards four">
       <div class="card qr-card reveal"><img src="images/qr-kakao.png" alt="KakaoTalk QR code" loading="lazy"><h3>KakaoTalk</h3>{tx("p", T("For guests in Korea", "국내 고객", "适合韩国境内顾客"))}</div>
+      <div class="card qr-card reveal"><img src="images/qr-line.png" alt="LINE QR code" loading="lazy"><h3>LINE</h3>{tx("p", T("For guests from Japan, Taiwan and Thailand", "일본·대만·태국 고객", "适合日本、台湾、泰国顾客"))}</div>
       <div class="card qr-card reveal"><img src="images/qr-whatsapp.png" alt="WhatsApp QR code" loading="lazy"><h3>WhatsApp</h3>{tx("p", T("For guests worldwide", "해외 고객", "适合全球顾客"))}</div>
       <div class="card qr-card reveal"><img src="images/qr-wechat.png" alt="WeChat QR code" loading="lazy"><h3>WeChat</h3>{tx("p", T("For guests from China", "중국 고객", "适合中国顾客"))}</div>
     </div>
@@ -874,10 +875,11 @@ def contact():
       <dl class="info">
         <div class="info-row"><dt data-i18n="contact.address">Address</dt><dd data-i18n="contact.addressText">Sun Tower 3F, Inspire Entertainment Resort<br>127 Gonghang-munhwa-ro, Jung-gu, Incheon, Korea</dd></div>
         <div class="info-row"><dt data-i18n="contact.hours">Hours</dt><dd class="hours" id="hours"></dd></div>
-        <div class="info-row"><dt data-i18n="contact.messenger">Messenger</dt><dd class="chips"><span>KakaoTalk</span><span>WhatsApp</span><span>WeChat</span></dd></div>
+        <div class="info-row"><dt data-i18n="contact.messenger">Messenger</dt><dd class="chips"><span>KakaoTalk</span><span>LINE</span><span>WhatsApp</span><span>WeChat</span></dd></div>
       </dl>
       <div class="qr-row">
         <figure class="qr"><img src="images/qr-kakao.png" alt="KakaoTalk QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>KakaoTalk</figcaption></figure>
+        <figure class="qr"><img src="images/qr-line.png" alt="LINE QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>LINE</figcaption></figure>
         <figure class="qr"><img src="images/qr-whatsapp.png" alt="WhatsApp QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>WhatsApp</figcaption></figure>
         <figure class="qr"><img src="images/qr-wechat.png" alt="WeChat QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>WeChat</figcaption></figure>
       </div>
