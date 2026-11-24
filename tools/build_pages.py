@@ -929,7 +929,10 @@ def contact():
 #   PRESS:  (T(기사 제목), "매체명", "YYYY-MM-DD", "기사 URL")
 # =====================================================================
 VIDEOS = [
-    # 기존 홈페이지 동영상 게시판(총 14편) 순서 · 제목 기준. 12~14번은 유튜브 주소를 받으면 위에 추가
+    # 기존 홈페이지 동영상 게시판(총 14편) 순서 · 제목 기준. 새 영상은 맨 위에 추가
+    ("2ECnLkCL7Z4", T("Mid-face SMAS lifting", "중안면 스마스 리프팅", "中面部SMAS提升"), ""),
+    ("rHHxLysGtLw", T("Rhinoplasty using Rib Cartilage", "가슴연골을 이용한 코성형수술", "肋软骨隆鼻手术"), ""),
+    ("jXXz-rf2PZo", T("Autologous cartilage rhinoplasty", "자가연골 코성형", "自体软骨隆鼻"), ""),
     ("QEXCBkwSdHI", T("Natural youthful-face surgery", "동안수술", "童颜手术"), ""),
     ("E5QL126AQPA", T("Making a beautiful nose · Doctor Life", "예쁜코 만들기 · 닥터라이프", "打造美鼻 · Doctor Life"), ""),
     ("v1Zx3usdkug", T("Nose reconstruction using rib cartilage", "가슴연골을 이용한 코 재건술", "肋软骨鼻重建"), ""),
