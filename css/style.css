@@ -409,3 +409,24 @@ html[lang="ko"] .cta-band h2 em,html[lang="zh"] .cta-band h2 em{font-style:norma
 .page-hero.with-img .wrap{padding-top:82px}
 @media (max-width:1100px){.page-hero.with-img .wrap{padding-top:56px}}
 html[lang="ko"] .kicker,html[lang="zh"] .kicker{letter-spacing:.14em}
+
+/* =========================================================
+   Serif body text (본문 명조)
+   - Body copy: Cormorant Garamond (EN) / Noto Serif KR / Noto Serif SC
+   - UI (menu, labels, buttons, forms) stays sans for legibility
+   ========================================================= */
+:root{--body:'Cormorant Garamond','Noto Serif KR','Noto Serif SC',serif}
+html[lang="ko"]{--body:'Noto Serif KR',serif}
+html[lang="zh"]{--body:'Noto Serif SC',serif}
+body{font-family:var(--body);font-weight:500;color:var(--ink)}
+html[lang="ko"] body,html[lang="zh"] body{font-weight:400}
+/* Cormorant has a small x-height: scale it up so body copy reads at the same size */
+html[lang="en"] body{font-size-adjust:.47}
+html[lang="en"] .lead,html[lang="en"] .prose,html[lang="en"] .hero p{line-height:1.6}
+.lead,.prose,.hero p,.feature p,.card p,.detail p,.tl p,.faq details p,.checks li,.creds li,.cv-groups ul,.info-row dd,.space-card p,.proc-item .sub li,.cta-band p,.director-card blockquote{font-family:var(--body);color:var(--ink-2)}
+html[lang="ko"] .lead,html[lang="ko"] .prose{line-height:1.95}
+/* keep UI in sans */
+.gnb,.header-cta,.lang,.kicker,.btn,.arrow-link,.tab,.field,.field input,.field select,.field textarea,.agree,.chips,.status,.mobile-bar,.crumbs,.tl .k,.cv-groups h4,.info-row dt,.footer,.more,.map-links,.other-procs,.drawer-lang,.tel-sub,.form-msg,.form > p,.director-card .role,.proc-item .nm,.faq summary,.hero-dots,.space-card .ph span{font-family:var(--sans);font-size-adjust:none}
+/* serif body on dark sections keeps light colour */
+.cta-band p{color:#c3cad8}
+.director-card blockquote{color:#e4e8f0}
