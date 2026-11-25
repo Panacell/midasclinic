@@ -501,8 +501,8 @@ CATS = [
 
 
 BA_PREVIEW = {"rhinoplasty": ["case01", "case03", "case06", "case11"], "lifting": ["lift01", "lift03", "lift07", "lift08"], "eye": ["eye01", "eye03", "eye06", "eye08"],
-              "body": ["breast01", "breast02", "breast04", "breast05"], "skin": ["skin01", "lip01", "chin01", "fore01"]}
-BA_PREVIEW_CAT = {"rhinoplasty": "nose", "lifting": "lift", "eye": "eye", "body": "breast", "skin": "face"}
+              "body": ["breast01", "breast02", "breast04", "breast05"], "skin": ["regen03", "regen05", "regen07", "skin01"]}
+BA_PREVIEW_CAT = {"rhinoplasty": "nose", "lifting": "lift", "eye": "eye", "body": "breast", "skin": "regen"}
 
 
 def detail_page(c):
@@ -1042,11 +1042,14 @@ RESULTS = [(f"case{n:02d}", "nose", T("Rhinoplasty · side view", "코성형 · 
     ("lip01", "face", T("Cheek filler", "볼 필러", "面颊填充")),
     ("chin01", "face", T("Chin filler · side view", "턱 필러 · 측면", "下巴填充 · 侧面")),
     ("fore01", "face", T("Hair transplant · hairline", "모발이식 · 헤어라인", "植发 · 发际线")),
-]
+] + [(f"regen{n:02d}", "regen",
+      T(f"Skin treatment · {n} session{'s' if n > 1 else ''}", f"피부 시술 · {n}회 시술", f"皮肤治疗 · {n}次治疗") if n <= 3
+      else T("Skin treatment", "피부 시술", "皮肤治疗")) for n in range(1, 9)]
 BA_CATS = [("all", T("All", "전체", "全部")), ("nose", T("Nose", "코성형", "鼻整形")), ("eye", T("Eye", "눈성형", "眼部整形")), ("lift", T("Lifting", "리프팅", "面部提升")),
-           ("breast", T("Breast", "가슴", "胸部")), ("face", T("Filler · Hair", "필러 · 모발이식", "填充 · 植发"))]
+           ("breast", T("Breast", "가슴", "胸部")), ("face", T("Filler · Hair", "필러 · 모발이식", "填充 · 植发")),
+           ("regen", T("Skin", "피부 시술", "皮肤治疗"))]
 # 사진 모양: 기본은 720x619, 아래 항목은 정사각형 / 원형
-BA_SQUARE = {"breast01": 640, "breast02": 640, "breast03": 600, "breast04": 600, "breast05": 600, "fore01": 640}
+BA_SQUARE = {"breast01": 640, "breast02": 640, "breast03": 600, "breast04": 600, "breast05": 600, "fore01": 640, **{f"regen{n:02d}": 640 for n in range(1, 9)}}
 BA_ROUND = {"skin01": 480, "lip01": 480, "chin01": 480}
 BA_NOTICE = T("These photos are of actual patients, shared with consent. Results differ from person to person and are not a guarantee of outcome. All surgery carries possible risks such as bleeding, infection, swelling, asymmetry and scarring.",
               "아래 사진은 동의를 받은 실제 환자의 사례입니다. 수술 결과는 개인에 따라 다르며, 같은 결과를 보장하지 않습니다. 모든 수술에는 출혈·감염·부종·비대칭·흉터 등의 부작용이 발생할 수 있습니다.",
@@ -1092,9 +1095,9 @@ def ba_gallery(keys=None, filters=False):
 def results():
     body = f'''{page_hero(T("Before &amp; After", "전후 사진", "术前术后"), T("Before &amp; After", "전후 사진", "术前术后"),
                 T("Case<br><em>gallery</em>", "수술<br>전후 사례", "手术<br>案例"),
-                T("Nose, eye, lifting, breast, filler and hair transplant cases. Drag the line on each photo to compare before and after.",
-                  "코성형·눈성형·리프팅·가슴·필러·모발이식 전후 사진입니다. 사진 가운데 선을 좌우로 움직여 비교해 보세요.",
-                  "鼻整形、眼部整形、面部提升、胸部、填充与植发案例。左右拖动照片中间的线对比术前术后。"))}
+                T("Nose, eye, lifting, breast, filler, hair transplant and skin treatment cases. Drag the line on each photo to compare before and after.",
+                  "코성형·눈성형·리프팅·가슴·필러·모발이식·피부 시술 전후 사진입니다. 사진 가운데 선을 좌우로 움직여 비교해 보세요.",
+                  "鼻整形、眼部整形、面部提升、胸部、填充、植发与皮肤治疗案例。左右拖动照片中间的线对比术前术后。"))}
 
 <section class="section">
   <div class="wrap">
