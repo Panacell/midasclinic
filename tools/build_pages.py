@@ -505,7 +505,7 @@ def detail_page(c):
   <div class="wrap">
     {sec_head(T("Before &amp; After", "전후 사진", "术前术后"), T("Rhinoplasty cases", "코성형 전후 사례", "鼻整形案例"))}
     {ba_gallery([1, 3, 6, 11])}
-    <a class="arrow-link reveal" href="results.html">{tx("span", T("View all 14 cases", "전후 사례 14건 모두 보기", "查看全部14个案例"))}{ARROW}</a>
+    <a class="arrow-link reveal" href="results.html">{tx("span", T("View all 18 cases", "전후 사례 18건 모두 보기", "查看全部18个案例"))}{ARROW}</a>
   </div>
 </section>'''
     others = "".join(tx("a", o["name"], "", f' href="{o["slug"]}.html"') for o in CATS if o["slug"] != c["slug"])
@@ -1016,7 +1016,7 @@ def media():
 # =====================================================================
 # Before & After (코성형 전후 사례) — images/results/caseNN-before.jpg / -after.jpg
 # =====================================================================
-RESULT_CASES = 14
+RESULT_CASES = 18
 BA_NOTICE = T("These photos are of actual patients, shared with consent. Results differ from person to person and are not a guarantee of outcome. All surgery carries possible risks such as bleeding, infection, swelling, asymmetry and scarring.",
               "아래 사진은 동의를 받은 실제 환자의 사례입니다. 수술 결과는 개인에 따라 다르며, 같은 결과를 보장하지 않습니다. 모든 수술에는 출혈·감염·부종·비대칭·흉터 등의 부작용이 발생할 수 있습니다.",
               "以下照片为经本人同意的真实患者案例。手术效果因人而异，不代表能获得相同效果。所有手术均可能出现出血、感染、肿胀、不对称或疤痕等副作用。")
@@ -1031,7 +1031,7 @@ def ba_card(n):
     <span class="ba-handle" aria-hidden="true"></span>
     <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after">
   </div>
-  <figcaption><b>Case {n:02d}</b>{tx("span", T("Rhinoplasty", "코성형", "鼻整形"))}</figcaption>
+  <figcaption><b>Case {n:02d}</b>{tx("span", T("Rhinoplasty · side view", "코성형 · 측면", "鼻整形 · 侧面") if n == 18 else T("Rhinoplasty", "코성형", "鼻整形"))}</figcaption>
 </figure>'''
 
 
