@@ -636,3 +636,52 @@ img{height:auto}
   body{padding-bottom:0}
   .footer{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
 }
+
+/* =========================================================
+   Mobile home — shorter page (≤640px). PC unchanged.
+   ========================================================= */
+.proc-grid,.home-cta{display:none}
+@media (max-width:640px){
+  /* features: one compact row */
+  .features{padding:28px 0}
+  .features-grid{grid-template-columns:repeat(3,1fr)}
+  .feature{padding:4px 6px}
+  .feature + .feature{border-top:0;border-left:1px solid var(--line)}
+  .feature svg{width:26px;height:26px;margin-bottom:8px}
+  .feature h3{font-size:16px;margin:0}
+  html[lang="ko"] .feature h3,html[lang="zh"] .feature h3{font-size:14.5px}
+  .feature p{display:none}
+  /* split images shorter */
+  .split.standard .split-media,.split.experience .split-media{aspect-ratio:16/10}
+  .split-body{padding:40px var(--pad) 48px}
+  .split-body .lead{margin-top:14px}
+  /* procedures: 2-column category buttons instead of image + accordion */
+  .procedures{padding:52px 0}
+  .proc-head{display:block;margin-bottom:22px}
+  .proc-head .tabs,.proc-body .proc-media,#procLists{display:none}
+  .proc-body{display:block}
+  .proc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .proc-grid a{display:flex;align-items:center;gap:12px;min-height:60px;padding:12px 14px;background:#fff;box-shadow:0 1px 0 var(--line);font-family:var(--sans);font-size:15px;font-weight:500}
+  .proc-grid svg{width:26px;height:26px;flex:none;color:var(--ink-2)}
+  .proc-body .arrow-link{margin-top:14px}
+  /* director: compact */
+  .director-card,.director-card:has(.dir-photo){aspect-ratio:16/12;padding:24px 20px}
+  .director-card .dir-photo{object-position:50% 12%}
+  .director-card blockquote{display:none}
+  .director-card .name{font-size:30px}
+  .director .split-body{padding:28px var(--pad) 44px}
+  .director .creds{display:none}
+  .director .split-body .title{font-size:26px;margin-top:10px}
+  .director .arrow-link{margin-top:10px}
+  /* contact: replace form with a short CTA */
+  .home-cta{display:block;padding:52px 0 60px;background:linear-gradient(180deg,var(--frost),var(--sky))}
+  .home-cta .lead{margin-top:14px}
+  .home-cta-btns{display:grid;gap:10px;margin-top:26px}
+  .home-cta-btns .btn{justify-content:center;height:52px}
+  body:has(.home-cta) section.contact{display:none}
+}
+@media (max-width:640px){
+  .hero-slides{display:grid;min-height:0}
+  .hero-slide{grid-area:1/1;position:relative;top:auto}
+  .hero-dots{margin:18px 0 14px}
+}

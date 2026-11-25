@@ -383,6 +383,14 @@
   var here = location.pathname.split('/').pop() || 'index.html';
   drawer.querySelectorAll('a[href]').forEach(function (a) { if (a.getAttribute('href') === here) a.classList.add('active'); });
 
+  /* mobile home: the contact form is replaced by a short CTA block */
+  document.querySelectorAll('a[href="#contact"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var m = document.getElementById('contact-m');
+      if (m && getComputedStyle(m).display !== 'none') { e.preventDefault(); m.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
   /* QR codes: tap / click to enlarge */
   var lb = null;
   function closeLightbox() { if (lb) lb.classList.remove('open'); document.body.classList.remove('lock'); }
