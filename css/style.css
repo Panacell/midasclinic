@@ -722,3 +722,11 @@ img{height:auto}
   .ba-gate{padding-top:40px}
   .ba-gate-box{padding:26px 22px 22px}
 }
+.ba-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.ba-filter .chip{min-height:42px;padding:0 18px;border:1px solid var(--line);background:#fff;font-family:var(--sans);font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;transition:.25s}
+.ba-filter .chip small{font-size:12px;color:var(--mute)}
+.ba-filter .chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.ba-filter .chip.on small{color:#aab2c2}
+.ba.hide{display:none}
+.ba figcaption{flex-wrap:wrap;line-height:1.5}
+.ba figcaption span{flex:1;min-width:0}

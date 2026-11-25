@@ -408,6 +408,13 @@
       }
     });
   });
+  var chipsBa = [].slice.call(document.querySelectorAll('.ba-filter .chip'));
+  function baFilter(f) {
+    chipsBa.forEach(function (c) { c.classList.toggle('on', c.dataset.f === f); });
+    document.querySelectorAll('.ba[data-cat]').forEach(function (b) { b.classList.toggle('hide', f !== 'all' && b.dataset.cat !== f); });
+  }
+  chipsBa.forEach(function (c) { c.addEventListener('click', function () { baFilter(c.dataset.f); }); });
+  if (chipsBa.length && /^#(nose|lift)$/.test(location.hash)) baFilter(location.hash.slice(1));
   var baOk = false;
   try { baOk = sessionStorage.getItem('midas-ba-ok') === '1'; } catch (e) {}
   document.querySelectorAll('[data-ba-gate]').forEach(function (w) {

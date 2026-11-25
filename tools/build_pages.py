@@ -500,12 +500,16 @@ CATS = [
 ]
 
 
+BA_PREVIEW = {"rhinoplasty": ["case01", "case03", "case06", "case11"], "lifting": ["lift01", "lift03", "lift04", "lift06"]}
+BA_PREVIEW_CAT = {"rhinoplasty": "nose", "lifting": "lift"}
+
+
 def detail_page(c):
-    ba_section = f'''<section class="section white">
+    ba_section = "" if c["slug"] not in BA_PREVIEW else f'''<section class="section white">
   <div class="wrap">
-    {sec_head(T("Before &amp; After", "전후 사진", "术前术后"), T("Rhinoplasty cases", "코성형 전후 사례", "鼻整形案例"))}
-    {ba_gallery([1, 3, 6, 11])}
-    <a class="arrow-link reveal" href="results.html">{tx("span", T("View all 18 cases", "전후 사례 18건 모두 보기", "查看全部18个案例"))}{ARROW}</a>
+    {sec_head(T("Before &amp; After", "전후 사진", "术前术后"), c["name"])}
+    {ba_gallery(BA_PREVIEW[c["slug"]])}
+    <a class="arrow-link reveal" href="results.html#{BA_PREVIEW_CAT[c["slug"]]}">{tx("span", T("View all cases", "전후 사례 모두 보기", "查看全部案例"))}{ARROW}</a>
   </div>
 </section>'''
     others = "".join(tx("a", o["name"], "", f' href="{o["slug"]}.html"') for o in CATS if o["slug"] != c["slug"])
@@ -542,7 +546,7 @@ def detail_page(c):
   </div>
 </section>
 
-{ba_section if c["slug"] == "rhinoplasty" else ""}
+{ba_section if c["slug"] in BA_PREVIEW else ""}
 <section class="section alt">
   <div class="wrap">
     {sec_head(T("FAQ", "자주 묻는 질문", "常见问题"), T("Questions", "자주 묻는 질문", "常见问题"))}
@@ -679,7 +683,7 @@ def procedures():
 <section class="section">
   <div class="wrap">
     <div class="cards">{cards}</div>
-    <a class="arrow-link reveal" href="results.html">{tx("span", T("Rhinoplasty before &amp; after", "코성형 전후 사진 보기", "鼻整形术前术后"))}{ARROW}</a>
+    <a class="arrow-link reveal" href="results.html">{tx("span", T("Before &amp; after cases", "수술 전후 사례 보기", "术前术后案例"))}{ARROW}</a>
     {tx("div", RISK, "notice reveal")}
   </div>
 </section>
@@ -1016,28 +1020,44 @@ def media():
 # =====================================================================
 # Before & After (코성형 전후 사례) — images/results/caseNN-before.jpg / -after.jpg
 # =====================================================================
-RESULT_CASES = 18
+NOSE_CAP = T("Rhinoplasty", "코성형", "鼻整形")
+# (파일 접두어, 분야, 설명)
+RESULTS = [(f"case{n:02d}", "nose", T("Rhinoplasty · side view", "코성형 · 측면", "鼻整形 · 侧面") if n == 18 else NOSE_CAP) for n in range(1, 19)] + [
+    ("lift01", "lift", T("Lower eyelid + mid-face SMAS lift · 2 weeks after (swelling remains)", "하안검 + 중안면 SMAS 리프팅 · 수술 후 2주 (붓기 남아 있음)", "下眼睑 + 中面部SMAS提升 · 术后2周（仍有肿胀）")),
+    ("lift02", "lift", T("Mid-face SMAS lift · long-term: surgery at 40, photo 8 years later", "중안면 SMAS 리프팅 · 장기 경과: 40세 수술, 8년 후 사진", "中面部SMAS提升 · 长期效果：40岁手术，8年后照片")),
+    ("lift03", "lift", T("Mid-face SMAS lift · 1 week after", "중안면 SMAS 리프팅 · 수술 후 1주", "中面部SMAS提升 · 术后1周")),
+    ("lift04", "lift", T("Lower eyelid + mid-face SMAS lift · 2 weeks after", "하안검 + 중안면 SMAS 리프팅 · 수술 후 2주", "下眼睑 + 中面部SMAS提升 · 术后2周")),
+    ("lift05", "lift", T("Same patient, oblique view · 2 weeks after", "같은 환자 측면 · 수술 후 2주", "同一患者侧面 · 术后2周")),
+    ("lift06", "lift", T("Forehead lift · 1 month after (incision line marked)", "포헤드(이마) 리프팅 · 수술 후 1개월 (봉합선 표시)", "额头提升 · 术后1个月（标注缝合线）")),
+]
+BA_CATS = [("all", T("All", "전체", "全部")), ("nose", T("Nose", "코성형", "鼻整形")), ("lift", T("Lifting", "리프팅", "面部提升"))]
 BA_NOTICE = T("These photos are of actual patients, shared with consent. Results differ from person to person and are not a guarantee of outcome. All surgery carries possible risks such as bleeding, infection, swelling, asymmetry and scarring.",
               "아래 사진은 동의를 받은 실제 환자의 사례입니다. 수술 결과는 개인에 따라 다르며, 같은 결과를 보장하지 않습니다. 모든 수술에는 출혈·감염·부종·비대칭·흉터 등의 부작용이 발생할 수 있습니다.",
               "以下照片为经本人同意的真实患者案例。手术效果因人而异，不代表能获得相同效果。所有手术均可能出现出血、感染、肿胀、不对称或疤痕等副作用。")
 
 
-def ba_card(n):
-    return f'''<figure class="ba reveal">
+def ba_card(key, cat, cap, idx):
+    return f'''<figure class="ba reveal" data-cat="{cat}">
   <div class="ba-frame" style="--pos:50%">
-    <img class="ba-after" src="images/results/case{n:02d}-after.jpg" alt="Case {n:02d} after" loading="lazy" width="720" height="619">
-    <img class="ba-before" src="images/results/case{n:02d}-before.jpg" alt="Case {n:02d} before" loading="lazy" width="720" height="619">
+    <img class="ba-after" src="images/results/{key}-after.jpg" alt="Case {idx:02d} after" loading="lazy" width="720" height="619">
+    <img class="ba-before" src="images/results/{key}-before.jpg" alt="Case {idx:02d} before" loading="lazy" width="720" height="619">
     <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
     <span class="ba-handle" aria-hidden="true"></span>
     <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after">
   </div>
-  <figcaption><b>Case {n:02d}</b>{tx("span", T("Rhinoplasty · side view", "코성형 · 측면", "鼻整形 · 侧面") if n == 18 else T("Rhinoplasty", "코성형", "鼻整形"))}</figcaption>
+  <figcaption><b>Case {idx:02d}</b>{tx("span", cap)}</figcaption>
 </figure>'''
 
 
-def ba_gallery(cases):
-    cards = "".join(ba_card(n) for n in cases)
-    return f'''<div class="ba-wrap" data-ba-gate>
+def ba_gallery(keys=None, filters=False):
+    items = [(i, k, c, cap) for i, (k, c, cap) in enumerate(RESULTS, 1) if keys is None or k in keys]
+    cards = "".join(ba_card(k, c, cap, i) for i, k, c, cap in items)
+    chips = ""
+    if filters:
+        chips = '<div class="ba-filter" role="tablist">' + "".join(
+            f'<button type="button" class="chip{" on" if key == "all" else ""}" data-f="{key}">{tx("span", label)}<small>{len(RESULTS) if key == "all" else sum(1 for r in RESULTS if r[1] == key)}</small></button>'
+            for key, label in BA_CATS) + "</div>"
+    return f'''{chips}<div class="ba-wrap" data-ba-gate>
     <div class="ba-grid">{cards}</div>
     <div class="ba-gate">
       <div class="ba-gate-box">
@@ -1051,14 +1071,14 @@ def ba_gallery(cases):
 
 def results():
     body = f'''{page_hero(T("Before &amp; After", "전후 사진", "术前术后"), T("Before &amp; After", "전후 사진", "术前术后"),
-                T("Rhinoplasty<br><em>case gallery</em>", "코성형<br>전후 사례", "鼻整形<br>案例"),
-                T("Front-view results of rhinoplasty and nose reconstruction. Drag the line on each photo to compare.",
-                  "코성형·코 재건 수술 전후의 정면 사진입니다. 사진 가운데 선을 좌우로 움직여 비교해 보세요.",
-                  "鼻整形与鼻重建的术前术后正面照片。左右拖动照片中间的线进行对比。"))}
+                T("Case<br><em>gallery</em>", "수술<br>전후 사례", "手术<br>案例"),
+                T("Rhinoplasty and lifting cases. Drag the line on each photo to compare before and after.",
+                  "코성형·리프팅 수술 전후 사진입니다. 사진 가운데 선을 좌우로 움직여 비교해 보세요.",
+                  "鼻整形与面部提升案例。左右拖动照片中间的线对比术前术后。"))}
 
 <section class="section">
   <div class="wrap">
-    {ba_gallery(range(1, RESULT_CASES + 1))}
+    {ba_gallery(filters=True)}
     {tx("div", BA_NOTICE, "notice reveal")}
   </div>
 </section>
