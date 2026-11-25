@@ -500,8 +500,8 @@ CATS = [
 ]
 
 
-BA_PREVIEW = {"rhinoplasty": ["case01", "case03", "case06", "case11"], "lifting": ["lift01", "lift03", "lift04", "lift06"]}
-BA_PREVIEW_CAT = {"rhinoplasty": "nose", "lifting": "lift"}
+BA_PREVIEW = {"rhinoplasty": ["case01", "case03", "case06", "case11"], "lifting": ["lift01", "lift03", "lift07", "lift08"], "eye": ["eye01", "eye03", "eye06", "eye08"]}
+BA_PREVIEW_CAT = {"rhinoplasty": "nose", "lifting": "lift", "eye": "eye"}
 
 
 def detail_page(c):
@@ -1029,18 +1029,21 @@ RESULTS = [(f"case{n:02d}", "nose", T("Rhinoplasty · side view", "코성형 · 
     ("lift04", "lift", T("Lower eyelid + mid-face SMAS lift · 2 weeks after", "하안검 + 중안면 SMAS 리프팅 · 수술 후 2주", "下眼睑 + 中面部SMAS提升 · 术后2周")),
     ("lift05", "lift", T("Same patient, oblique view · 2 weeks after", "같은 환자 측면 · 수술 후 2주", "同一患者侧面 · 术后2周")),
     ("lift06", "lift", T("Forehead lift · 1 month after (incision line marked)", "포헤드(이마) 리프팅 · 수술 후 1개월 (봉합선 표시)", "额头提升 · 术后1个月（标注缝合线）")),
-]
-BA_CATS = [("all", T("All", "전체", "全部")), ("nose", T("Nose", "코성형", "鼻整形")), ("lift", T("Lifting", "리프팅", "面部提升"))]
+    ("lift07", "lift", T("Neck SMAS lift · jaw and neck line, side view", "목 SMAS 리프팅 · 턱·목 라인 측면", "颈部SMAS提升 · 下颌与颈部线条侧面")),
+    ("lift08", "lift", T("Face lift · jowl and jawline, oblique view", "안면거상 · 턱선·볼 처짐, 사선 측면", "面部提升 · 下颌线与脸颊下垂，斜侧面")),
+] + [(f"eye{n:02d}", "eye", T("Ptosis correction", "안검하수 (눈매교정)", "上睑下垂矫正") if n == 6 else T("Eye surgery", "눈성형", "眼部整形")) for n in range(1, 9)]
+BA_CATS = [("all", T("All", "전체", "全部")), ("nose", T("Nose", "코성형", "鼻整形")), ("eye", T("Eye", "눈성형", "眼部整形")), ("lift", T("Lifting", "리프팅", "面部提升"))]
 BA_NOTICE = T("These photos are of actual patients, shared with consent. Results differ from person to person and are not a guarantee of outcome. All surgery carries possible risks such as bleeding, infection, swelling, asymmetry and scarring.",
               "아래 사진은 동의를 받은 실제 환자의 사례입니다. 수술 결과는 개인에 따라 다르며, 같은 결과를 보장하지 않습니다. 모든 수술에는 출혈·감염·부종·비대칭·흉터 등의 부작용이 발생할 수 있습니다.",
               "以下照片为经本人同意的真实患者案例。手术效果因人而异，不代表能获得相同效果。所有手术均可能出现出血、感染、肿胀、不对称或疤痕等副作用。")
 
 
 def ba_card(key, cat, cap, idx):
-    return f'''<figure class="ba reveal" data-cat="{cat}">
-  <div class="ba-frame" style="--pos:50%">
-    <img class="ba-after" src="images/results/{key}-after.jpg" alt="Case {idx:02d} after" loading="lazy" width="720" height="619">
-    <img class="ba-before" src="images/results/{key}-before.jpg" alt="Case {idx:02d} before" loading="lazy" width="720" height="619">
+    wh = (960, 240) if cat == "eye" else (720, 619)
+    return f'''<figure class="ba reveal{" wide" if cat == "eye" else ""}" data-cat="{cat}">
+  <div class="ba-frame" style="--pos:50%;aspect-ratio:{wh[0]}/{wh[1]}">
+    <img class="ba-after" src="images/results/{key}-after.jpg" alt="Case {idx:02d} after" loading="lazy" width="{wh[0]}" height="{wh[1]}">
+    <img class="ba-before" src="images/results/{key}-before.jpg" alt="Case {idx:02d} before" loading="lazy" width="{wh[0]}" height="{wh[1]}">
     <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
     <span class="ba-handle" aria-hidden="true"></span>
     <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after">
@@ -1072,9 +1075,9 @@ def ba_gallery(keys=None, filters=False):
 def results():
     body = f'''{page_hero(T("Before &amp; After", "전후 사진", "术前术后"), T("Before &amp; After", "전후 사진", "术前术后"),
                 T("Case<br><em>gallery</em>", "수술<br>전후 사례", "手术<br>案例"),
-                T("Rhinoplasty and lifting cases. Drag the line on each photo to compare before and after.",
-                  "코성형·리프팅 수술 전후 사진입니다. 사진 가운데 선을 좌우로 움직여 비교해 보세요.",
-                  "鼻整形与面部提升案例。左右拖动照片中间的线对比术前术后。"))}
+                T("Rhinoplasty, eye surgery and lifting cases. Drag the line on each photo to compare before and after.",
+                  "코성형·눈성형·리프팅 수술 전후 사진입니다. 사진 가운데 선을 좌우로 움직여 비교해 보세요.",
+                  "鼻整形、眼部整形与面部提升案例。左右拖动照片中间的线对比术前术后。"))}
 
 <section class="section">
   <div class="wrap">

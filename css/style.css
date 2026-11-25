@@ -730,3 +730,8 @@ img{height:auto}
 .ba.hide{display:none}
 .ba figcaption{flex-wrap:wrap;line-height:1.5}
 .ba figcaption span{flex:1;min-width:0}
+.ba.wide{grid-column:1/-1}
+.ba.wide .ba-frame{max-width:960px}
+.ba-grid .ba.wide + .ba.wide{margin-top:-6px}
+.ba.wide .ba-tag{top:10px}
+@media (max-width:640px){.ba.wide .ba-tag{font-size:9.5px;padding:3px 7px;top:6px}}
