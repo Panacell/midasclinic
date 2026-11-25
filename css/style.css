@@ -751,3 +751,7 @@ img{height:auto}
 @media (min-width:1101px){html[lang="ko"] .split.experience .title{font-size:clamp(30px,2.5vw,38px)}}
 /* 사진이 있는 페이지 상단: 제목 칸이 좁아 글자 크기를 조금 줄임 */
 @media (min-width:1101px){.page-hero.with-img h1{font-size:clamp(38px,3.6vw,54px)}}
+/* 메인 첫 화면 버튼 2개 */
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.proc-head .lead{margin-top:16px;max-width:520px}
+.director .split-body > .lead{margin-top:18px}
