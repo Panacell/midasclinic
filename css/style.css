@@ -731,6 +731,11 @@ img{height:auto}
 .ba figcaption{flex-wrap:wrap;line-height:1.5}
 .ba figcaption span{flex:1;min-width:0}
 .ba.wide{grid-column:1/-1}
+.ba.round .ba-frame{width:min(86%,440px);margin:0 auto;border-radius:50%;background:transparent;box-shadow:0 0 0 6px #fff,0 0 0 7px var(--line),0 18px 40px rgba(27,35,51,.12)}
+.ba.round .ba-tag{top:auto;bottom:17%}
+.ba.round .ba-tag.l{left:13%}.ba.round .ba-tag.r{right:13%}
+.ba.round figcaption{justify-content:center;margin-top:22px}
+.ba.round figcaption span{flex:0 1 auto}
 .ba.wide .ba-frame{max-width:960px}
 .ba-grid .ba.wide + .ba.wide{margin-top:-6px}
 .ba.wide .ba-tag{top:10px}
