@@ -38,16 +38,16 @@ ARROW = '<svg><use href="#i-arrow"/></svg>'
 PANACELL_URL = "https://panacell-website.pages.dev/"
 
 NAV = [
-    ("about", "about.html", T("About", "병원소개", "关于我们")),
-    ("procedures", "procedures.html", T("Procedures", "진료안내", "诊疗项目")),
-    ("global", "global-care.html", T("Global Care", "글로벌 케어", "国际关怀")),
-    ("experience", "experience.html", T("Inspire Experience", "인스파이어 경험", "Inspire 体验")),
-    ("media", "media.html", T("Media", "미디어", "媒体")),
-    ("contact", "contact.html", T("Contact", "오시는 길", "联系我们")),
+    ("about", "about.html", T("About", "미다스 소개", "关于MIDAS")),
+    ("procedures", "procedures.html", T("Procedures", "진료 안내", "诊疗项目")),
+    ("global", "global-care.html", T("Global Care", "글로벌 환자 서비스", "国际患者服务")),
+    ("experience", "experience.html", T("INSPIRE Experience", "인스파이어 경험", "INSPIRE体验")),
+    ("media", "media.html", T("Media", "미디어", "媒体资讯")),
+    ("contact", "contact.html", T("Contact", "문의 및 오시는 길", "联系我们")),
     ("cell", PANACELL_URL, T("Cell", "세포", "细胞")),
 ]
-CONSULT = T("Consultation", "상담 예약", "预约咨询")
-BOOK = T("Book a Consultation", "상담 예약하기", "预约咨询")
+CONSULT = T("Consultation", "진료 상담", "诊疗咨询")
+BOOK = T("Book a Consultation", "상담 및 예약", "预约咨询")
 HOME = T("Home", "홈", "首页")
 
 
@@ -669,35 +669,107 @@ def about():
          "About Midas Clinic Inspire — formerly 선이고은 Plastic Surgery. Director Choi Seung Ho.", body)
 
 
+PROC_CARDS = {
+    "rhinoplasty": (T("Rhinoplasty", "코성형", "鼻部整形"),
+        T("Personalized nasal surgery with consideration for facial harmony and nasal function",
+          "얼굴 전체의 조화와 코의 기능적 특성을 고려한 개인별 맞춤 코성형",
+          "兼顾面部整体协调与鼻部功能的个性化鼻整形方案"),
+        [T("Rib Cartilage Rhinoplasty", "늑연골 코성형", "肋软骨鼻整形"), T("Septoplasty", "비중격교정술", "鼻中隔矫正术"),
+         T("Revision Rhinoplasty", "코재수술", "鼻整形修复术"), T("Male Rhinoplasty", "남성 코성형", "男士鼻整形")]),
+    "eye": (T("Eye Surgery", "눈성형", "眼部整形"),
+        T("Customized eye surgery that respects individual features and facial proportions",
+          "개인의 눈매와 얼굴의 균형을 고려한 맞춤 눈성형",
+          "结合个人眼部特征与面部比例，提供个性化眼部整形方案"),
+        [T("Double Eyelid Surgery (Non-incisional / Partial-incision / Full-incision)", "쌍꺼풀 수술 (비절개·부분절개·절개)", "重睑术（非切开法／部分切开法／全切法）"),
+         T("Ptosis Correction", "안검하수 교정", "上睑下垂矫正"),
+         T("Epicanthoplasty / Lateral Canthoplasty", "앞트임·뒤트임", "内眦开大术／外眦成形术"),
+         T("Upper / Lower Blepharoplasty", "상안검·하안검 성형", "上睑／下睑整形术")]),
+    "lifting": (T("Facial Lifting", "리프팅", "面部提升"),
+        T("Personalized lifting procedures tailored to facial structure and age-related changes",
+          "얼굴의 구조와 노화에 따른 변화를 고려한 맞춤 리프팅",
+          "根据面部结构及年龄相关变化，制定个性化面部提升方案"),
+        [T("Facelift", "안면거상술", "面部提升术"), T("Midface SMAS Lift", "중안면 SMAS 거상술", "中面部SMAS提升术"),
+         T("Subbrow Lift", "눈썹하 거상술", "眉下提升术"), T("Neck SMAS Lift", "목 SMAS 거상술", "颈部SMAS提升术"),
+         T("Cheek Lift", "볼 리프팅", "面颊提升术"), T("Forehead Lift", "이마거상술", "额部提升术")]),
+    "contouring": (T("Facial Contouring", "안면 윤곽", "面部轮廓塑形"),
+        T("A personalized approach to facial contours, volume and overall balance",
+          "얼굴의 윤곽과 볼륨, 전체적인 균형을 고려한 맞춤 진료",
+          "综合考虑面部轮廓、容积与整体协调，提供个性化塑形方案"),
+        [T("T-Zone Contouring", "T존 윤곽성형", "T区轮廓塑形"), T("3D Facial Fat Grafting", "3D 얼굴 지방이식", "3D面部脂肪填充"),
+         T("Gummy Smile Correction", "잇몸 노출 교정", "露龈笑矫正")]),
+    "body": (T("Body Contouring &amp; Hair Restoration", "바디성형 및 모발이식", "形体塑形与毛发移植"),
+        T("A comprehensive range of body contouring, breast surgery and hair restoration procedures",
+          "체형성형부터 가슴성형, 모발이식까지 개인별 특성을 고려한 폭넓은 진료",
+          "涵盖形体塑形、乳房整形及毛发移植的多元化个性诊疗服务"),
+        [T("Liposuction", "지방흡입", "吸脂塑形"), T("Abdominoplasty", "복부성형술", "腹壁整形术"),
+         T("Breast Lift", "유방거상술", "乳房提升术"), T("Stem Cell Breast Augmentation", "줄기세포 가슴성형", "干细胞隆乳"),
+         T("Stem Cell Breast Reconstruction", "줄기세포 유방재건", "干细胞乳房重建"), T("Hair Transplantation", "모발이식", "毛发移植")]),
+    "skin": (T("Skin &amp; Aesthetic Treatments", "피부·미용 시술", "皮肤美容与微整形"),
+        T("Personalized non-surgical treatments addressing skin quality, facial aesthetics and individual concerns",
+          "피부 상태와 미용적 고민에 따라 제안하는 개인별 맞춤 비수술 시술",
+          "针对个人肤质、面部美容需求及不同皮肤问题，提供个性化非手术医美方案"),
+        [T("Botulinum Toxin &amp; Dermal Fillers", "보툴리눔 톡신·필러", "肉毒毒素注射与填充"),
+         T("Deep Dermal Renewal", "진피층 피부 개선", "真皮层肤质改善"), T("Skin Boosters", "스킨부스터", "肤质改善注射"),
+         T("Pore Refinement", "모공 개선", "毛孔改善"), T("PRP · PMRP", "PRP·PMRP", "PRP·PMRP疗法"),
+         T("Super PRP", "슈퍼 PRP", "Super PRP疗法"),
+         T("Pigmentation, Redness &amp; Acne", "색소·홍조·여드름", "色素沉着、泛红及痤疮")]),
+}
+PROC_PROCESS = [
+    (T("Personalized Consultation", "개인별 맞춤 상담", "个性化咨询"),
+     T("Connect with us through your preferred communication channel to discuss your concerns, aesthetic goals and treatment options",
+       "전화, 온라인 및 다양한 메신저를 통해 진료 문의와 상담이 가능합니다. 개인의 고민과 희망하는 개선 방향을 확인합니다",
+       "您可通过电话、在线平台或常用通讯工具进行咨询，沟通个人需求、审美偏好及诊疗选择")),
+    (T("Medical Assessment &amp; Treatment Planning", "의료진 진료 및 맞춤 진료 계획", "医生面诊与方案制定"),
+     T("Based on an individual medical assessment, our physician discusses suitable treatment options, expected outcomes and recovery",
+       "의료진의 진료를 바탕으로 개인에게 적합한 수술 및 시술 방법, 예상 결과와 회복 과정에 대해 안내합니다",
+       "医生根据个人情况进行专业评估，并详细说明适合的诊疗方案、预期效果及恢复过程")),
+    (T("Surgery &amp; Treatment", "수술 및 시술", "手术与治疗"),
+     T("Following the necessary medical assessments, your procedure is performed in a private medical setting with careful attention to patient safety",
+       "필요한 사전 검사와 확인 절차를 거쳐, 환자의 프라이버시와 안전을 고려한 의료 환경에서 수술 및 시술을 진행합니다",
+       "完成必要的术前检查与评估后，在注重患者隐私与安全的医疗环境中开展手术及相关治疗")),
+    (T("Recovery &amp; Follow-up Care", "회복 및 사후관리", "恢复与术后管理"),
+     T("We provide personalized recovery guidance and follow-up care according to your individual treatment plan",
+       "수술 및 시술 후 개인별 회복 경과에 따른 안내와 체계적인 사후관리 서비스를 제공합니다",
+       "根据个人诊疗方案及恢复情况，提供个性化恢复指导与后续管理服务")),
+]
+PROC_RISK = T("※ Treatment outcomes and recovery times vary by individual. Surgical and non-surgical aesthetic procedures may involve risks, including bleeding, infection, swelling, asymmetry and scarring. Please discuss the potential risks, limitations and expected outcomes with your physician before proceeding",
+              "※ 수술 및 시술 결과와 회복 기간은 개인에 따라 차이가 있을 수 있습니다. 출혈, 감염, 부기, 비대칭 및 흉터 등의 부작용이 발생할 수 있으므로 의료진과 충분한 상담 후 수술 및 시술을 결정하시기 바랍니다",
+              "※ 手术及治疗效果、恢复时间因人而异。相关诊疗项目可能存在出血、感染、肿胀、不对称及瘢痕等风险。请在充分了解潜在风险、局限性及预期效果，并与医生进行详细沟通后，再决定是否接受治疗")
+
+
 def procedures():
     cards = ""
     for c in CATS:
-        lis = "".join(tx("li", n) for n, _ in c["items"])
+        name, short, items = PROC_CARDS[c["slug"]]
+        lis = "".join(tx("li", n) for n in items)
         cards += (f'<a class="card reveal" href="{c["slug"]}.html"><svg class="ic" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.1">{c["icon"]}</svg>'
-                  f'{tx("h3", c["name"])}{tx("p", c["short"])}<ul>{lis}</ul>'
-                  f'<span class="more">{tx("span", T("Learn more", "자세히 보기", "了解更多"))}{ARROW}</span></a>')
-    body = f'''{page_hero(T("Procedures", "진료안내", "诊疗项目"), T("Procedures", "진료안내", "诊疗项目"),
-                T("Tailored care for<br><em>your natural beauty</em>", "한 사람을 위한<br>맞춤 진료", "为您量身定制的<br>自然之美"),
-                T("Face, body and skin — each plan starts from your own structure and lifestyle.",
-                  "얼굴부터 바디, 피부까지. 모든 계획은 개인의 구조와 라이프스타일에서 시작합니다.",
-                  "面部、身体与皮肤——每一个方案都从您的个人结构与生活方式出发。"))}
+                  f'{tx("h3", name)}{tx("p", short)}<ul>{lis}</ul>'
+                  f'<span class="more">{tx("span", T("Learn More", "자세히 보기", "了解详情"))}{ARROW}</span></a>')
+    body = f'''{page_hero(T("Procedures", "진료 안내", "诊疗项目"), T("Procedures", "진료 안내", "诊疗项目"),
+                T("Premium Aesthetic Care,<br><em>Tailored to You</em>", "당신을 위한<br>프리미엄 맞춤 진료", "专属定制，<br>品质医美"),
+                T("From facial and body surgery to advanced skin treatments, discover personalized aesthetic care in a refined, internationally connected medical setting",
+                  "성형수술부터 피부·미용 시술까지<br>인스파이어 미다스에서 개인별 맞춤 진료와 차별화된 프리미엄 의료 서비스를 만나보세요",
+                  "从面部整形、形体塑形到专业皮肤美容，在INSPIRE MIDAS体验个性化诊疗与国际化高品质医疗服务"))}
 
 <section class="section">
   <div class="wrap">
     <div class="cards">{cards}</div>
-    <a class="arrow-link reveal" href="results.html">{tx("span", T("Before &amp; after cases", "수술 전후 사례 보기", "术前术后案例"))}{ARROW}</a>
-    {tx("div", RISK, "notice reveal")}
+    <a class="arrow-link reveal" href="results.html">{tx("span", T("View Before &amp; After Cases", "수술 및 시술 사례 보기", "查看治疗前后案例"))}{ARROW}</a>
+    {tx("div", PROC_RISK, "notice reveal")}
   </div>
 </section>
 
 <section class="section alt">
   <div class="wrap">
-    {sec_head(T("Your journey", "진료 과정", "诊疗流程"), T("From consultation<br>to recovery", "상담부터<br>회복까지", "从咨询<br>到恢复"))}
-    {timeline(PROCESS, four=True)}
+    {sec_head(T("Your Care Experience", "진료 과정", "诊疗流程"), T("Personalized Care,<br>Every Step of the Way", "상담부터 사후관리까지,<br>체계적인 맞춤 의료 서비스", "从咨询到术后管理，<br>全程个性化医疗服务"))}
+    {timeline(PROC_PROCESS, four=True)}
   </div>
 </section>
 
-{cta_band()}'''
+{cta_band(T("Premium Care, <em>Within Reach</em>", "어디서든 연결되는 <em>프리미엄 의료 서비스</em>", "品质医疗，<em>触手可及</em>"),
+          T("Wherever you are, connect with MIDAS through your preferred communication channel. Consultations are available by phone, online inquiry, KakaoTalk, LINE, WhatsApp and WeChat",
+            "국내외 어디에서든 전화, 온라인 문의, 카카오톡, LINE, WhatsApp, WeChat을 통해 미다스의 진료 상담 및 예약이 가능합니다",
+            "无论您身在何处，均可通过电话、在线咨询、KakaoTalk、LINE、WhatsApp或微信联系MIDAS，进行诊疗咨询与预约"))}'''
     page("procedures.html", "procedures", T("Procedures", "진료안내", "诊疗项目"),
          "Rhinoplasty, eye surgery, lifting, facial contouring, body and skin care at Midas Clinic Inspire.", body)
 

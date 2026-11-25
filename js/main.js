@@ -14,8 +14,8 @@
   var I18N = {
     en: {
       'nav.about': 'About', 'nav.procedures': 'Procedures', 'nav.global': 'Global Care',
-      'nav.experience': 'Inspire Experience', 'nav.contact': 'Contact', 'nav.media': 'Media', 'nav.cell': 'Cell',
-      'cta.consult': 'Consultation', 'cta.book': 'Book a Consultation', 'cta.explore': 'Explore Procedures', 'cta.call': 'Call',
+      'nav.experience': 'INSPIRE Experience', 'nav.contact': 'Contact', 'nav.media': 'Media', 'nav.cell': 'Cell',
+      'cta.consult': 'Consultation', 'cta.book': 'Book a Consultation', 'cta.explore': 'Explore Our Procedures', 'cta.call': 'Call',
 
       'hero1.kicker': 'Premium Plastic Surgery',
       'hero1.title': 'A Global Destination<br>for Premium<br>Aesthetic Care',
@@ -71,9 +71,9 @@
     },
 
     ko: {
-      'nav.about': '병원소개', 'nav.procedures': '진료안내', 'nav.global': '글로벌 케어',
-      'nav.experience': '인스파이어 경험', 'nav.contact': '오시는 길', 'nav.media': '미디어', 'nav.cell': '세포',
-      'cta.consult': '상담 예약', 'cta.book': '상담 예약하기', 'cta.explore': '진료 안내 보기', 'cta.call': '전화',
+      'nav.about': '미다스 소개', 'nav.procedures': '진료 안내', 'nav.global': '글로벌 환자 서비스',
+      'nav.experience': '인스파이어 경험', 'nav.contact': '문의 및 오시는 길', 'nav.media': '미디어', 'nav.cell': '세포',
+      'cta.consult': '진료 상담', 'cta.book': '상담 및 예약', 'cta.explore': '진료 분야 자세히 보기', 'cta.call': '전화',
 
       'hero1.kicker': 'Premium Plastic Surgery',
       'hero1.title': '글로벌 프리미엄 의료의<br>새로운 경험',
@@ -129,9 +129,9 @@
     },
 
     zh: {
-      'nav.about': '关于我们', 'nav.procedures': '诊疗项目', 'nav.global': '国际关怀',
-      'nav.experience': 'Inspire 体验', 'nav.contact': '联系我们', 'nav.media': '媒体', 'nav.cell': '细胞',
-      'cta.consult': '预约咨询', 'cta.book': '预约咨询', 'cta.explore': '查看诊疗项目', 'cta.call': '致电',
+      'nav.about': '关于MIDAS', 'nav.procedures': '诊疗项目', 'nav.global': '国际患者服务',
+      'nav.experience': 'INSPIRE体验', 'nav.contact': '联系我们', 'nav.media': '媒体资讯', 'nav.cell': '细胞',
+      'cta.consult': '诊疗咨询', 'cta.book': '预约咨询', 'cta.explore': '了解诊疗项目', 'cta.call': '致电',
 
       'hero1.kicker': 'Premium Plastic Surgery',
       'hero1.title': '国际化高端<br>医美新体验',
@@ -379,7 +379,7 @@
   burger.addEventListener('click', function () { setDrawer(!drawer.classList.contains('open')); });
   drawer.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setDrawer(false); }); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setDrawer(false); closeLightbox(); } });
-  window.addEventListener('resize', function () { if (window.innerWidth > 1100 && drawer.classList.contains('open')) setDrawer(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 1180 && drawer.classList.contains('open')) setDrawer(false); });
   var here = location.pathname.split('/').pop() || 'index.html';
   drawer.querySelectorAll('a[href]').forEach(function (a) { if (a.getAttribute('href') === here) a.classList.add('active'); });
 
