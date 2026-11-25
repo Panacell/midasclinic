@@ -17,7 +17,7 @@
       'nav.experience': 'INSPIRE Experience', 'nav.contact': 'Contact', 'nav.media': 'Media', 'nav.cell': 'Cell',
       'cta.consult': 'Consultation', 'cta.book': 'Book a Consultation', 'cta.explore': 'Explore Our Procedures', 'cta.call': 'Call',
 
-      'hero1.kicker': 'Premium Plastic Surgery',
+      'hero1.kicker': 'Premium Care · Global Experience',
       'hero1.title': 'A Global Destination<br>for Premium<br>Aesthetic Care',
       'hero1.text': 'Experience personalized aesthetic care and<br>exceptional hospitality at INSPIRE, Korea',
       'hero2.kicker': 'Signature Rhinoplasty',
@@ -27,28 +27,28 @@
       'hero3.title': 'Lift, Not Change',
       'hero3.text': 'SMAS-level lifting that restores,<br>never replaces, who you are.',
 
-      'std.kicker': 'The Midas Standard',
-      'std.title': 'Natural Refinement,<br>Lasting Confidence',
-      'std.text': 'Personalized aesthetic care by a Korean specialist, for results that are naturally beautiful and uniquely you.',
+      'std.kicker': 'About MIDAS',
+      'std.title': 'Beyond<br>Aesthetic Care',
+      'std.text': 'MIDAS brings together medical expertise, personalized care and refined hospitality in an international resort setting',
       'std.link': 'Our Philosophy',
 
-      'f1.title': 'Global Care', 'f1.text': 'Multilingual consultation<br>and international coordination',
-      'f2.title': 'Easy Travel', 'f2.text': 'Convenient access at<br>Incheon Inspire',
-      'f3.title': 'Premium &amp; Private', 'f3.text': 'Discreet, comfortable care<br>in a world-class setting',
+      'f1.title': 'International Patient Services', 'f1.text': 'Multilingual consultation<br>and international coordination',
+      'f2.title': 'Seamless Accessibility', 'f2.text': 'Convenient access at<br>Incheon Inspire',
+      'f3.title': 'Privacy &amp; Exclusivity', 'f3.text': 'Discreet, comfortable care<br>in a world-class setting',
 
-      'exp.kicker': 'Inspire Experience',
-      'exp.title': 'A Refined<br>Healing Journey',
-      'exp.text': 'From consultation to recovery, experience premium care in a vibrant, cosmopolitan environment at Inspire.',
+      'exp.kicker': 'INSPIRE Experience',
+      'exp.title': 'Where Premium Care Meets<br>Global Hospitality',
+      'exp.text': 'Located within INSPIRE Entertainment Resort, MIDAS brings aesthetic care, leisure and convenience together in one destination',
       'exp.link': 'Explore the Experience',
 
-      'proc.kicker': 'Procedures', 'proc.title': 'Tailored Care for<br>Your Natural Beauty',
+      'proc.kicker': 'Procedures', 'proc.title': 'Premium Care,<br>Personalized for You',
       'tab.face': 'Face', 'tab.body': 'Body', 'tab.skin': 'Skin',
 
       'dir.kicker': 'Our Director', 'dir.title': 'Expertise<br>You Can <em>Trust</em>',
       'dir.name': 'Seungho Choi, M.D.', 'dir.role': 'Representative Director',
       'dir.quote': '“Never settled on one method — every face deserves the safest, most refined answer.”',
 
-      'contact.kicker': 'Contact', 'contact.title': 'Begin Your<br><em>Consultation</em>',
+      'contact.kicker': 'Consultation', 'contact.title': 'Your Experience<br><em>Begins at MIDAS</em>',
       'contact.address': 'Address', 'contact.hours': 'Hours', 'contact.messenger': 'Messenger',
       'contact.addressText': 'Sun Tower 3F, Inspire Entertainment Resort<br>127 Gonghang-munhwa-ro, Jung-gu, Incheon, Korea',
 
@@ -75,7 +75,7 @@
       'nav.experience': '인스파이어 경험', 'nav.contact': '문의 및 오시는 길', 'nav.media': '미디어', 'nav.cell': '세포',
       'cta.consult': '진료 상담', 'cta.book': '상담 및 예약', 'cta.explore': '진료 분야 자세히 보기', 'cta.call': '전화',
 
-      'hero1.kicker': 'Premium Plastic Surgery',
+      'hero1.kicker': '프리미엄 의료 · 글로벌 경험',
       'hero1.title': '글로벌 프리미엄 의료의<br>새로운 경험',
       'hero1.text': '수준 높은 의료 서비스와 품격 있는 공간<br>인스파이어 미다스에서 차별화된 성형·미용 의료 서비스를 경험하세요',
       'hero2.kicker': 'Signature Rhinoplasty',
@@ -85,28 +85,28 @@
       'hero3.title': '얼굴은 그대로,<br>시간만 되돌리다',
       'hero3.text': '근막(SMAS)층부터 끌어올리는<br>자연스러운 리프팅.',
 
-      'std.kicker': 'The Midas Standard',
-      'std.title': '자연스러운 변화,<br>오래가는 자신감',
-      'std.text': '유행이 아닌 한 사람의 골격과 인상을 존중합니다. (구)선이고은 성형외과의 철학을 이어, 꼭 필요한 수술만 정직하게 권합니다.',
+      'std.kicker': '미다스 소개',
+      'std.title': '의료 서비스,<br>그 이상의 가치',
+      'std.text': '미다스는 의료 전문성과 개인별 맞춤 진료, 프리미엄 서비스를 바탕으로 차별화된 의료 경험을 제공합니다',
       'std.link': '진료 철학',
 
-      'f1.title': '글로벌 케어', 'f1.text': '다국어 상담 채널과<br>해외 고객 일정 조율',
-      'f2.title': '편리한 접근성', 'f2.text': '인천국제공항 인근<br>인스파이어 리조트',
-      'f3.title': '프리미엄 · 프라이빗', 'f3.text': '다른 고객과 마주치지 않는<br>프라이빗한 진료 동선',
+      'f1.title': '글로벌 환자 맞춤 서비스', 'f1.text': '다국어 상담 채널과<br>해외 고객 일정 조율',
+      'f2.title': '편리한 의료 접근성', 'f2.text': '인천국제공항 인근<br>인스파이어 리조트',
+      'f3.title': '프라이빗 의료 환경', 'f3.text': '다른 고객과 마주치지 않는<br>프라이빗한 진료 동선',
 
-      'exp.kicker': 'Inspire Experience',
-      'exp.title': '세련된<br>회복의 여정',
-      'exp.text': '상담부터 회복까지, 인스파이어 엔터테인먼트 리조트 선타워 3층에서 편안하고 세련된 진료를 경험하세요.',
+      'exp.kicker': '인스파이어 경험',
+      'exp.title': '프리미엄 의료와 글로벌<br>호스피탈리티의 만남',
+      'exp.text': '인스파이어 복합리조트에 위치한 미다스<br>의료와 휴식, 라이프스타일이 어우러진 공간에서 차별화된 의료 서비스를 만나보세요',
       'exp.link': '방문 안내',
 
-      'proc.kicker': 'Procedures', 'proc.title': '한 사람을 위한<br>맞춤 진료',
+      'proc.kicker': '진료 안내', 'proc.title': '당신을 위한<br>프리미엄 맞춤 진료',
       'tab.face': '얼굴', 'tab.body': '바디', 'tab.skin': '피부',
 
       'dir.kicker': 'Our Director', 'dir.title': '믿을 수 있는<br><em>전문성</em>',
       'dir.name': '최승호 대표원장', 'dir.role': 'Representative Director',
       'dir.quote': '“한 가지 자격과 경험에 머무르지 않고, 더 아름답고 안전한 결과를 위해 매 순간 배우고 연구합니다.”',
 
-      'contact.kicker': 'Contact', 'contact.title': '상담을<br><em>시작하세요</em>',
+      'contact.kicker': '상담 및 예약', 'contact.title': '미다스에서 시작하는<br><em>새로운 의료 경험</em>',
       'contact.address': '주소', 'contact.hours': '진료시간', 'contact.messenger': '메신저',
       'contact.addressText': '인천광역시 중구 공항문화로 127<br>인스파이어 엔터테인먼트 리조트 선타워 3층',
 
@@ -133,7 +133,7 @@
       'nav.experience': 'INSPIRE体验', 'nav.contact': '联系我们', 'nav.media': '媒体资讯', 'nav.cell': '细胞',
       'cta.consult': '诊疗咨询', 'cta.book': '预约咨询', 'cta.explore': '了解诊疗项目', 'cta.call': '致电',
 
-      'hero1.kicker': 'Premium Plastic Surgery',
+      'hero1.kicker': '高端医疗 · 国际体验',
       'hero1.title': '国际化高端<br>医美新体验',
       'hero1.text': '专业医疗、品质服务与雅致环境，<br>在韩国INSPIRE MIDAS体验个性化高端医美服务',
       'hero2.kicker': 'Signature Rhinoplasty',
@@ -143,28 +143,28 @@
       'hero3.title': '不改变你，<br>只留住时间',
       'hero3.text': '从筋膜（SMAS）层提升的<br>自然拉皮。',
 
-      'std.kicker': 'The Midas Standard',
-      'std.title': '自然蜕变，<br>持久自信',
-      'std.text': '尊重每个人的骨骼与气质，而非追逐潮流。延续前身整形外科的理念，只诚实推荐真正需要的手术。',
+      'std.kicker': '关于MIDAS',
+      'std.title': '超越医美，<br>成就品质体验',
+      'std.text': 'MIDAS融合专业医疗、个性化诊疗与高品质服务，为您带来别具一格的医美体验',
       'std.link': '我们的理念',
 
-      'f1.title': '国际关怀', 'f1.text': '多语种咨询渠道<br>海外行程协调',
-      'f2.title': '交通便利', 'f2.text': '毗邻仁川国际机场<br>Inspire 度假村',
-      'f3.title': '高端 · 私密', 'f3.text': '私密动线<br>舒适安心的诊疗环境',
+      'f1.title': '国际患者专属服务', 'f1.text': '多语种咨询渠道<br>海外行程协调',
+      'f2.title': '便捷就医体验', 'f2.text': '毗邻仁川国际机场<br>Inspire 度假村',
+      'f3.title': '专属私密诊疗空间', 'f3.text': '私密动线<br>舒适安心的诊疗环境',
 
-      'exp.kicker': 'Inspire Experience',
-      'exp.title': '精致的<br>恢复之旅',
-      'exp.text': '从咨询到恢复，在 Inspire 娱乐度假村 Sun Tower 3层，体验舒适而精致的高端诊疗。',
+      'exp.kicker': 'INSPIRE体验',
+      'exp.title': '高端医疗与<br>国际化度假体验的融合',
+      'exp.text': 'MIDAS坐落于韩国INSPIRE综合度假区，将专业医美、休闲度假与便捷服务融为一体',
       'exp.link': '来访指南',
 
-      'proc.kicker': 'Procedures', 'proc.title': '为您量身定制的<br>自然之美',
+      'proc.kicker': '诊疗项目', 'proc.title': '专属于您的<br>高端医美服务',
       'tab.face': '面部', 'tab.body': '身体', 'tab.skin': '皮肤',
 
       'dir.kicker': 'Our Director', 'dir.title': '值得信赖的<br><em>专业</em>',
       'dir.name': 'Seungho Choi 代表院长', 'dir.role': 'Representative Director',
       'dir.quote': '“不止于一种资格与经验，为了更美、更安全的结果，时刻学习与钻研。”',
 
-      'contact.kicker': 'Contact', 'contact.title': '开始您的<br><em>咨询</em>',
+      'contact.kicker': '预约咨询', 'contact.title': '从MIDAS开启<br><em>您的品质医美体验</em>',
       'contact.address': '地址', 'contact.hours': '诊疗时间', 'contact.messenger': '即时通讯',
       'contact.addressText': '韩国仁川广域市中区机场文化路127<br>Inspire Entertainment Resort Sun Tower 3层',
 
