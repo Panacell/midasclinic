@@ -1033,18 +1033,18 @@ RESULTS = [(f"case{n:02d}", "nose", T("Rhinoplasty · side view", "코성형 · 
     ("lift07", "lift", T("Neck SMAS lift · jaw and neck line, side view", "목 SMAS 리프팅 · 턱·목 라인 측면", "颈部SMAS提升 · 下颌与颈部线条侧面")),
     ("lift08", "lift", T("Face lift · jowl and jawline, oblique view", "안면거상 · 턱선·볼 처짐, 사선 측면", "面部提升 · 下颌线与脸颊下垂，斜侧面")),
 ] + [(f"eye{n:02d}", "eye", T("Ptosis correction", "안검하수 (눈매교정)", "上睑下垂矫正") if n == 6 else T("Eye surgery", "눈성형", "眼部整形")) for n in range(1, 9)] + [
-    ("breast01", "breast", T("Breast surgery · side view", "가슴성형 · 측면", "胸部整形 · 侧面")),
-    ("breast02", "breast", T("Breast surgery · side view", "가슴성형 · 측면", "胸部整形 · 侧面")),
-    ("breast03", "breast", T("Breast surgery · front view", "가슴성형 · 정면", "胸部整形 · 正面")),
-    ("breast04", "breast", T("Breast surgery · front view", "가슴성형 · 정면", "胸部整形 · 正面")),
-    ("breast05", "breast", T("Breast surgery · oblique view", "가슴성형 · 사선 측면", "胸部整形 · 斜侧面")),
-    ("skin01", "face", T("Skin texture and pores", "피부결 · 모공", "肤质 · 毛孔")),
-    ("lip01", "face", T("Lips", "입술", "唇部")),
-    ("chin01", "face", T("Chin and jawline · side view", "턱 라인 · 측면", "下巴线条 · 侧面")),
-    ("fore01", "face", T("Forehead", "이마", "额头")),
+    ("breast01", "breast", T("Stem-cell breast augmentation · reconstruction · side view", "줄기세포 가슴확대·재건 · 측면", "干细胞丰胸·乳房重建 · 侧面")),
+    ("breast02", "breast", T("Stem-cell breast augmentation · reconstruction · side view", "줄기세포 가슴확대·재건 · 측면", "干细胞丰胸·乳房重建 · 侧面")),
+    ("breast03", "breast", T("Stem-cell breast augmentation · reconstruction · front view", "줄기세포 가슴확대·재건 · 정면", "干细胞丰胸·乳房重建 · 正面")),
+    ("breast04", "breast", T("Stem-cell breast augmentation · reconstruction · front view", "줄기세포 가슴확대·재건 · 정면", "干细胞丰胸·乳房重建 · 正面")),
+    ("breast05", "breast", T("Stem-cell breast augmentation · reconstruction · oblique view", "줄기세포 가슴확대·재건 · 사선 측면", "干细胞丰胸·乳房重建 · 斜侧面")),
+    ("skin01", "face", T("Nasolabial fold filler", "팔자주름 필러", "法令纹填充")),
+    ("lip01", "face", T("Cheek filler", "볼 필러", "面颊填充")),
+    ("chin01", "face", T("Chin filler · side view", "턱 필러 · 측면", "下巴填充 · 侧面")),
+    ("fore01", "face", T("Hair transplant · hairline", "모발이식 · 헤어라인", "植发 · 发际线")),
 ]
 BA_CATS = [("all", T("All", "전체", "全部")), ("nose", T("Nose", "코성형", "鼻整形")), ("eye", T("Eye", "눈성형", "眼部整形")), ("lift", T("Lifting", "리프팅", "面部提升")),
-           ("breast", T("Breast", "가슴", "胸部")), ("face", T("Skin · Face", "피부 · 얼굴", "皮肤 · 面部"))]
+           ("breast", T("Breast", "가슴", "胸部")), ("face", T("Filler · Hair", "필러 · 모발이식", "填充 · 植发"))]
 # 사진 모양: 기본은 720x619, 아래 항목은 정사각형 / 원형
 BA_SQUARE = {"breast01": 640, "breast02": 640, "breast03": 600, "breast04": 600, "breast05": 600, "fore01": 640}
 BA_ROUND = {"skin01": 480, "lip01": 480, "chin01": 480}
@@ -1092,9 +1092,9 @@ def ba_gallery(keys=None, filters=False):
 def results():
     body = f'''{page_hero(T("Before &amp; After", "전후 사진", "术前术后"), T("Before &amp; After", "전후 사진", "术前术后"),
                 T("Case<br><em>gallery</em>", "수술<br>전후 사례", "手术<br>案例"),
-                T("Nose, eye, lifting, breast and skin cases. Drag the line on each photo to compare before and after.",
-                  "코성형·눈성형·리프팅·가슴·피부 전후 사진입니다. 사진 가운데 선을 좌우로 움직여 비교해 보세요.",
-                  "鼻整形、眼部整形、面部提升、胸部与皮肤案例。左右拖动照片中间的线对比术前术后。"))}
+                T("Nose, eye, lifting, breast, filler and hair transplant cases. Drag the line on each photo to compare before and after.",
+                  "코성형·눈성형·리프팅·가슴·필러·모발이식 전후 사진입니다. 사진 가운데 선을 좌우로 움직여 비교해 보세요.",
+                  "鼻整形、眼部整形、面部提升、胸部、填充与植发案例。左右拖动照片中间的线对比术前术后。"))}
 
 <section class="section">
   <div class="wrap">
@@ -1105,7 +1105,7 @@ def results():
 
 {cta_band(interest=0)}'''
     page("results.html", "procedures", T("Before &amp; After", "전후 사진", "术前术后"),
-         "Before and after case gallery — nose, eye, lifting, breast and skin — Midas Clinic Inspire.", body)
+         "Before and after case gallery — nose, eye, lifting, breast, filler and hair transplant — Midas Clinic Inspire.", body)
 
 
 if __name__ == "__main__":
