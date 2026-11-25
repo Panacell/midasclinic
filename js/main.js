@@ -18,8 +18,8 @@
       'cta.consult': 'Consultation', 'cta.book': 'Book a Consultation', 'cta.explore': 'Explore Procedures', 'cta.call': 'Call',
 
       'hero1.kicker': 'Premium Plastic Surgery',
-      'hero1.title': 'A Global Aesthetic<br>Destination at Inspire',
-      'hero1.text': 'World-class plastic surgery in Korea,<br>with seamless travel and exceptional care.',
+      'hero1.title': 'A Global Destination<br>for Premium<br>Aesthetic Care',
+      'hero1.text': 'Experience personalized aesthetic care and<br>exceptional hospitality at INSPIRE, Korea',
       'hero2.kicker': 'Signature Rhinoplasty',
       'hero2.title': 'The Art of<br>the Profile',
       'hero2.text': 'From rib-cartilage reconstruction to revision,<br>designed for both line and breath.',
@@ -76,8 +76,8 @@
       'cta.consult': '상담 예약', 'cta.book': '상담 예약하기', 'cta.explore': '진료 안내 보기', 'cta.call': '전화',
 
       'hero1.kicker': 'Premium Plastic Surgery',
-      'hero1.title': '인스파이어에서 만나는<br>글로벌 에스테틱',
-      'hero1.text': '세계 어디에서 오셔도 편안하게.<br>인천국제공항 곁, 프리미엄 맞춤 성형.',
+      'hero1.title': '글로벌 프리미엄 의료의<br>새로운 경험',
+      'hero1.text': '수준 높은 의료 서비스와 품격 있는 공간<br>인스파이어 미다스에서 차별화된 성형·미용 의료 서비스를 경험하세요',
       'hero2.kicker': 'Signature Rhinoplasty',
       'hero2.title': '라인과 호흡을<br>함께 설계하는 코',
       'hero2.text': '늑연골 구조 재건부터 코 재수술까지,<br>아름다움과 기능을 함께 완성합니다.',
@@ -134,8 +134,8 @@
       'cta.consult': '预约咨询', 'cta.book': '预约咨询', 'cta.explore': '查看诊疗项目', 'cta.call': '致电',
 
       'hero1.kicker': 'Premium Plastic Surgery',
-      'hero1.title': 'Inspire<br>全球美学目的地',
-      'hero1.text': '韩国高端整形外科，<br>便捷出行，悉心照护。',
+      'hero1.title': '国际化高端<br>医美新体验',
+      'hero1.text': '专业医疗、品质服务与雅致环境，<br>在韩国INSPIRE MIDAS体验个性化高端医美服务',
       'hero2.kicker': 'Signature Rhinoplasty',
       'hero2.title': '兼顾线条与呼吸的<br>鼻整形',
       'hero2.text': '从肋软骨结构重建到鼻修复，<br>美观与功能兼得。',
