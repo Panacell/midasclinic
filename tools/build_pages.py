@@ -776,70 +776,76 @@ def global_care():
 def experience():
     # Real facility categories from the clinic tour page. Put the clinic's own photos in images/ and set the path.
     spaces = [
-        ("wide", "images/facility-lobby.jpg", T("Sun Tower Lobby", "선타워 로비", "Sun Tower 大堂"),
-         T("A bright, green atrium welcomes you at Sun Tower, Inspire Resort.", "초록이 어우러진 선타워 로비에서 방문이 시작됩니다.", "绿意盎然的Sun Tower大堂迎接您的到来。")),
-        ("wide", "images/facility-entrance.jpg", T("Clinic Entrance", "병원 입구", "医院入口"),
-         T("A quiet, private entrance on the 3rd floor.", "3층의 조용하고 프라이빗한 입구.", "位于3层、安静私密的入口。")),
-        ("", "images/facility-lounge.jpg", T("Lounge", "라운지", "休息室"),
-         T("Relax before your consultation.", "상담 전 편안히 쉬는 공간.", "咨询前放松休息的空间。")),
-        ("", "images/facility-consultation.jpg", T("Consultation Room", "상담실", "咨询室"),
-         T("One-to-one consultation with the director.", "대표원장과 1:1로 상담합니다.", "与院长一对一咨询。")),
-        ("", "images/facility-treatment.jpg", T("Treatment Room", "진료실", "诊疗室"),
-         T("For examinations and non-surgical treatments.", "진찰과 시술을 위한 공간.", "用于检查与非手术治疗。")),
+        ("wide", "images/facility-lobby.jpg", T("Sun Tower Lobby", "선타워 로비", "Sun Tower大堂"),
+         T("A welcoming arrival in the light-filled atrium of INSPIRE", "개방감과 품격을 갖춘 인스파이어 선타워 로비", "明亮开阔、格调雅致的INSPIRE Sun Tower大堂")),
+        ("wide", "images/facility-entrance.jpg", T("Clinic Entrance", "미다스의원 입구", "MIDAS诊所入口"),
+         T("Convenient access to MIDAS on Level 3 of Sun Tower", "선타워 3층에서 만나는 프라이빗 의료 공간", "位于Sun Tower 3层的私密诊疗空间")),
+        ("", "images/facility-lounge.jpg", T("Patient Lounge", "고객 라운지", "患者休息区"),
+         T("A thoughtfully designed lounge for your time before consultation", "환자의 편의와 프라이버시를 고려한 라운지", "兼顾舒适度与隐私的专属休息空间")),
+        ("", "images/facility-consultation.jpg", T("Consultation Room", "상담실", "面诊室"),
+         T("Personalized, one-to-one consultations in a private setting", "프라이빗한 공간에서 진행되는 일대일 맞춤 진료 상담", "在私密环境中提供一对一个性化面诊服务")),
+        ("", "images/facility-treatment.jpg", T("Treatment Room", "시술실", "治疗室"),
+         T("A dedicated space for medical assessments and non-surgical aesthetic treatments", "진료 및 비수술 미용 시술을 위한 의료 공간", "用于专业评估及非手术医美项目的独立诊疗空间")),
         ("wide", "images/facility-operating.jpg", T("Operating Room", "수술실", "手术室"),
-         T("Equipped and prepared with safety as the first priority.", "안전을 최우선으로 갖춘 수술 공간.", "以安全为第一原则配备的手术空间。")),
-        ("wide", "images/inspire-lounge.jpg", T("Stay at Inspire", "인스파이어에 머물기", "入住Inspire"),
-         T("Recover at the resort, steps away from the clinic.", "병원 가까이 리조트에 머물며 회복할 수 있습니다.", "在毗邻诊所的度假村休养恢复。")),
+         T("A dedicated surgical environment with patient safety as a priority", "환자의 안전을 우선으로 고려한 수술 환경", "以患者安全为首要原则的专业手术环境")),
+        ("wide", "images/inspire-lounge.jpg", T("Stay at INSPIRE", "인스파이어 호텔", "INSPIRE酒店住宿"),
+         T("Premium accommodation with convenient access to the clinic", "미다스의원과 가까운 프리미엄 호텔 숙박 시설", "毗邻MIDAS诊所的高端酒店住宿体验")),
     ]
     sp = ""
     for cls, img, h, p in spaces:
         media = f'<span>Photo</span><img src="{img}" alt="" loading="lazy" onerror="this.remove()">'
         sp += f'<div class="space-card {cls} reveal"><div class="ph">{media}</div><div class="body">{tx("h3", h)}{tx("p", p)}</div></div>'
     journey = [
-        (T("Arrive", "도착", "抵达"), T("Arrive at Inspire, minutes from the airport.", "공항 가까운 인스파이어 리조트에 도착합니다.", "抵达毗邻机场的Inspire度假村。")),
-        (T("Consult", "상담", "咨询"), T("Meet the director in a private room.", "프라이빗 상담실에서 대표원장을 만납니다.", "在私密咨询室与院长见面。")),
-        (T("Procedure", "수술", "手术"), T("Your procedure, safely performed.", "안전하게 수술·시술을 진행합니다.", "安全进行手术。")),
-        (T("Recover", "회복", "恢复"), T("Rest at the resort and return for check-ups.", "리조트에 머물며 회복하고 경과를 확인합니다.", "在度假村休养并按时复诊。")),
+        (T("Arrival", "방문", "抵达"),
+         T("Arrive at INSPIRE with convenient access from Incheon International Airport", "인천국제공항과 인접한 인스파이어에서 시작하는 편리한 의료 방문", "从仁川国际机场便捷抵达INSPIRE，开启您的就医行程")),
+        (T("Consultation", "맞춤 상담", "个性化面诊"),
+         T("Meet with our physician for a personalized consultation in a private setting", "프라이빗한 공간에서 진행되는 의료진과의 개인별 맞춤 상담", "在私密环境中与医生进行一对一个性化面诊")),
+        (T("Treatment", "수술 및 시술", "手术与治疗"),
+         T("Receive personalized medical care based on your individual treatment plan", "개인별 진료 계획에 따른 맞춤 수술 및 시술", "根据个人诊疗方案，接受专业的个性化医疗服务")),
+        (T("Recovery &amp; Follow-up", "회복 및 사후관리", "恢复与术后管理"),
+         T("When medically appropriate, enjoy the convenience of staying at INSPIRE with follow-up care nearby", "의료진의 안내에 따라 리조트에 체류하며 편리하게 사후관리를 받을 수 있습니다", "在医生指导下，可选择入住INSPIRE，便捷享受后续复诊与术后管理服务")),
     ]
-    body = f'''{page_hero(T("Inspire Experience", "인스파이어 경험", "Inspire 体验"), T("Inspire Experience", "인스파이어 경험", "Inspire 体验"),
-                T("A refined<br><em>healing journey</em>", "세련된<br>회복의 여정", "精致的<br>恢复之旅"),
-                T("From consultation to recovery, premium care in a vibrant, cosmopolitan setting at Inspire.",
-                  "상담부터 회복까지, 인스파이어의 세련된 공간에서 프리미엄 진료를 경험하세요.",
-                  "从咨询到恢复，在Inspire充满活力的都市空间中体验高端诊疗。"),
+    body = f'''{page_hero(T("INSPIRE Experience", "인스파이어 경험", "INSPIRE体验"), T("INSPIRE Experience", "인스파이어 경험", "INSPIRE体验"),
+                T("Where Premium Care<br><em>Meets Global Hospitality</em>", "프리미엄 의료와 글로벌<br>라이프스타일의 만남", "高端医美与<br>国际化度假体验的融合"),
+                T("Experience personalized aesthetic care, exceptional service and the convenience of an international resort, all in one destination",
+                  "개인별 맞춤 진료부터 품격 있는 서비스, 복합리조트의 편의시설까지<br>인스파이어 미다스에서 새로운 의료 경험을 만나보세요",
+                  "个性化诊疗、高品质服务与国际度假区的便捷配套，尽在INSPIRE MIDAS"),
                 img="images/facility-lobby.jpg")}
 
 <section class="section">
   <div class="wrap two-col">
-    <div class="reveal">{tx("div", T("The location", "위치", "位置"), "kicker")}{tx("h2", T("Sun Tower, 3F<br>Inspire Entertainment Resort", "인스파이어 엔터테인먼트 리조트<br>선타워 3층", "Inspire娱乐度假村<br>Sun Tower 3层"), "title")}</div>
+    <div class="reveal">{tx("div", T("A Global Destination", "글로벌 접근성", "国际化区位优势"), "kicker")}{tx("h2", T("INSPIRE Entertainment Resort<br>Sun Tower, Level 3", "인스파이어 엔터테인먼트 리조트<br>선타워 3층", "INSPIRE综合度假区<br>Sun Tower 3层"), "title")}</div>
     <div class="prose reveal">
-      {tx("p", T("Midas Clinic is located on the 3rd floor of Sun Tower at Inspire Entertainment Resort in Incheon, close to Incheon International Airport.",
-                 "미다스의원은 인천국제공항과 가까운 인스파이어 엔터테인먼트 리조트 선타워 3층에 있습니다.",
-                 "美达斯医院位于靠近仁川国际机场的Inspire娱乐度假村Sun Tower 3层。"))}
-      {tx("p", T("Combine consultation and recovery with a stay at the resort", "리조트에 머물며 상담과 회복을 함께할 수 있습니다", "可在度假村入住期间完成咨询与恢复"))}
+      {tx("p", T("Located near Incheon International Airport, MIDAS offers convenient access to aesthetic care within an international resort featuring accommodation, dining and entertainment",
+                 "인천국제공항과 인접한 미다스의원<br>숙박, 다이닝, 엔터테인먼트 시설을 갖춘 복합리조트에서 편리하게 의료 서비스를 이용하실 수 있습니다",
+                 "MIDAS毗邻仁川国际机场，坐落于集高端住宿、餐饮及娱乐设施于一体的国际综合度假区，为您提供便捷的就医体验"))}
     </div>
   </div>
 </section>
 
 <section class="section alt">
   <div class="wrap">
-    {sec_head(T("The space", "공간", "空间"), T("A private &amp; refined<br>healing space", "프라이빗하고<br>세련된 공간", "私密而精致的<br>疗愈空间"),
-              T("Designed for comfort and discretion, with a private flow from arrival to recovery.",
-                "도착부터 회복까지 다른 고객과 마주치지 않도록 설계했습니다.",
-                "从抵达到恢复，全程私密动线设计。"))}
+    {sec_head(T("Our Medical Environment", "의료 공간", "医疗环境"), T("A Private Setting<br>A Premium Experience", "프라이버시와 품격을<br>갖춘 의료 공간", "私密空间，<br>品质医疗体验"),
+              T("A medical environment designed around privacy, comfort and personalized service, from consultation to recovery",
+                "상담부터 진료, 회복까지 환자의 프라이버시와 서비스의 품질을 고려한 의료 환경을 제공합니다",
+                "从咨询、诊疗到术后恢复，为您提供注重隐私、舒适度与个性化服务的医疗环境"))}
     <div class="space-grid">{sp}</div>
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    {sec_head(T("Your stay", "머무는 동안", "停留期间"), T("Stay, heal,<br><em>shine</em>", "머물고, 회복하고,<br>빛나다", "入住、恢复、<br>焕发光彩"))}
+    {sec_head(T("Your Visit &amp; Stay", "방문 및 체류", "到访与停留"), T("A Seamless Experience,<br>From Arrival to Recovery", "방문부터 회복까지,<br>체계적인 의료 서비스", "从抵达到恢复，<br>便捷的全程医疗体验"))}
     {timeline(journey, four=True)}
   </div>
 </section>
 
-{cta_band(T("Plan your <em>visit</em>", "방문을 <em>계획하세요</em>", "规划您的<em>来访</em>"))}'''
-    page("experience.html", "experience", T("Inspire Experience", "인스파이어 경험", "Inspire 体验"),
-         "Midas Clinic at Sun Tower 3F, Inspire Entertainment Resort, Incheon. A private healing space near Incheon Airport.", body)
+{cta_band(T("Your MIDAS Experience <em>Starts Here</em>", "인스파이어에서 만나는 <em>미다스</em>", "在INSPIRE，开启您的<em>MIDAS体验</em>"),
+          T("Connect with us by phone, online, KakaoTalk, LINE, WhatsApp or WeChat to plan your visit",
+            "국내외 어디에서든 다양한 상담 채널을 통해 진료 문의 및 방문 예약이 가능합니다",
+            "无论您身在何处，均可通过多种通讯渠道进行诊疗咨询与预约"))}'''
+    page("experience.html", "experience", T("INSPIRE Experience", "인스파이어 경험", "INSPIRE体验"),
+         "MIDAS Clinic at Sun Tower Level 3, INSPIRE Entertainment Resort, Incheon — premium care and global hospitality near Incheon Airport.", body)
 
 
 def contact():
