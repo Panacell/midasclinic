@@ -391,6 +391,34 @@
     });
   });
 
+  /* Before & After: compare slider + consent gate */
+  document.querySelectorAll('.ba-frame').forEach(function (f) {
+    var r = f.querySelector('.ba-range');
+    function set(v) { f.style.setProperty('--pos', v + '%'); }
+    r.addEventListener('input', function () { set(r.value); });
+    /* also follow a drag that starts anywhere on the photo */
+    f.addEventListener('pointerdown', function (e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      var rect = f.getBoundingClientRect();
+      function move(ev) { var v = Math.max(0, Math.min(100, (ev.clientX - rect.left) / rect.width * 100)); r.value = v; set(v); }
+      move(e);
+      if (e.pointerType === 'mouse') {
+        var up = function () { window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', up); };
+        window.addEventListener('pointermove', move); window.addEventListener('pointerup', up);
+      }
+    });
+  });
+  var baOk = false;
+  try { baOk = sessionStorage.getItem('midas-ba-ok') === '1'; } catch (e) {}
+  document.querySelectorAll('[data-ba-gate]').forEach(function (w) {
+    if (!baOk) w.classList.add('gated');
+    var b = w.querySelector('.ba-open');
+    if (b) b.addEventListener('click', function () {
+      document.querySelectorAll('[data-ba-gate]').forEach(function (x) { x.classList.remove('gated'); });
+      try { sessionStorage.setItem('midas-ba-ok', '1'); } catch (e) {}
+    });
+  });
+
   /* QR codes: tap / click to enlarge */
   var lb = null;
   function closeLightbox() { if (lb) lb.classList.remove('open'); document.body.classList.remove('lock'); }

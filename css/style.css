@@ -685,3 +685,40 @@ img{height:auto}
   .hero-slide{grid-area:1/1;position:relative;top:auto}
   .hero-dots{margin:18px 0 14px}
 }
+
+/* =========================================================
+   Before & After — compare slider + consent gate
+   ========================================================= */
+.ba-wrap{position:relative}
+.ba-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.ba{margin:0}
+.ba-frame{position:relative;aspect-ratio:720/619;overflow:hidden;background:var(--mist);user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.ba-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 0 1px rgba(27,35,51,.08)}
+.ba-handle:after{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b2333' stroke-width='1.6'%3E%3Cpath d='M9 7l-5 5 5 5M15 7l5 5-5 5'/%3E%3C/svg%3E") center/22px no-repeat;box-shadow:0 6px 18px rgba(27,35,51,.22)}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;-webkit-appearance:none;appearance:none;touch-action:pan-y}
+.ba-range::-webkit-slider-thumb{-webkit-appearance:none;width:44px;height:100%}
+.ba-tag{position:absolute;top:14px;padding:5px 12px;background:rgba(27,35,51,.72);color:#fff;font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;pointer-events:none}
+.ba-tag.l{left:14px}.ba-tag.r{right:14px}
+.ba figcaption{display:flex;align-items:baseline;gap:12px;margin-top:14px;font-family:var(--sans);font-size:14px;color:var(--mute)}
+.ba figcaption b{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink)}
+.ba-range:focus-visible + *,.ba-frame:focus-within{outline:2px solid #4a6fa5;outline-offset:3px}
+
+/* consent gate: photos blurred until the visitor confirms */
+.ba-gate{position:absolute;inset:0;z-index:5;display:flex;align-items:flex-start;justify-content:center;padding-top:min(18vh,140px);background:rgba(245,247,251,.35)}
+.ba-wrap.gated .ba-grid{filter:blur(18px) saturate(.6);pointer-events:none}
+.ba-wrap:not(.gated) .ba-gate{display:none}
+.ba-gate-box{position:sticky;top:120px;max-width:520px;margin:0 20px;background:#fff;padding:34px 32px 30px;box-shadow:0 30px 60px rgba(27,35,51,.14);text-align:center}
+.ba-gate-box p{margin:14px 0 24px;font-size:15px;line-height:1.75;color:var(--ink-2)}
+.ba-gate-box .btn{width:100%;justify-content:center}
+.ba-wrap + .arrow-link{margin-top:30px}
+
+@media (max-width:1100px){.ba-grid{gap:20px}}
+@media (max-width:640px){
+  .ba-grid{grid-template-columns:1fr;gap:26px}
+  .ba-tag{top:10px;font-size:10.5px;padding:4px 9px}
+  .ba-tag.l{left:10px}.ba-tag.r{right:10px}
+  .ba-gate{padding-top:40px}
+  .ba-gate-box{padding:26px 22px 22px}
+}

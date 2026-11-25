@@ -47,3 +47,4 @@ tools/build_pages.py    서브 페이지 생성 스크립트
 - **줄기세포 유방 확대술·재건술**: 바디(`body.html`)에 포함
 - **PRP(PMRP)·슈퍼 PRP**: 피부(`skin.html`)에 포함
 - **기사·동영상**: `media.html`. 목록은 `tools/build_pages.py`의 `VIDEOS`, `PRESS`에 추가한 뒤 `python3 tools/build_pages.py` 실행
+- **전후 사진**: `results.html`(14건) + 코성형 페이지 일부(4건). 사진은 `images/results/caseNN-before.jpg / -after.jpg`. 첫 방문 시 안내문 확인 후 사진이 보입니다(세션 동안 유지). 게시 전 의료광고 심의·환자 동의 여부를 확인하세요.

@@ -501,6 +501,13 @@ CATS = [
 
 
 def detail_page(c):
+    ba_section = f'''<section class="section white">
+  <div class="wrap">
+    {sec_head(T("Before &amp; After", "전후 사진", "术前术后"), T("Rhinoplasty cases", "코성형 전후 사례", "鼻整形案例"))}
+    {ba_gallery([1, 3, 6, 11])}
+    <a class="arrow-link reveal" href="results.html">{tx("span", T("View all 14 cases", "전후 사례 14건 모두 보기", "查看全部14个案例"))}{ARROW}</a>
+  </div>
+</section>'''
     others = "".join(tx("a", o["name"], "", f' href="{o["slug"]}.html"') for o in CATS if o["slug"] != c["slug"])
     items = "".join(
         f'<div class="detail reveal"><div class="n">{i:02d}</div>{tx("h3", n)}{tx("p", d)}</div>'
@@ -535,6 +542,7 @@ def detail_page(c):
   </div>
 </section>
 
+{ba_section if c["slug"] == "rhinoplasty" else ""}
 <section class="section alt">
   <div class="wrap">
     {sec_head(T("FAQ", "자주 묻는 질문", "常见问题"), T("Questions", "자주 묻는 질문", "常见问题"))}
@@ -671,6 +679,7 @@ def procedures():
 <section class="section">
   <div class="wrap">
     <div class="cards">{cards}</div>
+    <a class="arrow-link reveal" href="results.html">{tx("span", T("Rhinoplasty before &amp; after", "코성형 전후 사진 보기", "鼻整形术前术后"))}{ARROW}</a>
     {tx("div", RISK, "notice reveal")}
   </div>
 </section>
@@ -1004,8 +1013,64 @@ def media():
          "Videos and press coverage of Midas Clinic Inspire and Dr. Seungho Choi.", body)
 
 
+# =====================================================================
+# Before & After (코성형 전후 사례) — images/results/caseNN-before.jpg / -after.jpg
+# =====================================================================
+RESULT_CASES = 14
+BA_NOTICE = T("These photos are of actual patients, shared with consent. Results differ from person to person and are not a guarantee of outcome. All surgery carries possible risks such as bleeding, infection, swelling, asymmetry and scarring.",
+              "아래 사진은 동의를 받은 실제 환자의 사례입니다. 수술 결과는 개인에 따라 다르며, 같은 결과를 보장하지 않습니다. 모든 수술에는 출혈·감염·부종·비대칭·흉터 등의 부작용이 발생할 수 있습니다.",
+              "以下照片为经本人同意的真实患者案例。手术效果因人而异，不代表能获得相同效果。所有手术均可能出现出血、感染、肿胀、不对称或疤痕等副作用。")
+
+
+def ba_card(n):
+    return f'''<figure class="ba reveal">
+  <div class="ba-frame" style="--pos:50%">
+    <img class="ba-after" src="images/results/case{n:02d}-after.jpg" alt="Case {n:02d} after" loading="lazy" width="720" height="619">
+    <img class="ba-before" src="images/results/case{n:02d}-before.jpg" alt="Case {n:02d} before" loading="lazy" width="720" height="619">
+    <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
+    <span class="ba-handle" aria-hidden="true"></span>
+    <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+  </div>
+  <figcaption><b>Case {n:02d}</b>{tx("span", T("Rhinoplasty", "코성형", "鼻整形"))}</figcaption>
+</figure>'''
+
+
+def ba_gallery(cases):
+    cards = "".join(ba_card(n) for n in cases)
+    return f'''<div class="ba-wrap" data-ba-gate>
+    <div class="ba-grid">{cards}</div>
+    <div class="ba-gate">
+      <div class="ba-gate-box">
+        {tx("div", T("Before &amp; After", "전후 사진", "术前术后"), "kicker")}
+        {tx("p", BA_NOTICE)}
+        <button type="button" class="btn ba-open">{tx("span", T("I understand — view photos", "확인했습니다 · 사진 보기", "我已了解 · 查看照片"))}</button>
+      </div>
+    </div>
+  </div>'''
+
+
+def results():
+    body = f'''{page_hero(T("Before &amp; After", "전후 사진", "术前术后"), T("Before &amp; After", "전후 사진", "术前术后"),
+                T("Rhinoplasty<br><em>case gallery</em>", "코성형<br>전후 사례", "鼻整形<br>案例"),
+                T("Front-view results of rhinoplasty and nose reconstruction. Drag the line on each photo to compare.",
+                  "코성형·코 재건 수술 전후의 정면 사진입니다. 사진 가운데 선을 좌우로 움직여 비교해 보세요.",
+                  "鼻整形与鼻重建的术前术后正面照片。左右拖动照片中间的线进行对比。"))}
+
+<section class="section">
+  <div class="wrap">
+    {ba_gallery(range(1, RESULT_CASES + 1))}
+    {tx("div", BA_NOTICE, "notice reveal")}
+  </div>
+</section>
+
+{cta_band(interest=0)}'''
+    page("results.html", "procedures", T("Before &amp; After", "전후 사진", "术前术后"),
+         "Rhinoplasty before and after case gallery — Midas Clinic Inspire.", body)
+
+
 if __name__ == "__main__":
     media()
+    results()
     about()
     procedures()
     for c in CATS:
