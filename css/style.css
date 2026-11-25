@@ -749,3 +749,5 @@ img{height:auto}
 @media (max-width:1180px){.gnb,.header-cta,.header-r .lang{display:none}.burger{display:block}.header-r{margin-left:auto}}
 /* 메인 인스파이어 섹션 국문 제목: 두 줄로 유지 */
 @media (min-width:1101px){html[lang="ko"] .split.experience .title{font-size:clamp(30px,2.5vw,38px)}}
+/* 사진이 있는 페이지 상단: 제목 칸이 좁아 글자 크기를 조금 줄임 */
+@media (min-width:1101px){.page-hero.with-img h1{font-size:clamp(38px,3.6vw,54px)}}

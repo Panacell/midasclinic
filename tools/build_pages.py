@@ -854,11 +854,11 @@ def global_care():
            "네. 메신저로 사진과 궁금한 점을 보내주시면 회복 과정을 안내해 드립니다.",
            "可以。通过即时通讯发送照片和问题，我们会指导您的恢复过程。")),
     ]
-    body = f'''{page_hero(T("Global Care", "글로벌 케어", "国际关怀"), T("Global Care", "글로벌 케어", "国际关怀"),
-                T("Fly in,<br><em>glow out</em>", "세계 어디서 오셔도,<br>편안하게", "无论从哪里来，<br>都安心舒适"),
-                T("From your first message to follow-up at home — care designed for patients from abroad.",
-                  "첫 메시지부터 귀국 후 관리까지, 해외 고객을 위해 설계한 진료 과정.",
-                  "从第一条消息到回国后的随访，专为海外顾客设计的诊疗流程。"),
+    body = f'''{page_hero(T("Global Care", "글로벌 환자 서비스", "国际患者服务"), T("Global Care", "글로벌 환자 서비스", "国际患者服务"),
+                T("Exceptional Care,<br><em>Wherever You're From</em>", "국경을 넘어 만나는<br>프리미엄 의료 서비스", "跨越国界，<br>尽享品质医疗"),
+                T("From your initial inquiry to post-treatment care, our international patient services are designed to make your experience in Korea seamless",
+                  "상담부터 진료, 사후관리까지 해외 환자를 위한 맞춤형 서비스를 제공합니다",
+                  "从初步咨询、就诊安排到术后管理，为国际患者提供个性化、便捷的医疗服务"),
                 img="images/hero-inspire.jpg")}
 
 <section class="section">
@@ -908,7 +908,7 @@ def global_care():
 </section>
 
 {cta_band(T("Start your <em>global consultation</em>", "해외 상담을 <em>시작하세요</em>", "开始您的<em>海外咨询</em>"))}'''
-    page("global-care.html", "global", T("Global Care", "글로벌 케어", "国际关怀"),
+    page("global-care.html", "global", T("Global Care", "글로벌 환자 서비스", "国际患者服务"),
          "International patients at Midas Clinic Inspire, near Incheon International Airport. Consult via KakaoTalk, WhatsApp, WeChat.", body)
 
 
