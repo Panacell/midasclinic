@@ -414,7 +414,7 @@
     document.querySelectorAll('.ba[data-cat]').forEach(function (b) { b.classList.toggle('hide', f !== 'all' && b.dataset.cat !== f); });
   }
   chipsBa.forEach(function (c) { c.addEventListener('click', function () { baFilter(c.dataset.f); }); });
-  if (chipsBa.length && /^#(nose|eye|lift|breast|face|regen|contour|fat)$/.test(location.hash)) baFilter(location.hash.slice(1));
+  if (chipsBa.length && /^#(nose|eye|lift|breast|face|regen|contour|fat|gum)$/.test(location.hash)) baFilter(location.hash.slice(1));
   var baOk = false;
   try { baOk = sessionStorage.getItem('midas-ba-ok') === '1'; } catch (e) {}
   document.querySelectorAll('[data-ba-gate]').forEach(function (w) {
