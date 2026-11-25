@@ -191,30 +191,30 @@
   var PROCEDURES = {
     face: [
       { icon: 'nose', en: ['Rhinoplasty', ['Rib Cartilage Rhinoplasty', 'Septoplasty', 'Revision Rhinoplasty', 'Male Rhinoplasty']],
-        ko: ['코성형 · 코 재건', ['늑연골(가슴연골) 코성형', '비중격 만곡증 교정', '코 재수술', '남자 코성형']],
-        zh: ['鼻整形 · 鼻重建', ['肋软骨隆鼻', '鼻中隔偏曲矫正', '鼻修复', '男士鼻整形']] },
-      { icon: 'eye', en: ['Eye Surgery', ['Double Eyelid (Non-incision / Partial / Full incision)', 'Ptosis Correction', 'Epicanthoplasty / Lateral Canthoplasty', 'Upper / Lower Blepharoplasty']],
-        ko: ['눈성형', ['매몰법 · 부분절개 · 절개법', '안검하수 (눈매교정)', '앞트임 · 뒤트임', '상안검 · 하안검']],
-        zh: ['眼部整形', ['埋线 · 部分切开 · 全切开双眼皮', '上睑下垂矫正', '开内眼角 · 开外眼角', '上眼睑 · 下眼睑整形']] },
-      { icon: 'lift', en: ['Lifting', ['Face Lift', 'Mid-face SMAS Lift', 'Sub-brow / Neck SMAS Lift', 'Cheek Lift · Forehead Lift']],
-        ko: ['리프팅', ['안면거상', '중안면 SMAS 리프팅', '눈썹하 · 목 SMAS 리프팅', '볼 리프팅 · 포헤드 리프팅']],
-        zh: ['提升', ['面部提升', '中面部SMAS提升', '眉下 · 颈部SMAS提升', '脸颊提升 · 额头提升']] },
-      { icon: 'face', en: ['Facial Contouring', ['T-zone Contouring', '3D Fat Grafting', 'Gummy Smile Correction']],
-        ko: ['윤곽 · 페이스', ['T존 성형', '3차원 입체 지방이식', '잇몸 성형']],
-        zh: ['轮廓整形', ['T区整形', '3D立体脂肪移植', '露龈笑矫正']] }
+        ko: ['코성형', ['늑연골 코성형', '비중격교정술', '코재수술', '남성 코성형']],
+        zh: ['鼻部整形', ['肋软骨鼻整形', '鼻中隔矫正术', '鼻整形修复术', '男士鼻整形']] },
+      { icon: 'eye', en: ['Eye Surgery', ['Double Eyelid Surgery (Non-incisional / Partial-incision / Full-incision)', 'Ptosis Correction', 'Epicanthoplasty / Lateral Canthoplasty', 'Upper / Lower Blepharoplasty']],
+        ko: ['눈성형', ['쌍꺼풀 수술 (비절개·부분절개·절개)', '안검하수 교정', '앞트임·뒤트임', '상안검·하안검 성형']],
+        zh: ['眼部整形', ['重睑术（非切开法／部分切开法／全切法）', '上睑下垂矫正', '内眦开大术／外眦成形术', '上睑／下睑整形术']] },
+      { icon: 'lift', en: ['Facial Lifting', ['Facelift', 'Midface SMAS Lift', 'Subbrow Lift · Neck SMAS Lift', 'Cheek Lift · Forehead Lift']],
+        ko: ['리프팅', ['안면거상술', '중안면 SMAS 거상술', '눈썹하 거상술 · 목 SMAS 거상술', '볼 리프팅 · 이마거상술']],
+        zh: ['面部提升', ['面部提升术', '中面部SMAS提升术', '眉下提升术 · 颈部SMAS提升术', '面颊提升术 · 额部提升术']] },
+      { icon: 'face', en: ['Facial Contouring', ['T-Zone Contouring', '3D Facial Fat Grafting', 'Gummy Smile Correction']],
+        ko: ['안면 윤곽', ['T존 윤곽성형', '3D 얼굴 지방이식', '잇몸 노출 교정']],
+        zh: ['面部轮廓塑形', ['T区轮廓塑形', '3D面部脂肪填充', '露龈笑矫正']] }
     ],
     body: [
-      { icon: 'body', en: ['Liposuction', ['Area-specific Liposuction']], ko: ['지방흡입', ['부위별 지방흡입']], zh: ['吸脂', ['局部吸脂']] },
-      { icon: 'abdomen', en: ['Abdominoplasty', ['Tummy Tuck']], ko: ['복부 성형', ['늘어진 복부 피부 · 근막 정리']], zh: ['腹部整形', ['腹壁成形']] },
-      { icon: 'breast', en: ['Breast Lift', ['Breast Ptosis Correction']], ko: ['유방 하수 교정', ['처진 가슴의 위치 · 형태 교정']], zh: ['乳房提升', ['乳房下垂矫正']] },
-      { icon: 'breast', en: ['Stem Cell Breast Surgery', ['Stem Cell Breast Augmentation', 'Stem Cell Breast Reconstruction']], ko: ['줄기세포 유방 성형', ['줄기세포 유방 확대술', '줄기세포 유방 재건술']], zh: ['干细胞乳房整形', ['干细胞丰胸', '干细胞乳房重建']] },
-      { icon: 'hair', en: ['Hair Transplant', ['Hairline & Density Design']], ko: ['모발이식', ['헤어라인 · 밀도 디자인']], zh: ['植发', ['发际线与密度设计']] }
+      { icon: 'body', en: ['Liposuction', ['Area-specific Liposuction']], ko: ['지방흡입', ['부위별 지방흡입']], zh: ['吸脂塑形', ['局部吸脂']] },
+      { icon: 'abdomen', en: ['Abdominoplasty', ['Abdominal Skin &amp; Fascia Tightening']], ko: ['복부성형술', ['늘어진 복부 피부·근막 개선']], zh: ['腹壁整形术', ['腹部皮肤与筋膜收紧']] },
+      { icon: 'breast', en: ['Breast Lift', ['Breast Ptosis Correction']], ko: ['유방거상술', ['처진 가슴의 위치·형태 교정']], zh: ['乳房提升术', ['乳房下垂矫正']] },
+      { icon: 'breast', en: ['Stem Cell Breast Surgery', ['Stem Cell Breast Augmentation', 'Stem Cell Breast Reconstruction']], ko: ['줄기세포 가슴성형', ['줄기세포 가슴성형', '줄기세포 유방재건']], zh: ['干细胞乳房整形', ['干细胞隆乳', '干细胞乳房重建']] },
+      { icon: 'hair', en: ['Hair Transplantation', ['Hairline &amp; Density Planning']], ko: ['모발이식', ['헤어라인·밀도 계획']], zh: ['毛发移植', ['发际线与密度规划']] }
     ],
     skin: [
-      { icon: 'spark', en: ['Botox · Filler', ['Wrinkle Botox', 'Volume Filler']], ko: ['보톡스 · 필러', ['주름 보톡스', '볼륨 필러']], zh: ['肉毒素 · 玻尿酸', ['除皱肉毒素', '填充玻尿酸']] },
-      { icon: 'ring', en: ['Skin Renewal', ['Deep Dermal Renewal', 'Pore Care', 'Skin Booster']], ko: ['피부 재생', ['피부 심부 재생', '모공', '물광주사']], zh: ['皮肤再生', ['深层皮肤再生', '毛孔管理', '水光针']] },
-      { icon: 'spark', en: ['PRP · Super PRP', ['PRP · PMRP', 'Super PRP']], ko: ['PRP · 슈퍼 PRP', ['PRP · PMRP', '슈퍼 PRP']], zh: ['PRP · 超级PRP', ['PRP · PMRP', '超级PRP']] },
-      { icon: 'dots', en: ['Pigment · Acne', ['Melasma · Freckles · Redness', 'Acne · Acne Scars']], ko: ['색소 · 여드름', ['기미 · 주근깨 · 안면홍조', '여드름 · 여드름흉터']], zh: ['色斑 · 痘痘', ['黄褐斑 · 雀斑 · 面部潮红', '痘痘 · 痘印']] }
+      { icon: 'spark', en: ['Botulinum Toxin &amp; Dermal Fillers', ['Botulinum Toxin', 'Dermal Fillers']], ko: ['보툴리눔 톡신·필러', ['보툴리눔 톡신', '필러']], zh: ['肉毒毒素注射与填充', ['肉毒毒素注射', '填充']] },
+      { icon: 'ring', en: ['Skin Renewal', ['Deep Dermal Renewal', 'Skin Boosters', 'Pore Refinement']], ko: ['피부 개선', ['진피층 피부 개선', '스킨부스터', '모공 개선']], zh: ['肤质改善', ['真皮层肤质改善', '肤质改善注射', '毛孔改善']] },
+      { icon: 'spark', en: ['PRP · Super PRP', ['PRP · PMRP', 'Super PRP']], ko: ['PRP · 슈퍼 PRP', ['PRP·PMRP', '슈퍼 PRP']], zh: ['PRP · Super PRP', ['PRP·PMRP疗法', 'Super PRP疗法']] },
+      { icon: 'dots', en: ['Pigmentation, Redness &amp; Acne', ['Melasma · Freckles · Redness', 'Acne · Acne Scars']], ko: ['색소·홍조·여드름', ['기미·주근깨·안면홍조', '여드름·여드름 흉터']], zh: ['色素沉着、泛红及痤疮', ['黄褐斑 · 雀斑 · 面部泛红', '痤疮 · 痤疮瘢痕']] }
     ]
   };
   var PROC_IMG = { face: 'images/standard-portrait.jpg', body: 'images/inspire-lounge.jpg', skin: 'images/standard-portrait.jpg' };
