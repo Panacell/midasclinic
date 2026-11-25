@@ -43,7 +43,7 @@ tools/build_pages.py    서브 페이지 생성 스크립트
 6. **메신저 링크**: 카카오톡 채널·WhatsApp·WeChat 주소를 받으면 연결합니다.
 
 ## 기존 사이트와의 관계
-- **세포 메뉴**: 새 사이트에서는 메뉴의 `Cell / 세포` 항목이 파나셀 홈페이지(https://panacellbio.com/ko/)로 새 창 연결됩니다. 주소는 `tools/build_pages.py`의 `PANACELL_URL`과 `index.html`에서 바꿀 수 있습니다.
+- **세포 메뉴**: 새 사이트에서는 메뉴의 `Cell / 세포` 항목이 파나셀 사이트(https://panacell-website.pages.dev/)로 새 창 연결됩니다. 주소는 `tools/build_pages.py`의 `PANACELL_URL`과 `index.html`에서 바꿀 수 있습니다.
 - **줄기세포 유방 확대술·재건술**: 바디(`body.html`)에 포함
 - **PRP(PMRP)·슈퍼 PRP**: 피부(`skin.html`)에 포함
 - **기사·동영상**: `media.html`. 목록은 `tools/build_pages.py`의 `VIDEOS`, `PRESS`에 추가한 뒤 `python3 tools/build_pages.py` 실행

@@ -35,7 +35,7 @@ def tx(tag, t, cls="", attrs=""):
 ARROW = '<svg><use href="#i-arrow"/></svg>'
 
 # 세포 항목은 파나셀 홈페이지로 연결 (새 창)
-PANACELL_URL = "https://panacellbio.com/ko/"
+PANACELL_URL = "https://panacell-website.pages.dev/"
 
 NAV = [
     ("about", "about.html", T("About", "병원소개", "关于我们")),
