@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Eye Surgery — MIDAS CLINIC · INSPIRE</title>
 <meta name="description" content="Eye Surgery at Midas Clinic, Inspire Resort Incheon. Double eyelid, ptosis correction, canthoplasty and blepharoplasty.">
 <meta property="og:title" content="Eye Surgery — MIDAS CLINIC · INSPIRE">
@@ -15,6 +15,7 @@
 </head>
 <body data-title-ko="눈성형 — 미다스의원 인스파이어" data-title-zh="眼部整形 — MIDAS CLINIC · INSPIRE">
 
+<a class="skip" href="#main">Skip to content</a>
 <svg width="0" height="0" class="sr" aria-hidden="true">
   <symbol id="i-arrow" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 6h18M13 1l5 5-5 5"/></symbol>
   <symbol id="i-chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 3l4 4 4-4"/></symbol>
@@ -55,10 +56,14 @@
   <a href="media.html" data-ko="미디어" data-zh="媒体">Media</a>
   <a href="contact.html" data-ko="오시는 길" data-zh="联系我们">Contact</a>
   <a class="ext" href="https://panacellbio.com/ko/" target="_blank" rel="noopener" data-ko="세포" data-zh="细胞">Cell</a>
-  <div class="drawer-lang"><button data-lang="en">EN</button><button data-lang="ko">KR</button><button data-lang="zh">中文</button></div>
+  <div class="drawer-foot">
+    <div class="drawer-lang"><button data-lang="en">EN</button><button data-lang="ko">KR</button><button data-lang="zh">中文</button></div>
+    <a class="drawer-tel" href="tel:+82322523210">+82 32 252 3210</a>
+    <a class="btn" href="contact.html#form"><span data-ko="상담 예약하기" data-zh="预约咨询">Book a Consultation</span><svg><use href="#i-arrow"/></svg></a>
+  </div>
 </nav>
 
-<main>
+<main id="main">
 <section class="page-hero">
   <div class="wrap">
       <div class="crumbs"><a href="index.html" data-ko="홈" data-zh="首页">Home</a> / <span data-ko="눈성형" data-zh="眼部整形">Eye Surgery</span></div>
@@ -155,7 +160,12 @@
   </div>
 </footer>
 
-<div class="mobile-bar"><a href="tel:+82322523210" data-ko="전화" data-zh="致电">Call</a><a href="contact.html" data-ko="상담 예약" data-zh="预约咨询">Consultation</a></div>
+<nav class="mobile-bar" aria-label="Quick actions">
+  <a href="tel:+82322523210"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span data-ko="전화" data-zh="致电">Call</span></a>
+  <a href="contact.html#messengers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg><span data-ko="메신저" data-zh="在线咨询">Messenger</span></a>
+  <a class="primary" href="contact.html#form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span data-ko="상담 예약" data-zh="预约咨询">Consultation</span></a>
+</nav>
+<a class="to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 
 <script src="js/main.js"></script>
 </body>

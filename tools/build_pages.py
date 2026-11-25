@@ -88,7 +88,11 @@ def header(active):
 
 <nav class="drawer" id="drawer" aria-label="Mobile">
   {drawer}
-  <div class="drawer-lang"><button data-lang="en">EN</button><button data-lang="ko">KR</button><button data-lang="zh">中文</button></div>
+  <div class="drawer-foot">
+    <div class="drawer-lang"><button data-lang="en">EN</button><button data-lang="ko">KR</button><button data-lang="zh">中文</button></div>
+    <a class="drawer-tel" href="tel:+82322523210">+82 32 252 3210</a>
+    <a class="btn" href="contact.html#form">{tx("span", BOOK)}{ARROW}</a>
+  </div>
 </nav>
 '''
 
@@ -119,7 +123,12 @@ def footer():
   </div>
 </footer>
 
-<div class="mobile-bar">{tx("a", T("Call", "전화", "致电"), "", ' href="tel:+82322523210"')}{tx("a", CONSULT, "", ' href="contact.html"')}</div>
+<nav class="mobile-bar" aria-label="Quick actions">
+  <a href="tel:+82322523210"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>{tx("span", T("Call", "전화", "致电"))}</a>
+  <a href="contact.html#messengers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg>{tx("span", T("Messenger", "메신저", "在线咨询"))}</a>
+  <a class="primary" href="contact.html#form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>{tx("span", CONSULT)}</a>
+</nav>
+<a class="to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 '''
 
 
@@ -174,7 +183,7 @@ def page(filename, active, title, desc, body):
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{en_title} — MIDAS CLINIC · INSPIRE</title>
 <meta name="description" content="{esc(desc)}">
 <meta property="og:title" content="{esc(en_title)} — MIDAS CLINIC · INSPIRE">
@@ -187,8 +196,9 @@ def page(filename, active, title, desc, body):
 </head>
 <body data-title-ko="{esc(ko_title)} — 미다스의원 인스파이어" data-title-zh="{esc(zh_title)} — MIDAS CLINIC · INSPIRE">
 
+<a class="skip" href="#main">Skip to content</a>
 {header(active)}
-<main>
+<main id="main">
 {body}
 </main>
 
@@ -771,7 +781,10 @@ def global_care():
       <div class="card qr-card reveal"><img src="images/qr-line.png" alt="LINE QR code" loading="lazy"><h3>LINE</h3>{tx("p", T("For guests from Japan, Taiwan and Thailand", "일본·대만·태국 고객", "适合日本、台湾、泰国顾客"))}</div>
       <div class="card qr-card reveal"><img src="images/qr-whatsapp.png" alt="WhatsApp QR code" loading="lazy"><h3>WhatsApp</h3>{tx("p", T("For guests worldwide", "해외 고객", "适合全球顾客"))}</div>
       <div class="card qr-card reveal"><img src="images/qr-wechat.png" alt="WeChat QR code" loading="lazy"><h3>WeChat</h3>{tx("p", T("For guests from China", "중국 고객", "适合中国顾客"))}</div>
+    {tx("p", T("On your phone? Press and hold a QR code to save it, then scan it from the messenger app.", "휴대폰으로 보고 계신가요? QR 코드를 길게 눌러 저장한 뒤 메신저 앱에서 스캔해 주세요.", "正在用手机浏览？长按二维码保存后，在聊天应用中扫描即可。"), "qr-tip")}
+    <div style="display:none"></div>
     </div>
+    {tx("p", T("On a phone? Tap a QR code to enlarge it, then scan it from another device or save the image.", "휴대폰으로 보고 계신가요? QR 코드를 누르면 크게 보입니다. 다른 기기로 스캔하거나 이미지를 저장해 앱에서 불러오세요.", "正在用手机浏览？点击二维码可放大，用其他设备扫描或保存图片后在应用中识别。"), "qr-hint")}
   </div>
 </section>
 
@@ -877,25 +890,26 @@ def contact():
         <div class="info-row"><dt data-i18n="contact.hours">Hours</dt><dd class="hours" id="hours"></dd></div>
         <div class="info-row"><dt data-i18n="contact.messenger">Messenger</dt><dd class="chips"><span>KakaoTalk</span><span>LINE</span><span>WhatsApp</span><span>WeChat</span></dd></div>
       </dl>
-      <div class="qr-row">
+      <div class="qr-row" id="messengers">
         <figure class="qr"><img src="images/qr-kakao.png" alt="KakaoTalk QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>KakaoTalk</figcaption></figure>
         <figure class="qr"><img src="images/qr-line.png" alt="LINE QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>LINE</figcaption></figure>
         <figure class="qr"><img src="images/qr-whatsapp.png" alt="WhatsApp QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>WhatsApp</figcaption></figure>
         <figure class="qr"><img src="images/qr-wechat.png" alt="WeChat QR" loading="lazy" onerror="this.parentNode.remove()"><figcaption>WeChat</figcaption></figure>
       </div>
+      {tx("p", T("On a phone? Tap a QR code to enlarge it, then scan it from another device or save the image.", "휴대폰으로 보고 계신가요? QR 코드를 누르면 크게 보입니다. 다른 기기로 스캔하거나 이미지를 저장해 앱에서 불러오세요.", "正在用手机浏览？点击二维码可放大，用其他设备扫描或保存图片后在应用中识别。"), "qr-hint")}
     </div>
     <form class="form reveal" id="form" novalidate>
       <h3 data-i18n="form.title">Online Consultation</h3>
       <p data-i18n="form.sub">We will contact you during clinic hours.</p>
       <div class="two">
-        <div class="field"><label for="fName" data-i18n="form.name">Name</label><input id="fName" autocomplete="name"></div>
-        <div class="field"><label for="fTel" data-i18n="form.phone">Phone / Messenger ID</label><input id="fTel" autocomplete="tel"></div>
+        <div class="field"><label for="fName" data-i18n="form.name">Name</label><input id="fName" autocomplete="name" enterkeyhint="next"></div>
+        <div class="field"><label for="fTel" data-i18n="form.phone">Phone / Messenger ID</label><input id="fTel" type="text" autocomplete="tel" enterkeyhint="next"></div>
       </div>
       <div class="two">
         <div class="field"><label for="fCat" data-i18n="form.interest">Interest</label><select id="fCat"></select></div>
         <div class="field"><label for="fLang" data-i18n="form.lang">Preferred Language</label><select id="fLang"><option>English</option><option>한국어</option><option>中文</option></select></div>
       </div>
-      <div class="field"><label for="fMsg" data-i18n="form.msg">Message</label><textarea id="fMsg"></textarea></div>
+      <div class="field"><label for="fMsg" data-i18n="form.msg">Message</label><textarea id="fMsg" rows="3"></textarea></div>
       <label class="agree"><input type="checkbox" id="fAgree"><span data-i18n="form.agree">I agree to the collection and use of my name and contact details for consultation purposes. (Required)</span></label>
       <button class="btn" type="submit"><span data-i18n="form.submit">Request Consultation</span>{ARROW}</button>
       <div class="form-msg" id="formMsg" role="status"></div>

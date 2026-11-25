@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Global Care — MIDAS CLINIC · INSPIRE</title>
 <meta name="description" content="International patients at Midas Clinic Inspire, near Incheon International Airport. Consult via KakaoTalk, WhatsApp, WeChat.">
 <meta property="og:title" content="Global Care — MIDAS CLINIC · INSPIRE">
@@ -15,6 +15,7 @@
 </head>
 <body data-title-ko="글로벌 케어 — 미다스의원 인스파이어" data-title-zh="国际关怀 — MIDAS CLINIC · INSPIRE">
 
+<a class="skip" href="#main">Skip to content</a>
 <svg width="0" height="0" class="sr" aria-hidden="true">
   <symbol id="i-arrow" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 6h18M13 1l5 5-5 5"/></symbol>
   <symbol id="i-chev" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 3l4 4 4-4"/></symbol>
@@ -55,10 +56,14 @@
   <a href="media.html" data-ko="미디어" data-zh="媒体">Media</a>
   <a href="contact.html" data-ko="오시는 길" data-zh="联系我们">Contact</a>
   <a class="ext" href="https://panacellbio.com/ko/" target="_blank" rel="noopener" data-ko="세포" data-zh="细胞">Cell</a>
-  <div class="drawer-lang"><button data-lang="en">EN</button><button data-lang="ko">KR</button><button data-lang="zh">中文</button></div>
+  <div class="drawer-foot">
+    <div class="drawer-lang"><button data-lang="en">EN</button><button data-lang="ko">KR</button><button data-lang="zh">中文</button></div>
+    <a class="drawer-tel" href="tel:+82322523210">+82 32 252 3210</a>
+    <a class="btn" href="contact.html#form"><span data-ko="상담 예약하기" data-zh="预约咨询">Book a Consultation</span><svg><use href="#i-arrow"/></svg></a>
+  </div>
 </nav>
 
-<main>
+<main id="main">
 <section class="page-hero with-img">
   <div class="wrap">
       <div class="crumbs"><a href="index.html" data-ko="홈" data-zh="首页">Home</a> / <span data-ko="글로벌 케어" data-zh="国际关怀">Global Care</span></div>
@@ -107,7 +112,10 @@
       <div class="card qr-card reveal"><img src="images/qr-line.png" alt="LINE QR code" loading="lazy"><h3>LINE</h3><p data-ko="일본·대만·태국 고객" data-zh="适合日本、台湾、泰国顾客">For guests from Japan, Taiwan and Thailand</p></div>
       <div class="card qr-card reveal"><img src="images/qr-whatsapp.png" alt="WhatsApp QR code" loading="lazy"><h3>WhatsApp</h3><p data-ko="해외 고객" data-zh="适合全球顾客">For guests worldwide</p></div>
       <div class="card qr-card reveal"><img src="images/qr-wechat.png" alt="WeChat QR code" loading="lazy"><h3>WeChat</h3><p data-ko="중국 고객" data-zh="适合中国顾客">For guests from China</p></div>
+    <p class="qr-tip" data-ko="휴대폰으로 보고 계신가요? QR 코드를 길게 눌러 저장한 뒤 메신저 앱에서 스캔해 주세요." data-zh="正在用手机浏览？长按二维码保存后，在聊天应用中扫描即可。">On your phone? Press and hold a QR code to save it, then scan it from the messenger app.</p>
+    <div style="display:none"></div>
     </div>
+    <p class="qr-hint" data-ko="휴대폰으로 보고 계신가요? QR 코드를 누르면 크게 보입니다. 다른 기기로 스캔하거나 이미지를 저장해 앱에서 불러오세요." data-zh="正在用手机浏览？点击二维码可放大，用其他设备扫描或保存图片后在应用中识别。">On a phone? Tap a QR code to enlarge it, then scan it from another device or save the image.</p>
   </div>
 </section>
 
@@ -157,7 +165,12 @@
   </div>
 </footer>
 
-<div class="mobile-bar"><a href="tel:+82322523210" data-ko="전화" data-zh="致电">Call</a><a href="contact.html" data-ko="상담 예약" data-zh="预约咨询">Consultation</a></div>
+<nav class="mobile-bar" aria-label="Quick actions">
+  <a href="tel:+82322523210"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span data-ko="전화" data-zh="致电">Call</span></a>
+  <a href="contact.html#messengers"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 5h16v11H9l-5 4z"/></svg><span data-ko="메신저" data-zh="在线咨询">Messenger</span></a>
+  <a class="primary" href="contact.html#form"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span data-ko="상담 예약" data-zh="预约咨询">Consultation</span></a>
+</nav>
+<a class="to-top" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 
 <script src="js/main.js"></script>
 </body>

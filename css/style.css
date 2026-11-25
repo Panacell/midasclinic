@@ -481,3 +481,158 @@ html[lang="ko"] .lead,html[lang="ko"] .prose{line-height:1.95}
 .qr{padding:10px 10px 6px}
 .qr img{width:100%;height:auto;aspect-ratio:1/1}
 @media (max-width:640px){.qr-row{grid-template-columns:repeat(2,1fr);max-width:320px}}
+
+/* =========================================================
+   UX optimisation — PC & mobile
+   ========================================================= */
+html{scroll-padding-top:90px;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{-webkit-tap-highlight-color:transparent}
+body.lock{overflow:hidden;touch-action:none}
+img{height:auto}
+::selection{background:#1f2635;color:#fff}
+
+/* accessibility */
+.skip{position:fixed;left:16px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 16px;font-family:var(--sans);font-size:14px;transition:top .2s}
+.skip:focus{top:12px}
+:focus{outline:none}
+:focus-visible{outline:2px solid #4a6fa5;outline-offset:3px}
+.btn:focus-visible,.header-cta:focus-visible{outline-offset:4px}
+
+/* tap targets */
+.arrow-link{min-height:44px;margin-top:22px}
+.crumbs a,.crumbs span{display:inline-block;padding:10px 0}
+.page-hero .crumbs{margin-bottom:12px}
+.faq summary{min-height:56px;align-items:center}
+.tab{min-height:48px}
+.lang-btn{min-height:44px;padding:0 4px}
+.lang-menu button{min-height:40px}
+.other-procs a{min-height:44px;display:inline-flex;align-items:center}
+
+/* form: 16px prevents iOS zoom on focus */
+.field input,.field select,.field textarea{font-size:16px;min-height:40px}
+.field select{-webkit-appearance:none;appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 3l4 4 4-4' fill='none' stroke='%231b2333' stroke-width='1.3'/%3E%3C/svg%3E") no-repeat right 2px center/10px;padding-right:20px}
+.agree{cursor:pointer}
+.agree input{width:18px;height:18px;flex:none}
+.field.err{border-color:#c0392b}
+.form .btn[disabled]{opacity:.6;pointer-events:none}
+
+/* header: hide on scroll down, show on scroll up */
+.header{transition:background .4s,box-shadow .4s,transform .4s var(--ease)}
+.header.hide{transform:translateY(-100%)}
+.header.menu-open{transform:none;background:transparent;box-shadow:none}
+
+/* drawer */
+.drawer{overflow-y:auto;overscroll-behavior:contain;padding-bottom:calc(30px + env(safe-area-inset-bottom));padding-top:96px}
+.drawer > a{display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:12px 0;font-size:26px}
+.drawer > a.active{color:#4a6fa5}
+.drawer-foot{margin-top:auto;padding-top:28px;display:grid;gap:16px}
+.drawer .drawer-lang{margin-top:0}
+.drawer .drawer-lang button{min-height:44px;min-width:56px}
+.drawer-tel{font-family:var(--serif);font-size:28px}
+.drawer-foot .btn{justify-content:center;height:54px}
+@media (min-width:1101px){.drawer{display:none}}
+
+/* mobile quick bar */
+.mobile-bar{display:none}
+@media (max-width:1100px){
+  .mobile-bar{display:grid;grid-template-columns:1fr 1fr 1.3fr;position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(245,247,251,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom);transition:transform .35s var(--ease)}
+  .mobile-bar a{height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-family:var(--sans);font-size:12.5px;font-weight:500;color:var(--ink)}
+  .mobile-bar a svg{width:20px;height:20px}
+  .mobile-bar a.primary{background:var(--navy);color:#fff;flex-direction:row;gap:8px;font-size:14px}
+  .mobile-bar.hide{transform:translateY(110%)}
+  body{padding-bottom:calc(58px + env(safe-area-inset-bottom))}
+  .footer{padding-bottom:34px}
+}
+
+/* back to top */
+.to-top{position:fixed;right:22px;bottom:24px;z-index:45;width:48px;height:48px;border-radius:50%;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(27,35,51,.14);opacity:0;visibility:hidden;transform:translateY(10px);transition:.35s var(--ease)}
+.to-top svg{width:20px;height:20px}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--ink);color:#fff}
+@media (max-width:1100px){.to-top{right:16px;bottom:calc(72px + env(safe-area-inset-bottom));width:44px;height:44px}}
+
+/* hero: real mobile viewport height, tighter on phones */
+.hero{height:clamp(620px,100svh,900px)}
+@media (max-width:640px){
+  .hero{height:auto;min-height:0;display:flex;flex-direction:column;padding-top:104px}
+  .hero-slides{position:relative;inset:auto;min-height:330px}
+  .hero-slide{top:0;transform:none}
+  .hero h1,.hero h2{font-size:34px;margin:16px 0 16px}
+  .hero p{font-size:15.5px}
+  .hero .btn{margin-top:24px}
+  .hero-media{position:relative;width:100%;height:auto;aspect-ratio:4/3;opacity:1;order:2;margin-top:8px}
+  .hero-media img{-webkit-mask-image:none;mask-image:none;object-position:70% center}
+  .hero-media:after{height:30%}
+  .hero-dots{position:absolute;bottom:auto;top:calc(104px + 312px)}
+  .hero-dots button{width:10px;height:10px}
+}
+
+/* mobile rhythm */
+@media (max-width:640px){
+  :root{--pad:20px}
+  .title{font-size:30px}
+  html[lang="ko"] .title,html[lang="zh"] .title{font-size:28px}
+  .lead{font-size:15.5px}
+  .split-media,.split.standard .split-media,.split.experience .split-media{min-height:0;aspect-ratio:4/3}
+  .split-body{padding:56px var(--pad) 64px}
+  .features{padding:40px 0 30px}
+  .procedures{padding:70px 0}
+  .proc-head{margin-bottom:28px}
+  .proc-media{aspect-ratio:16/10}
+  .proc-item > button{padding:18px 0;min-height:56px}
+  .director-card,.director-card:has(.dir-photo){min-height:0;aspect-ratio:4/5;padding:32px 22px}
+  .director-card blockquote{font-size:18px;margin-top:20px}
+  .page-hero{padding:112px 0 52px}
+  .page-hero h1{font-size:36px}
+  html[lang="ko"] .page-hero h1,html[lang="zh"] .page-hero h1{font-size:32px}
+  .page-hero.with-img .wrap{padding:112px var(--pad) 40px}
+  .page-hero.with-img .media{min-height:0;aspect-ratio:4/3}
+  .section{padding:64px 0}
+  .sec-head{margin-bottom:32px;gap:14px}
+  .card{padding:26px 22px}
+  .detail{padding:22px 0}
+  .tl{padding-top:20px}
+  .cta-band{padding:60px 0}
+  .cta-band .btns{width:100%}
+  .cta-band .btn{flex:1;justify-content:center}
+  .tel{font-size:34px}
+  .contact{padding:70px 0}
+  .info{margin-top:28px}
+  .qr-row{max-width:none;grid-template-columns:repeat(4,1fr);gap:8px}
+  .qr{padding:6px 6px 4px}
+  .qr figcaption{font-size:10.5px}
+  .video figcaption{font-size:17px}
+  .space-card .body{padding:18px 20px 22px}
+  .footer-bottom{font-size:11.5px}
+}
+/* tabs scroll if needed */
+.tabs{overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+
+/* QR: tap to enlarge (useful on mobile — show to another device) */
+.qr,.qr-card img{cursor:zoom-in}
+.qr-hint{display:none;font-family:var(--sans);font-size:13px;color:var(--mute);margin-top:12px;line-height:1.6}
+@media (hover:none){.qr-hint{display:block}}
+.lightbox{position:fixed;inset:0;z-index:120;background:rgba(15,20,32,.86);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;opacity:0;visibility:hidden;transition:.3s}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox img{width:min(78vw,360px);height:auto;background:#fff;padding:16px}
+.lightbox p{color:#fff;font-family:var(--sans);font-size:15px;letter-spacing:.04em}
+.lightbox button{position:absolute;top:calc(16px + env(safe-area-inset-top));right:16px;width:48px;height:48px;color:#fff;font-size:30px;line-height:1}
+
+/* PC polish */
+@media (min-width:1101px){
+  .card,.proc-item > button,.press,.other-procs a{transition:all .35s var(--ease)}
+  .split-body{max-width:640px}
+}
+@media (hover:hover){.btn:hover svg,.arrow-link:hover svg{transform:translateX(6px)}}
+.drawer-foot a{border:0;min-height:0}
+.drawer-foot .drawer-tel{padding:4px 0;font-size:26px}
+.drawer-foot .btn{padding:0 24px;font-family:var(--sans);font-size:15px;color:#fff}
+@media (max-width:640px){
+  .hero-slides{order:0}.hero-dots{order:1;position:relative;top:auto;bottom:auto;margin:6px 0 10px}.hero-media{order:2}
+}
+.page-hero .crumbs a{display:inline-block;padding:12px 4px 12px 0}
+@media (max-width:1100px){
+  body{padding-bottom:0}
+  .footer{padding-bottom:calc(92px + env(safe-area-inset-bottom))}
+}
