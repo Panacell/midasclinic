@@ -50,7 +50,7 @@
 
       'contact.kicker': 'Consultation', 'contact.title': 'Premium Care,<br><em>Within Reach</em>',
       'contact.address': 'Address', 'contact.hours': 'Hours', 'contact.messenger': 'Messenger',
-      'contact.addressText': 'Sun Tower 3F, Inspire Entertainment Resort<br>127 Gonghang-munhwa-ro, Jung-gu, Incheon, Korea',
+      'contact.addressText': 'Sun Tower 3F, Inspire Entertainment Resort<br>127 Gonghang-munhwa-ro, Yeongjong-gu, Incheon, Korea',
 
       'form.title': 'Online Consultation', 'form.sub': 'We will contact you during clinic hours.',
       'form.name': 'Name', 'form.phone': 'Phone / Messenger ID', 'form.interest': 'Interest',
@@ -108,7 +108,7 @@
 
       'contact.kicker': '상담 및 예약', 'contact.title': '어디서든 만나는<br><em>프리미엄 의료 서비스</em>',
       'contact.address': '주소', 'contact.hours': '진료시간', 'contact.messenger': '메신저',
-      'contact.addressText': '인천광역시 중구 공항문화로 127<br>인스파이어 엔터테인먼트 리조트 선타워 3층',
+      'contact.addressText': '인천광역시 영종구 공항문화로 127<br>인스파이어 엔터테인먼트 리조트 선타워 3층',
 
       'form.title': '온라인 상담 신청', 'form.sub': '남겨주신 연락처로 진료시간 내 연락드립니다.',
       'form.name': '성함', 'form.phone': '연락처 / 메신저 ID', 'form.interest': '관심 분야',
@@ -166,7 +166,7 @@
 
       'contact.kicker': '预约咨询', 'contact.title': '品质医疗，<br><em>触手可及</em>',
       'contact.address': '地址', 'contact.hours': '诊疗时间', 'contact.messenger': '即时通讯',
-      'contact.addressText': '韩国仁川广域市中区机场文化路127<br>Inspire Entertainment Resort Sun Tower 3层',
+      'contact.addressText': '韩国仁川广域市永宗区机场文化路127<br>Inspire Entertainment Resort Sun Tower 3层',
 
       'form.title': '在线咨询', 'form.sub': '我们将在诊疗时间内与您联系。',
       'form.name': '姓名', 'form.phone': '电话 / 即时通讯ID', 'form.interest': '咨询项目',
@@ -339,7 +339,7 @@
     document.getElementById('langLabel').textContent = LANG_LABEL[lang];
     document.querySelectorAll('[data-lang]').forEach(function (b) { b.classList.toggle('on', b.dataset.lang === lang); });
     renderProcedures(); renderCreds(); renderInterestOptions(); renderHours();
-    try { localStorage.setItem('midas-lang', lang); } catch (e) {}
+    try { sessionStorage.setItem('midas-lang', lang); } catch (e) {}
   }
 
   /* ---------------------------------------------------------
@@ -562,10 +562,12 @@
   });
 
   /* ---------------------------------------------------------
-     9. Init language: saved → browser → EN
+     9. Init language: every new visit opens in English.
+        A language picked from the menu is kept only while the
+        visitor moves between pages in the same tab (sessionStorage).
      --------------------------------------------------------- */
   var saved = null;
-  try { saved = localStorage.getItem('midas-lang'); } catch (e) {}
-  var nav = (navigator.language || 'en').toLowerCase();
-  setLang(saved || (nav.indexOf('ko') === 0 ? 'ko' : nav.indexOf('zh') === 0 ? 'zh' : 'en'));
+  try { localStorage.removeItem('midas-lang'); } catch (e) {}  // drop the old permanent setting
+  try { saved = sessionStorage.getItem('midas-lang'); } catch (e) {}
+  setLang(saved || 'en');
 })();
