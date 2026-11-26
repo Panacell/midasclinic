@@ -117,7 +117,7 @@ def footer():
       </div>
     </div>
     <div class="footer-bottom">
-      <span>미다스의원 인스파이어리조트점 (구)선이고은 성형외과 · Formerly Beauty Line Plastic Surgery · 대표원장 최승호 · 사업자등록번호 617-66-00589<br>인천광역시 중구 공항문화로 127 인스파이어 엔터테인먼트 리조트 선타워 3층 · T. 032-252-3210 · F. 032-252-3211</span>
+      <span>미다스의원 인스파이어리조트점 (구)선이고은 성형외과 · Formerly Beauty Line Plastic Surgery · 대표원장 최승호 · 사업자등록번호 617-66-00589<br>인천광역시 영종구 공항문화로 127 인스파이어 엔터테인먼트 리조트 선타워 3층 · T. 032-252-3210 · F. 032-252-3211</span>
       {tx("span", notice)}
     </div>
   </div>
@@ -868,7 +868,7 @@ def contact():
       <div class="tel-sub">032-252-3210 · FAX 032-252-3211 · drchoi119@gmail.com</div>
       <div class="status" id="status"><i></i><span id="statusText"></span></div>
       <dl class="info">
-        <div class="info-row"><dt data-i18n="contact.address">Address</dt><dd data-i18n="contact.addressText">Sun Tower 3F, Inspire Entertainment Resort<br>127 Gonghang-munhwa-ro, Jung-gu, Incheon, Korea</dd></div>
+        <div class="info-row"><dt data-i18n="contact.address">Address</dt><dd data-i18n="contact.addressText">Sun Tower 3F, Inspire Entertainment Resort<br>127 Gonghang-munhwa-ro, Yeongjong-gu, Incheon, Korea</dd></div>
         <div class="info-row"><dt data-i18n="contact.hours">Hours</dt><dd class="hours" id="hours"></dd></div>
         <div class="info-row"><dt data-i18n="contact.messenger">Messenger</dt><dd class="chips"><span>KakaoTalk</span><span>LINE</span><span>WhatsApp</span><span>WeChat</span></dd></div>
       </dl>

@@ -18,7 +18,7 @@ global-care.html        해외 고객 안내
 experience.html         인스파이어 공간 · 위치
 contact.html            상담 신청 · 오시는 길 · 지도
 css/style.css           스타일 (색·서체 변수는 파일 상단 :root)
-js/main.js              다국어(EN/KR/中文), 메뉴, 슬라이더, 진료 탭, 진료 상태, 상담 폼
+js/main.js              다국어(EN/KR/中文, 첫 화면은 항상 영문), 메뉴, 슬라이더, 진료 탭, 진료 상태, 상담 폼
 images/                 사진 (현재는 시안에서 잘라낸 임시 이미지)
 tools/build_pages.py    서브 페이지 생성 스크립트
 ```
