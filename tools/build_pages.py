@@ -175,6 +175,9 @@ def cta_band(title=None, text=None, interest=None):
 </section>'''
 
 
+SITE_URL = "https://midas-inspire.com/"
+
+
 def page(filename, active, title, desc, body):
     en_title, ko_title, zh_title = title
     doc = f'''<!DOCTYPE html>
@@ -182,10 +185,14 @@ def page(filename, active, title, desc, body):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{en_title} — MIDAS CLINIC · INSPIRE</title>
-<meta name="description" content="{esc(desc)}">
-<meta property="og:title" content="{esc(en_title)} — MIDAS CLINIC · INSPIRE">
-<meta property="og:image" content="images/hero-inspire.jpg">
+<title>{en_title} | 미다스의원 인스파이어 · MIDAS CLINIC</title>
+<meta name="description" content="{esc(html.unescape(desc if "미다스의원" in desc else desc.rstrip(". ") + ". 미다스의원 인스파이어리조트점 (구 선이고은 성형외과) " + ko_title + "."))}">
+<link rel="canonical" href="{SITE_URL}{filename}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MIDAS CLINIC · INSPIRE 미다스의원">
+<meta property="og:url" content="{SITE_URL}{filename}">
+<meta property="og:title" content="{esc(en_title)} | 미다스의원 인스파이어 · MIDAS CLINIC">
+<meta property="og:image" content="{SITE_URL}images/hero-inspire.jpg">
 <meta name="theme-color" content="#eef2f8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -582,7 +589,7 @@ def about():
 </section>
 
 {cta_band()}'''
-    page("about.html", "about", T("About", "병원소개", "关于我们"),
+    page("about.html", "about", T("About", "미다스 소개", "关于MIDAS"),
          "About Midas Clinic Inspire — formerly 선이고은 Plastic Surgery. Director Choi Seung Ho.", body)
 
 
@@ -905,7 +912,7 @@ def contact():
     </div>
   </div>
 </section>'''
-    page("contact.html", "contact", T("Contact", "오시는 길", "联系我们"),
+    page("contact.html", "contact", T("Contact", "문의 및 오시는 길", "联系我们"),
          "Contact Midas Clinic Inspire: +82 32 252 3210. Sun Tower 3F, Inspire Entertainment Resort, Incheon.", body)
 
 
